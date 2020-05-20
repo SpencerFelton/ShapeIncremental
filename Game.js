@@ -32,6 +32,11 @@ function pointGainPerUpdate(){
   return gain;
 }
 
+function lineGainPerUpdate(){
+  var gain = (generatorArray[2]/60);
+  return gain;
+}
+
 function updateCurrency(){ // points generate currency - calculate and update html every update
   var gain = currencyGainPerUpdate();
   playerCurrency += gain;
@@ -41,6 +46,12 @@ function updatePoints(){
   var gain = pointGainPerUpdate();
   generatorArray[0] += gain;
 }
+
+function updateLines(){
+  var gain = lineGainPerUpdate();
+  generatorArray[1] += gain;
+}
+
 
 function checkUpgrades(){
   if (generatorArray[0] >= 5 && pointUpgradesPurchased[0] == false) {
@@ -58,18 +69,27 @@ function updateDisplay(){
   $("#CardinalCurrency").text("Cardinals: " + playerCurrency.toFixed(2));
   $("#point").text("Points: " + generatorArray[0].toFixed(0));
   $("#line").text("Lines: " + generatorArray[1].toFixed(0));
+  $("#triangle").text("Triangles: " + generatorArray[2].toFixed(0));
 
   $("#buyPointButton").text("Cost: " + generatorCurrentCostArray[0].toFixed(0));
   $("#buyLineButton").text("Cost: " + generatorCurrentCostArray[1].toFixed(0));
+  $("#buyTriangleButton").text("Cost: " + generatorCurrentCostArray[2].toFixed(0))
 
   $("#currencyPS").text("Cardinals/Sec: " + (currencyGainPerUpdate()*60).toFixed(2));
   $("#pointsPS").text("Points/Sec: " + (pointGainPerUpdate()*60).toFixed(2));
+  $("#linesPS").text("Lines/Sec: " + (lineGainPerUpdate()*60).toFixed(2));
 
+  //Generator Checks
+  //Point checks
   if(generatorArray[0] >= 5) {
     $("#upgradeShopWrapper").show();
   }
   if (generatorArray[0] >= 10) { // if the player has 5 Points, show the next generator
     $("#lineWrapper").show();
+  }
+  //Line checks
+  if(generatorArray[1] >= 5) {
+    $("#triangleWrapper").show();
   }
   checkUpgrades();
 }
@@ -77,6 +97,7 @@ function updateDisplay(){
 function update(){ // update all aspects of the game
   updateCurrency();
   updatePoints();
+  updateLines();
 
 }
 

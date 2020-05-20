@@ -10,6 +10,11 @@ $(document).ready(function(){
     console.log("you clicked!");
   });
 
+  $("#buyTriangleButton").click(function(){
+    buyGenerator(2);
+    console.log("you clicked!");
+  })
+
   $("#homeButton").click(function(){ // clicking the home button hides other windows and shows the home window
     $("#mainGameWindow").show();
     $("#upgradeWindow").hide();

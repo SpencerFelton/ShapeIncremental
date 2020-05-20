@@ -13,3 +13,11 @@
 #lineWrapper > * {
   display: inline-block;
 }
+
+#triangleWrapper {
+  white-space: nowrap;
+}
+
+#triangleWrapper > * {
+  display: inline-block;
+}
