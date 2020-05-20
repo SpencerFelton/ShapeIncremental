@@ -2,6 +2,7 @@ var generatorArray =[0,0,0,0,0,0,0,0,0,0]; // Start with 0 of each initial gener
 var generatorBaseCostArray =[1,1e2,1e4,1e6,1e8,1e10,1e12,1e14,1e16,1e18];
 var generatorCurrentCostArray =[1,1e2,1e4,1e6,1e8,1e10,1e12,1e14,1e16,1e18];
 var generatorMultipliers = [1,1,1,1,1,1,1,1,1,1]
+var pointUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false] // index corresponding to number of upgrade, [0] = upgrade1 etc
 var playerCurrency = 1
 
 function nextGeneratorCost(i) {
@@ -43,7 +44,7 @@ function updatePoints(){
 }
 
 function checkUpgrades(){
-  if (generatorArray[0] >= 5) {
+  if (generatorArray[0] >= 5 && pointUpgradesPurchased[0] == false) {
     $("#pointUpgrade1").show();
   }
 }

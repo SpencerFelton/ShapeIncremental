@@ -25,6 +25,7 @@ $(document).ready(function(){
       playerCurrency -= 50;
       generatorMultipliers[0] *= 2; // multiply currency generation by points by 2
       $("#pointUpgrade1").hide(); // hide the button and description so it cant be pressed twice
+      pointUpgradesPurchased[0] = true;
     }
     else{
       console.log("you cant afford that yet");
