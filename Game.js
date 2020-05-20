@@ -6,7 +6,7 @@ var pointUpgradesPurchased = [false, false, false, false, false, false, false, f
 var playerCurrency = 1
 
 function nextGeneratorCost(i) {
-  nextCost = 1+generatorCurrentCostArray[i]*2.1;
+  nextCost = 1+generatorCurrentCostArray[i]*1.7;
   return nextCost;
 }
 
@@ -39,13 +39,18 @@ function updateCurrency(){ // points generate currency - calculate and update ht
 
 function updatePoints(){
   var gain = pointGainPerUpdate();
-  console.log(gain);
   generatorArray[0] += gain;
 }
 
 function checkUpgrades(){
   if (generatorArray[0] >= 5 && pointUpgradesPurchased[0] == false) {
     $("#pointUpgrade1").show();
+  }
+  if (generatorArray[0] >= 25 && pointUpgradesPurchased[1] == false) {
+    $("#pointUpgrade2").show();
+  }
+  if (generatorArray[0] >= 500 && pointUpgradesPurchased[2] == false) {
+    $("#pointUpgrade3").show();
   }
 }
 
