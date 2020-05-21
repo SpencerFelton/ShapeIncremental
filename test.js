@@ -13,7 +13,42 @@ $(document).ready(function(){
   $("#buyTriangleButton").click(function(){
     buyGenerator(2);
     console.log("you clicked!");
-  })
+  });
+
+  $("#buySquareButton").click(function(){
+    buyGenerator(3);
+    console.log("you clicked!");
+  });
+
+  $("#buyPentagonButton").click(function(){
+    buyGenerator(4);
+    console.log("you clicked!");
+  });
+
+  $("#buyHexagonButton").click(function(){
+    buyGenerator(5);
+    console.log("you clicked!");
+  });
+
+  $("#buyHeptagonButton").click(function(){
+    buyGenerator(6);
+    console.log("you clicked!");
+  });
+
+  $("#buyOctagonButton").click(function(){
+    buyGenerator(7);
+    console.log("you clicked!");
+  });
+
+  $("#buyNonagonButton").click(function(){
+    buyGenerator(8);
+    console.log("you clicked!");
+  });
+
+  $("#buyDecagonButton").click(function(){
+    buyGenerator(9);
+    console.log("you clicked!");
+  });
 
   $("#homeButton").click(function(){ // clicking the home button hides other windows and shows the home window
     $("#mainGameWindow").show();
