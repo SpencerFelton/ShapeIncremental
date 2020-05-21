@@ -60,6 +60,12 @@ $(document).ready(function(){
     $("#upgradeWindow").show();
   });
 
+  $("#achievementButton").click(function(){
+    $("#mainGameWindow").hide();
+    $("#upgradeWindow").hide();
+    $("#achievementWindow").show();
+  })
+
   $("#pointUpgrade1Button").click(function(){
     if (playerCurrency >= 50) { // check the player has enough money to purchase the upgrade
       playerCurrency -= 50;

@@ -1,9 +1,21 @@
 var generatorArray =[0,0,0,0,0,0,0,0,0,0]; // Start with 0 of each initial generator
 var generatorBaseCostArray =[1,1e2,1e4,1e6,1e8,1e10,1e12,1e14,1e16,1e18];
 var generatorCurrentCostArray =[1,1e2,1e4,1e6,1e8,1e10,1e12,1e14,1e16,1e18];
-var generatorMultipliers = [1,1,1,1,1,1,1,1,1,1]
-var pointUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false] // index corresponding to number of upgrade, [0] = upgrade1 etc
-var playerCurrency = 1
+var generatorMultipliers = [1,1,1,1,1,1,1,1,1,1];
+
+var pointUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false]; // index corresponding to number of upgrade, [0] = upgrade1 etc
+var lineUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
+var triangleUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
+var squareUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
+var pentagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
+var hexagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
+var heptagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
+var octagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
+var nonagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
+var decagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
+
+var playerCurrency = 1;
+var playerPrestigeCurrency = 0;
 
 function nextGeneratorCost(i) {
   nextCost = 1+generatorCurrentCostArray[i]*1.7;
@@ -132,6 +144,58 @@ function toENotation(number){ // if a number is less than 1 million, leave it as
   }
 }
 
+function checkCanPrestige(){ // check if the player has enough curreny to prestige
+  if (playerCurrency >= 1e308) {
+    if(window.confirm("You've reached 1e308 Cardinals, time for a prestige!")){
+      prestige(); // perform a prestige, unlock 3d shapes and prestige curreny shop
+    }
+    else {
+      alert("I'm afraid at this time, you have no choice.")
+    }
+  }
+}
+
+function resetPlayerCurrency(){ //reset player currency for prestige
+  playerCurrency = 1;
+}
+
+function resetGeneratorArray(){
+  generatorArray = [0,0,0,0,0,0,0,0,0,0];
+}
+
+function resetGeneratorBaseCostArray(){
+  generatorCurrentCostArray = [1,1e2,1e4,1e6,1e8,1e10,1e12,1e14,1e16,1e18];
+}
+
+function resetGeneratorMultipliers(){
+  generatorMultipliers = [1,1,1,1,1,1,1,1,1,1];
+}
+
+function resetGeneratorUpgrades(){
+  pointUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false]; // index corresponding to number of upgrade, [0] = upgrade1 etc
+  lineUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
+  triangleUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
+  squareUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
+  pentagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
+  hexagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
+  heptagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
+  octagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
+  nonagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
+  decagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
+}
+
+
+
+function prestige(){ // perform a prestige
+  if($("#prestigeShopWindow").css("display") == "none"){ // check if this is the first prestige, shop should only not appear on the first run
+    $("#prestigeShopButton").show();
+  }
+  resetPlayerCurrency();
+  resetGeneratorArray();
+  resetGeneratorBaseCostArray();
+  resetGeneratorMultipliers();
+  resetGeneratorUpgrades();
+}
 
 
 
@@ -242,6 +306,7 @@ setInterval(loop, 16)
 function loop(){
   update();
   updateDisplay();
+  checkCanPrestige();
 
 
 }
