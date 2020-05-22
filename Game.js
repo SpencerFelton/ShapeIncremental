@@ -184,6 +184,18 @@ function resetGeneratorUpgrades(){
   decagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
 }
 
+function hideGeneratorVisibility(){
+  $("#lineWrapper").hide();
+  $("#triangleWrapper").hide();
+  $("#squareWrapper").hide();
+  $("#pentagonWrapper").hide();
+  $("#hexagonWrapper").hide();
+  $("#heptagonWrapper").hide();
+  $("#octagonWrapper").hide();
+  $("#nonagonWrapper").hide();
+  $("#decagonWrapper").hide();
+}
+
 
 
 function prestige(){ // perform a prestige
@@ -195,6 +207,7 @@ function prestige(){ // perform a prestige
   resetGeneratorBaseCostArray();
   resetGeneratorMultipliers();
   resetGeneratorUpgrades();
+  hideGeneratorVisibility();
 }
 
 
