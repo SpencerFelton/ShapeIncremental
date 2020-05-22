@@ -1,5 +1,5 @@
 var generatorArray =[0,0,0,0,0,0,0,0,0,0]; // Start with 0 of each initial generator
-var generatorBaseCostArray =[1,1e2,1e4,1e6,1e8,1e10,1e12,1e14,1e16,1e18];
+var generatorBaseCostArray =[1,1,1,1,1,1,1,1,1,1];
 var generatorCurrentCostArray =[1,1e2,1e4,1e6,1e8,1e10,1e12,1e14,1e16,1e18];
 var generatorMultipliers = [1,1,1,1,1,1,1,1,1,1];
 
@@ -18,7 +18,7 @@ var playerCurrency = 1;
 var playerPrestigeCurrency = 0;
 
 function nextGeneratorCost(i) {
-  nextCost = 1+generatorCurrentCostArray[i]*1.7;
+  nextCost = 1+generatorCurrentCostArray[i]*1.7*generatorBaseCostArray[i]; //cost of next generator is 1.7* higher than current cost, multiplied by the base cost multiplier
   return nextCost;
 }
 
@@ -213,18 +213,41 @@ function prestige(){ // perform a prestige
 
 
 function checkUpgrades(){
+  // check how many points to see if eligible to see upgrades
   if (generatorArray[0] >= 5 && pointUpgradesPurchased[0] == false) {
     $("#pointUpgrade1").show();
   }
-  if (generatorArray[0] >= 25 && pointUpgradesPurchased[1] == false) {
+  if (generatorArray[0] >= 500 && pointUpgradesPurchased[1] == false) {
     $("#pointUpgrade2").show();
   }
-  if (generatorArray[0] >= 500 && pointUpgradesPurchased[2] == false) {
+  if (generatorArray[0] >= 50000 && pointUpgradesPurchased[2] == false) {
     $("#pointUpgrade3").show();
+  }
+  if (generatorArray[0] >= 50000 && pointUpgradesPurchased[3] == false) {
+    $("#pointUpgrade4").show();
+  }
+  if (generatorArray[0] >= 50000 && pointUpgradesPurchased[4] == false) {
+    $("#pointUpgrade5").show();
+  }
+  if (generatorArray[0] >= 50000 && pointUpgradesPurchased[5] == false) {
+    $("#pointUpgrade6").show();
+  }
+  if (generatorArray[0] >= 50000 && pointUpgradesPurchased[6] == false) {
+    $("#pointUpgrade7").show();
+  }
+  if (generatorArray[0] >= 50000 && pointUpgradesPurchased[7] == false) {
+    $("#pointUpgrade8").show();
+  }
+  if (generatorArray[0] >= 50000 && pointUpgradesPurchased[8] == false) {
+    $("#pointUpgrade9").show();
+  }
+  if (generatorArray[0] >= 50000 && pointUpgradesPurchased[9] == false) {
+    $("#pointUpgrade10").show();
   }
 }
 
 function updateDisplay(){
+  //PRE PRESTIGE GENERATION
   $("#decagon").text("Decagons: " + toENotation(generatorArray[9]));
   $("#nonagon").text("Nonagons: " + toENotation(generatorArray[8]));
   $("#octagon").text("Octagons: " + toENotation(generatorArray[7]));
@@ -258,6 +281,8 @@ function updateDisplay(){
   $("#heptagonPS").text("Heptagons/Sec: " + (toENotation(heptagonGainPerUpdate()*60)));
   $("#octagonPS").text("Octagons/Sec: " + (toENotation(octagonGainPerUpdate()*60)));
   $("#nonagonPS").text("Nonagons/Sec: " + (toENotation(nonagonGainPerUpdate()*60)));
+
+  //POST PRESTIGE GENERATION
 
   //Generator Checks
   //Point checks

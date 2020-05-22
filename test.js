@@ -64,7 +64,7 @@ $(document).ready(function(){
     $("#mainGameWindow").hide();
     $("#upgradeWindow").hide();
     $("#achievementWindow").show();
-  })
+  });
 
   $("#pointUpgrade1Button").click(function(){
     if (playerCurrency >= 50) { // check the player has enough money to purchase the upgrade
@@ -76,7 +76,7 @@ $(document).ready(function(){
     else{
       console.log("you cant afford that yet");
     }
-  })
+  });
 
   $("#pointUpgrade2Button").click(function(){
     if (playerCurrency >= 1000) { // check the player has enough money to purchase the upgrade
@@ -88,7 +88,7 @@ $(document).ready(function(){
     else{
       console.log("you cant afford that yet");
     }
-  })
+  });
 
   $("#pointUpgrade3Button").click(function(){
     if (playerCurrency >= 100000) { // check the player has enough money to purchase the upgrade
@@ -100,5 +100,29 @@ $(document).ready(function(){
     else{
       console.log("you cant afford that yet");
     }
-  })
+  });
+
+  $("#pointUpgrade4Button").click(function(){
+    if (playerCurrency >= 100000000){
+      playerCurrency -= 100000000;
+      generatorMultipliers[0] *= 10;
+      $("#pointUpgrade4").hide();
+      pointUpgradesPurchased[3] = true;
+    }
+    else{
+      console.log("you cant afford that yet");
+    }
+  });
+
+  $("#pointUpgrade5Button").click(function(){
+    if (playerCurrency >= 100000000000){
+      playerCurrency -= 100000000000;
+      generatorMultipliers[0] = generatorMultipliers[0]**2;
+      $("#pointUpgrade5").hide();
+      pointUpgradesPurchased[4] = true;
+    }
+    else{
+      console.log("you cant afford that yet");
+    }
+  });
 });
