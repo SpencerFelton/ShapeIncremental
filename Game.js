@@ -212,17 +212,17 @@ function checkUpgrades(){
 }
 
 function updateDisplay(){
-  $("#CardinalCurrency").text("Cardinals: " + toENotation(playerCurrency));
-  $("#point").text("Points: " + toENotation(generatorArray[0]));
-  $("#line").text("Lines: " + toENotation(generatorArray[1]));
-  $("#triangle").text("Triangles: " + toENotation(generatorArray[2]));
-  $("#square").text("Squares: " + toENotation(generatorArray[3]));
-  $("#pentagon").text("Pentagons: " + toENotation(generatorArray[4]));
-  $("#hexagon").text("Hexagons: " + toENotation(generatorArray[5]));
-  $("#heptagon").text("Heptagons: " + toENotation(generatorArray[6]));
-  $("#octagon").text("Octagons: " + toENotation(generatorArray[7]));
-  $("#nonagon").text("Nonagons: " + toENotation(generatorArray[8]));
   $("#decagon").text("Decagons: " + toENotation(generatorArray[9]));
+  $("#nonagon").text("Nonagons: " + toENotation(generatorArray[8]));
+  $("#octagon").text("Octagons: " + toENotation(generatorArray[7]));
+  $("#heptagon").text("Heptagons: " + toENotation(generatorArray[6]));
+  $("#hexagon").text("Hexagons: " + toENotation(generatorArray[5]));
+  $("#pentagon").text("Pentagons: " + toENotation(generatorArray[4]));
+  $("#square").text("Squares: " + toENotation(generatorArray[3]));
+  $("#triangle").text("Triangles: " + toENotation(generatorArray[2]));
+  $("#CardinalCurrency").text("Cardinals: " + toENotation(playerCurrency));
+  $("#line").text("Lines: " + toENotation(generatorArray[1]));
+  $("#point").text("Points: " + toENotation(generatorArray[0]));
 
   $("#buyPointButton").text("Cost: " + toENotation(generatorCurrentCostArray[0]));
   $("#buyLineButton").text("Cost: " + toENotation(generatorCurrentCostArray[1]));
@@ -290,16 +290,16 @@ function updateDisplay(){
 }
 
 function update(){ // update all aspects of the game
-  updateCurrency();
-  updatePoints();
-  updateLines();
-  updateTriangles();
-  updateSquares();
-  updatePentagons();
-  updateHexagons();
-  updateHeptagons();
+  updateNonagons(); // update shapes top to bottom because nonagons give octagons p/s, octagons give heptagons p/s etc
   updateOctagons();
-  updateNonagons();
+  updateHeptagons();
+  updateHexagons();
+  updatePentagons();
+  updateSquares();
+  updateTriangles();
+  updateLines();
+  updatePoints();
+  updateCurrency();
 }
 
 setInterval(loop, 16)
