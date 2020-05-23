@@ -1,6 +1,6 @@
 var generatorArray =[0,0,0,0,0,0,0,0,0,0]; // Start with 0 of each initial generator
 var generatorBaseCostArray =[1,1,1,1,1,1,1,1,1,1];
-var generatorCurrentCostArray =[1,1e2,1e4,1e6,1e8,1e10,1e12,1e14,1e16,1e18];
+var generatorCurrentCostArray =[1,1e4,1e9,1e16,1e25,1e36,1e49,1e64,1e81,1e100];
 var generatorMultipliers = [1,1,1,1,1,1,1,1,1,1];
 
 var pointUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false]; // index corresponding to number of upgrade, [0] = upgrade1 etc
@@ -18,7 +18,7 @@ var playerCurrency = 1;
 var playerPrestigeCurrency = 0;
 
 function nextGeneratorCost(i) {
-  nextCost = 1+generatorCurrentCostArray[i]*1.7*generatorBaseCostArray[i]; //cost of next generator is 1.7* higher than current cost, multiplied by the base cost multiplier
+  nextCost = 1+(generatorCurrentCostArray[i]*1.7*generatorBaseCostArray[i]); //cost of next generator is 1.7* higher than current cost, multiplied by the base cost multiplier
   return nextCost;
 }
 
@@ -214,7 +214,9 @@ function prestige(){ // perform a prestige
 
 function checkUpgrades(){
   // check how many points to see if eligible to see upgrades
-  if (generatorArray[0] >= 5 && pointUpgradesPurchased[0] == false) {
+
+  //Point Upgrades
+  if (generatorArray[0] >= 10 && pointUpgradesPurchased[0] == false) {
     $("#pointUpgrade1").show();
   }
   if (generatorArray[0] >= 500 && pointUpgradesPurchased[1] == false) {
@@ -229,7 +231,7 @@ function checkUpgrades(){
   if (generatorArray[0] >= 50000 && pointUpgradesPurchased[4] == false) {
     $("#pointUpgrade5").show();
   }
-  if (generatorArray[0] >= 50000 && pointUpgradesPurchased[5] == false) {
+  if (generatorArray[0] >= 50000 && pointUpgradesPurchased[5] == false) { // not implemented below
     $("#pointUpgrade6").show();
   }
   if (generatorArray[0] >= 50000 && pointUpgradesPurchased[6] == false) {
@@ -289,39 +291,39 @@ function updateDisplay(){
   if(generatorArray[0] >= 5) {
     $("#upgradeShopWrapper").show();
   }
-  if (generatorArray[0] >= 10) { // if the player has 5 Points, show the next generator
+  if (generatorArray[0] >= 10) { // if the player has 10 Points, show the next generator
     $("#lineWrapper").show();
   }
   //Line checks
-  if(generatorArray[1] >= 5) {
+  if(generatorArray[1] >= 15) {
     $("#triangleWrapper").show();
   }
   //triangle checks
-  if(generatorArray[2] >= 5){
+  if(generatorArray[2] >= 20){
     $("#squareWrapper").show();
   }
   //Square Checks
-  if(generatorArray[3] >= 5){
+  if(generatorArray[3] >= 25){
     $("#pentagonWrapper").show();
   }
   //Pentagon checks
-  if(generatorArray[4] >= 5){
+  if(generatorArray[4] >= 30){
     $("#hexagonWrapper").show();
   }
   //Hexagon checks
-  if(generatorArray[5] >= 5){
+  if(generatorArray[5] >= 35){
     $("#heptagonWrapper").show();
   }
   //Heptagon checks
-  if(generatorArray[6] >= 5){
+  if(generatorArray[6] >= 40){
     $("#octagonWrapper").show();
   }
   //Octagon checks
-  if(generatorArray[7] >= 5){
+  if(generatorArray[7] >= 45){
     $("#nonagonWrapper").show();
   }
   //Nonagon checks
-  if(generatorArray[8] >= 5){
+  if(generatorArray[8] >= 50){
     $("#decagonWrapper").show();
   }
   checkUpgrades();
