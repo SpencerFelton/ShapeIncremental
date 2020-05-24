@@ -1,7 +1,8 @@
 var generatorArray =[0,0,0,0,0,0,0,0,0,0]; // Start with 0 of each initial generator
 var generatorBaseCostArray =[1,1,1,1,1,1,1,1,1,1];
-var generatorCurrentCostArray =[1,1e4,1e9,1e16,1e25,1e36,1e49,1e64,1e81,1e100];
-var generatorMultipliers = [1,1,1,1,1,1,1,1,1,1];
+var generatorCurrentCostArray =[1,3e3,1e9,1e16,1e25,1e36,1e49,1e64,1e81,1e100];
+var generatorMultipliers = [1,1,1,1,1,1,1,1,1,1]; //
+var generatorExponent = [1,1,1,1,1,1,1,1,1,1];
 
 var pointUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false]; // index corresponding to number of upgrade, [0] = upgrade1 etc
 var lineUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
@@ -17,8 +18,12 @@ var decagonUpgradesPurchased = [false, false, false, false, false, false, false,
 var playerCurrency = 1;
 var playerPrestigeCurrency = 0;
 
+function totalMultiplier(multiplier, exponent){
+  return multiplier**exponent;
+}
+
 function nextGeneratorCost(i) {
-  nextCost = 1+(generatorCurrentCostArray[i]*1.7*generatorBaseCostArray[i]); //cost of next generator is 1.7* higher than current cost, multiplied by the base cost multiplier
+  nextCost = 1+(generatorCurrentCostArray[i]*1.4*generatorBaseCostArray[i]); //cost of next generator is 1.7* higher than current cost, multiplied by the base cost multiplier
   return nextCost;
 }
 
@@ -35,7 +40,7 @@ function buyGenerator(i){ //Try to buy generator according to resourcesArray
 }
 // Gain per update functions - gain dependent on the generator above them, or i+1
 function currencyGainPerUpdate(){ // game runs at 60 updates per second, so to get gain per update we divide point gains by 60 and any upgrades
-  var gain = (generatorArray[0]*generatorMultipliers[0])/60;
+  var gain = (generatorArray[0]*totalMultiplier(generatorMultipliers[0], generatorExponent[0]))/60;
   return gain;
 }
 
@@ -216,19 +221,19 @@ function checkUpgrades(){
   // check how many points to see if eligible to see upgrades
 
   //Point Upgrades
-  if (generatorArray[0] >= 10 && pointUpgradesPurchased[0] == false) {
+  if (generatorArray[0] >= 5 && pointUpgradesPurchased[0] == false) {
     $("#pointUpgrade1").show();
   }
-  if (generatorArray[0] >= 500 && pointUpgradesPurchased[1] == false) {
+  if (generatorArray[0] >= 10 && pointUpgradesPurchased[1] == false) {
     $("#pointUpgrade2").show();
   }
-  if (generatorArray[0] >= 50000 && pointUpgradesPurchased[2] == false) {
+  if (generatorArray[0] >= 1000 && pointUpgradesPurchased[2] == false) {
     $("#pointUpgrade3").show();
   }
-  if (generatorArray[0] >= 50000 && pointUpgradesPurchased[3] == false) {
+  if (generatorArray[0] >= 5000 && pointUpgradesPurchased[3] == false) {
     $("#pointUpgrade4").show();
   }
-  if (generatorArray[0] >= 50000 && pointUpgradesPurchased[4] == false) {
+  if (generatorArray[0] >= 10000 && pointUpgradesPurchased[4] == false) {
     $("#pointUpgrade5").show();
   }
   if (generatorArray[0] >= 50000 && pointUpgradesPurchased[5] == false) { // not implemented below
@@ -245,6 +250,39 @@ function checkUpgrades(){
   }
   if (generatorArray[0] >= 50000 && pointUpgradesPurchased[9] == false) {
     $("#pointUpgrade10").show();
+  }
+
+  //Line Upgrades
+  if(generatorArray[1] >= 5 && lineUpgradesPurchased[0] == false){
+    $("#lineUpgrade1").show();
+  }
+  if(generatorArray[1] >= 5 && lineUpgradesPurchased[1] == false){
+    console.log("in erem9");
+    $("#lineUpgrade2").show();
+  }
+  if(generatorArray[1] >= 5 && lineUpgradesPurchased[2] == false){
+    $("#lineUpgrade3").show();
+  }
+  if(generatorArray[1] >= 5 && lineUpgradesPurchased[3] == false){
+    $("#lineUpgrade4").show();
+  }
+  if(generatorArray[1] >= 5 && lineUpgradesPurchased[4] == false){
+    $("#lineUpgrade5").show();
+  }
+  if(generatorArray[1] >= 5 && lineUpgradesPurchased[5] == false){
+    $("#lineUpgrade6").show();
+  }
+  if(generatorArray[1] >= 5 && lineUpgradesPurchased[6] == false){
+    $("#lineUpgrade7").show();
+  }
+  if(generatorArray[1] >= 5 && lineUpgradesPurchased[7] == false){
+    $("#lineUpgrade8").show();
+  }
+  if(generatorArray[1] >= 5 && lineUpgradesPurchased[8] == false){
+    $("#lineUpgrade9").show();
+  }
+  if(generatorArray[1] >= 5 && lineUpgradesPurchased[9] == false){
+    $("#lineUpgrade10").show();
   }
 }
 

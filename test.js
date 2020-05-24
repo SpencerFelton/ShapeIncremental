@@ -65,7 +65,7 @@ $(document).ready(function(){
     $("#upgradeWindow").hide();
     $("#achievementWindow").show();
   });
-
+  //POINT UPGRADE BUTTONS
   $("#pointUpgrade1Button").click(function(){
     if (playerCurrency >= 50) { // check the player has enough money to purchase the upgrade
       playerCurrency -= 50;
@@ -80,7 +80,7 @@ $(document).ready(function(){
 
   $("#pointUpgrade2Button").click(function(){
     if (playerCurrency >= 1000) { // check the player has enough money to purchase the upgrade
-      playerCurrency -= 1000
+      playerCurrency -= 1000;
       generatorMultipliers[0] *= 3; // multiply currency generation by points by 2
       $("#pointUpgrade2").hide(); // hide the button and description so it cant be pressed twice
       pointUpgradesPurchased[1] = true;
@@ -91,8 +91,8 @@ $(document).ready(function(){
   });
 
   $("#pointUpgrade3Button").click(function(){
-    if (playerCurrency >= 100000) { // check the player has enough money to purchase the upgrade
-      playerCurrency -= 100000
+    if (playerCurrency >= 5000) { // check the player has enough money to purchase the upgrade
+      playerCurrency -= 5000;
       generatorMultipliers[0] *= 4; // multiply currency generation by points by 2
       $("#pointUpgrade3").hide(); // hide the button and description so it cant be pressed twice
       pointUpgradesPurchased[2] = true;
@@ -117,7 +117,7 @@ $(document).ready(function(){
   $("#pointUpgrade5Button").click(function(){
     if (playerCurrency >= 100000000000){
       playerCurrency -= 100000000000;
-      generatorMultipliers[0] = generatorMultipliers[0]**2;
+      generatorMultipliers[0] = generatorExponent[0]*1.2;
       $("#pointUpgrade5").hide();
       pointUpgradesPurchased[4] = true;
     }
@@ -125,4 +125,46 @@ $(document).ready(function(){
       console.log("you cant afford that yet");
     }
   });
+
+  //LINE UPGRADE BUTTONS
+  $("#lineUpgrade1Button").click(function(){
+
+  });
+
+  $("#lineUpgrade2Button").click(function(){
+
+  });
+
+  $("#lineUpgrade3Button").click(function(){
+
+  });
+
+  $("#lineUpgrade4Button").click(function(){
+
+  });
+
+  $("#lineUpgrade5Button").click(function(){
+
+  });
+
+  $("#lineUpgrade6Button").click(function(){
+
+  });
+
+  $("#lineUpgrade7Button").click(function(){
+
+  });
+
+  $("#lineUpgrade8Button").click(function(){
+
+  });
+
+  $("#lineUpgrade9Button").click(function(){
+
+  });
+
+  $("#lineUpgrade10Button").click(function(){
+
+  });
+
 });
