@@ -45,47 +45,47 @@ function currencyGainPerUpdate(){ // game runs at 60 updates per second, so to g
 }
 
 function pointGainPerUpdate(){ // points are the first tier of production, but their gain is dependent on lines, hence we check the 2nd index of the array
-  var gain = (generatorArray[1])/60;
+  var gain = (generatorArray[1]*totalMultiplier(generatorMultipliers[1], generatorExponent[1]))/60;
   return gain;
 }
 
 function lineGainPerUpdate(){
-  var gain = (generatorArray[2]/60);
+  var gain = (generatorArray[2]*totalMultiplier(generatorMultipliers[2], generatorExponent[2]))/60;
   return gain;
 }
 
 function triangleGainPerUpdate(){
-  var gain = generatorArray[3]/60;
+  var gain = (generatorArray[3]*totalMultiplier(generatorMultipliers[3], generatorExponent[3]))/60;
   return gain;
 }
 
 function squareGainPerUpdate(){
-  var gain = generatorArray[4]/60;
+  var gain = (generatorArray[4]*totalMultiplier(generatorMultipliers[4], generatorExponent[4]))/60;
   return gain;
 }
 
 function pentagonGainPerUpdate(){
-  var gain = generatorArray[5]/60;
+  var gain = (generatorArray[5]*totalMultiplier(generatorMultipliers[5], generatorExponent[5]))/60;
   return gain;
 }
 
 function hexagonGainPerUpdate(){
-  var gain = generatorArray[6]/60;
+  var gain = (generatorArray[6]*totalMultiplier(generatorMultipliers[6], generatorExponent[6]))/60;
   return gain;
 }
 
 function heptagonGainPerUpdate(){
-  var gain = generatorArray[7]/60;
+  var gain = (generatorArray[7]*totalMultiplier(generatorMultipliers[7], generatorExponent[7]))/60;
   return gain;
 }
 
 function octagonGainPerUpdate(){
-  var gain = generatorArray[8]/60;
+  var gain = (generatorArray[8]*totalMultiplier(generatorMultipliers[8], generatorExponent[8]))/60;
   return gain;
 }
 
 function nonagonGainPerUpdate(){
-  var gain = generatorArray[9]/60;
+  var gain = (generatorArray[9]*totalMultiplier(generatorMultipliers[9], generatorExponent[9]))/60;
   return gain;
 }
 
@@ -230,7 +230,7 @@ function checkUpgrades(){
   if (generatorArray[0] >= 1000 && pointUpgradesPurchased[2] == false) {
     $("#pointUpgrade3").show();
   }
-  if (generatorArray[0] >= 5000 && pointUpgradesPurchased[3] == false) {
+  if (generatorArray[0] >= 2500 && pointUpgradesPurchased[3] == false) {
     $("#pointUpgrade4").show();
   }
   if (generatorArray[0] >= 10000 && pointUpgradesPurchased[4] == false) {
@@ -256,17 +256,17 @@ function checkUpgrades(){
   if(generatorArray[1] >= 5 && lineUpgradesPurchased[0] == false){
     $("#lineUpgrade1").show();
   }
-  if(generatorArray[1] >= 5 && lineUpgradesPurchased[1] == false){
+  if(generatorArray[1] >= 10 && lineUpgradesPurchased[1] == false){
     console.log("in erem9");
     $("#lineUpgrade2").show();
   }
-  if(generatorArray[1] >= 5 && lineUpgradesPurchased[2] == false){
+  if(generatorArray[1] >= 100 && lineUpgradesPurchased[2] == false){
     $("#lineUpgrade3").show();
   }
-  if(generatorArray[1] >= 5 && lineUpgradesPurchased[3] == false){
+  if(generatorArray[1] >= 1000 && lineUpgradesPurchased[3] == false){
     $("#lineUpgrade4").show();
   }
-  if(generatorArray[1] >= 5 && lineUpgradesPurchased[4] == false){
+  if(generatorArray[1] >= 10000 && lineUpgradesPurchased[4] == false){
     $("#lineUpgrade5").show();
   }
   if(generatorArray[1] >= 5 && lineUpgradesPurchased[5] == false){

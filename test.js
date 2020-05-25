@@ -103,8 +103,8 @@ $(document).ready(function(){
   });
 
   $("#pointUpgrade4Button").click(function(){
-    if (playerCurrency >= 100000000){
-      playerCurrency -= 100000000;
+    if (playerCurrency >= 1e7){
+      playerCurrency -= 1e7;
       generatorMultipliers[0] *= 10;
       $("#pointUpgrade4").hide();
       pointUpgradesPurchased[3] = true;
@@ -127,16 +127,31 @@ $(document).ready(function(){
   });
 
   //LINE UPGRADE BUTTONS
-  $("#lineUpgrade1Button").click(function(){
-
+  $("#lineUpgrade1Button").click(function(){ // Double output
+    if(playerCurrency >= 2e4){
+      playerCurrency-=2e4;
+      generatorMultipliers[1] *= 2;
+      $("#lineUpgrade1").hide();
+      lineUpgradesPurchased[0] = true;
+    }
   });
 
-  $("#lineUpgrade2Button").click(function(){
-
+  $("#lineUpgrade2Button").click(function(){ //x3 output
+    if(playerCurrency >= 2.5e5){
+      playerCurrency-=2.5e5;
+      generatorMultipliers[1] *= 3;
+      $("#lineUpgrade2").hide();
+      lineUpgradesPurchased[1] = true;
+    }
   });
 
   $("#lineUpgrade3Button").click(function(){
-
+    if(playerCurrency >= 1e7){
+      playerCurrency-=1e7;
+      generatorMultipliers[1] *= 4;
+      $("#lineUpgrade3").hide();
+      lineUpgradesPurchased[2] = true;
+    }
   });
 
   $("#lineUpgrade4Button").click(function(){
