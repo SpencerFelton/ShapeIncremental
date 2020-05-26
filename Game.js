@@ -15,7 +15,7 @@ var octagonUpgradesPurchased = [false, false, false, false, false, false, false,
 var nonagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
 var decagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
 
-var playerCurrency = 1;
+var playerCurrency = 1e100;
 var playerPrestigeCurrency = 0;
 
 function totalMultiplier(multiplier, exponent){

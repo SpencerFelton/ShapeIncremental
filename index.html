@@ -84,87 +84,111 @@
     <div id="upgradeWindow" style="display: none;">
       <div id="upgradeLine1Wrapper">
         <div id="pointUpgrade1">
-          <p id="pointUpgrade1Desc">Bigger Points: Doubles the Cardinal output of points</p>
-          <button type = "button" id="pointUpgrade1Button">Cost: 50</button>
+          <p id="pointUpgrade1DescUpper" class="upgradeButtonDescUpper">Bigger Points</p>
+          <button type = "button" id="pointUpgrade1Button" class="upgradeButton">Cost: 50</button>
+          <p id="pointUpgrade1DescLower" class="upgradeButtonDescLower">x2 the Cardinal output of Points</p>
         </div>
         <div id="pointUpgrade2" style="display: none;">
-          <p id="pointUpgrade2Desc">Dotty: Triples the Cardinal output of points</p>
-          <button type = "button" id="pointUpgrade2Button">Cost: 1000</button>
+          <p id="pointUpgrade2DescUpper" class="upgradeButtonDescUpper">Dotty</p>
+          <button type = "button" id="pointUpgrade2Button" class="upgradeButton">Cost: 1000</button>
+          <p id="pointUpgrade2Lower" class="upgradeButtonDescLower">x3 the Cardinal output of points</p>
         </div>
         <div id="pointUpgrade3" style="display: none;">
-          <p id="pointUpgrade3Desc">Get to the point: Quadruples the Cardinal output of points</p>
-          <button type = "button" id="pointUpgrade3Button">Cost: 100,000</button>
+          <p id="pointUpgrade3DescUpper" class="upgradeButtonDescUpper">Get to the point</p>
+          <button type = "button" id="pointUpgrade3Button" class="upgradeButton">Cost: 100,000</button>
+          <p id="pointUpgrade3DescLower" class="upgradeButtonDescLower">x4 the Cardinal output of points</p>
         </div>
         <div id="pointUpgrade4" style="display: none;">
-          <p id="pointUpgrade4Desc">Such magnitude: 10x the Cardinal output of points</p>
-          <button type = "button" id="pointUpgrade4Button">Cost: 1e7</button>
+          <p id="pointUpgrade4DescUpper" class="upgradeButtonDescUpper">Such magnitude</p>
+          <button type = "button" id="pointUpgrade4Button" class="upgradeButton">Cost: 1e7</button>
+          <p id="pointUpgrade4DescLower" class="upgradeButtonDescLower">10x the Cardinal output of points</p>
         </div>
         <div id="pointUpgrade5" style="display: none;">
-          <p id="pointUpgrade5Desc">Not a square yet: Sqaures the Cardinal output of points</p>
-          <button type = "button" id="pointUpgrade5Button">Cost: 100,000,000,000</button>
+          <p id="pointUpgrade5DescUpper" class="upgradeButtonDescUpper">Not a square yet</p>
+          <button type = "button" id="pointUpgrade5Button" class="upgradeButton">Cost: 100,000,000,000</button>
+          <p id="pointUpgrade5DescLower" class="upgradeButtonDescLower">Sqaures the Cardinal output of points</p>
         </div>
+      </div>
+      <div id="upgradeLine2Wrapper">
         <div id="pointUpgrade6" style="display: none;">
-          <p id="pointUpgrade6Desc">Lorem ipsum: Sqaures the Cardinal output of points</p>
-          <button type = "button" id="pointUpgrade6Button">Cost: 100,000,000,000,000</button>
+          <p id="pointUpgrade6DescUpper" class="upgradeButtonDescUpper">Lorem ipsum</p>
+          <button type = "button" id="pointUpgrade6Button" class="upgradeButton">Cost: ------</button>
+          <p id="pointUpgrade6DescLower" class="upgradeButtonDescLower">--------</p>
         </div>
-        <div id="pointUpgrade7" style="display: none;">
-          <p id="pointUpgrade7Desc">Lorem ipsum: Sqaures the Cardinal output of points</p>
-          <button type = "button" id="pointUpgrade7Button">Cost: 100,000,000,000,000,000</button>
+        <div id="pointUpgrade7Desc" style="display: none;">
+          <p id="pointUpgrade7DescUpper" class="upgradeButtonDescUpper">Lorem ipsum</p>
+          <button type = "button" id="pointUpgrade7Button" class="upgradeButton">Cost: ------</button>
+          <p id="pointUpgrade7DescLower" class="upgradeButtonDescLower">--------</p>
         </div>
         <div id="pointUpgrade8" style="display: none;">
-          <p id="pointUpgrade8Desc">Lorem ipsum: Sqaures the Cardinal output of points</p>
-          <button type = "button" id="pointUpgrade8Button">Cost: 100,000,000,000,000,000,000</button>
+          <p id="pointUpgrade8DescUpper" class="upgradeButtonDescUpper">Lorem ipsum</p>
+          <button type = "button" id="pointUpgrade8Button" class="upgradeButton">Cost: ------</button>
+          <p id="pointUpgrade8DescLower" class="upgradeButtonDescLower">--------</p>
         </div>
         <div id="pointUpgrade9" style="display: none;">
-          <p id="pointUpgrade9Desc">Lorem ipsum: Sqaures the Cardinal output of points</p>
-          <button type = "button" id="pointUpgrade9Button">Cost: 100,000,000,000,000,000,000,000</button>
+          <p id="pointUpgrade9DescUpper" class="upgradeButtonDescUpper">Lorem ipsum</p>
+          <button type = "button" id="pointUpgrade9Button" class="upgradeButton">Cost: ------</button>
+          <p id="pointUpgrade9DescLower" class="upgradeButtonDescLower">--------</p>
         </div>
         <div id="pointUpgrade10" style="display: none;">
-          <p id="pointUpgrade10Desc">Lorem ipsum: Sqaures the Cardinal output of points</p>
-          <button type = "button" id="pointUpgrade10Button">Cost: 100,000,000,000,000,000,000,000,000</button>
+          <p id="pointUpgrade10DescUpper" class="upgradeButtonDescUpper">Lorem ipsum</p>
+          <button type = "button" id="pointUpgrade10Button" class="upgradeButton">Cost: ------</button>
+          <p id="pointUpgrade10DescLower" class="upgradeButtonDescLower">--------</p>
         </div>
       </div>
 
-      <div id="upgradeLine2Wrapper">
+      <div id="upgradeLine3Wrapper">
         <div id="lineUpgrade1" style="display: none;">
-          <p id="lineUpgrade1Desc">Line Lengthen: Doubles the Point output of lines</p>
-          <button type=button id="lineUpgrade1Button">Cost: 50,000</button>
+          <p id="lineUpgrade1DescUpper" class="upgradeButtonDescUpper">Line Lengthen</p>
+          <button type=button id="lineUpgrade1Button" class="upgradeButton">Cost: 50,000</button>
+          <p id="lineUpgrade1DescLower" class="upgradeButtonDescLower">x2 the Point output of Lines</p>
         </div>
         <div id="lineUpgrade2" style="display: none;">
-          <p id="lineUpgrade2Desc">Damn son yo lines thiiiicc: Triples the Point output of lines</p>
-          <button type=button id="lineUpgrade2Button">Cost: 250,000 </button>
+          <p id="lineUpgrade2DescUpper" class="upgradeButtonDescUpper">Damn son yo lines thiiiicc</p>
+          <button type=button id="lineUpgrade2Button" class="upgradeButton">Cost: 250,000 </button>
+          <p id="lineUpgrade2DescLower" class="upgradeButtonDescLower">x3 the Point output of Lines></p>
         </div>
         <div id="lineUpgrade3" style="display: none;">
-          <p id="lineUpgrade3Desc">Can we make squares now?: Quadruples the Point output of lines</p>
-          <button type=button id="lineUpgrade3Button">Cost: 1e7</button>
+          <p id="lineUpgrade3DescUpper" class="upgradeButtonDescUpper">Can we make squares now?</p>
+          <button type=button id="lineUpgrade3Button" class="upgradeButton">Cost: 1e7</button>
+          <p id="lineUpgrade3DescLower" class="upgradeButtonDescLower">x4 the Point output of Lines</p>
         </div>
         <div id="lineUpgrade4" style="display: none;">
-          <p id="lineUpgrade4Desc"></p>
-          <button type=button id="lineUpgrade4Button">Cost: -----</button>
+          <p id="lineUpgrade4DescUpper" class="upgradeButtonDescUpper">lorem ipsum</p>
+          <button type=button id="lineUpgrade4Button" class="upgradeButton">Cost: -----</button>
+          <p id="lineUpgrade4DescLower" class="upgradeButtonDescLower">--------</p>
         </div>
         <div id="lineUpgrade5" style="display: none;">
-          <p id="lineUpgrade5Desc"></p>
-          <button type=button id="lineUpgrade5Button">Cost: -----</button>
+          <p id="lineUpgrade5DescUpper" class="upgradeButtonDescUpper"></p>
+          <button type=button id="lineUpgrade5Button" class="upgradeButton">Cost: -----</button>
+          <p id="lineUpgrade5DescLower" class="upgradeButtonDescLower">--------</p>
         </div>
+      </div>
+      <div id="upgradeLine4Wrapper">
         <div id="lineUpgrade6" style="display: none;">
-          <p id="lineUpgrade6Desc"></p>
-          <button type=button id="lineUpgrade6Button">Cost: -----</button>
+          <p id="lineUpgrade6DescUpper" class="upgradeButtonDescUpper"></p>
+          <button type=button id="lineUpgrade6Button" class="upgradeButton">Cost: -----</button>
+          <p id="lineUpgrade6DescLower" class="upgradeButtonDescLower">--------</p>
         </div>
         <div id="lineUpgrade7" style="display: none;">
-          <p id="lineUpgrade7Desc"></p>
-          <button type=button id="lineUpgrade7Button">Cost: -----</button>
+          <p id="lineUpgrade7DescUpper" class="upgradeButtonDescUpper"></p>
+          <button type=button id="lineUpgrade7Button" class="upgradeButton">Cost: -----</button>
+          <p id="lineUpgrade7DescLower" class="upgradeButtonDescLower">--------</p>
         </div>
         <div id="lineUpgrade8" style="display: none;">
-          <p id="lineUpgrade8Desc"></p>
-          <button type=button id="lineUpgrade8Button">Cost: -----</button>
+          <p id="lineUpgrade8DescUpper" class="upgradeButtonDescUpper"></p>
+          <button type=button id="lineUpgrade8Button" class="upgradeButton">Cost: -----</button>
+          <p id="lineUpgrade8DescLower" class="upgradeButtonDescLower">--------</p>
         </div>
         <div id="lineUpgrade9" style="display: none;">
-          <p id="lineUpgrade9Desc"></p>
-          <button type=button id="lineUpgrade9Button">Cost: -----</button>
+          <p id="lineUpgrade9DescUpper" class="upgradeButtonDescUpper"></p>
+          <button type=button id="lineUpgrade9Button" class="upgradeButton">Cost: -----</button>
+          <p id="lineUpgrade9DescLower" class="upgradeButtonDescLower">--------</p>
         </div>
         <div id="lineUpgrade10" style="display: none;">
-          <p id="lineUpgrade10Desc"></p>
-          <button type=button id="lineUpgrade10Button">Cost: -----</button>
+          <p id="lineUpgrade10DescUpper" class="upgradeButtonDescUpper"></p>
+          <button type=button id="lineUpgrade10Button" class="upgradeButton">Cost: -----</button>
+          <p id="lineUpgrade10DescLower" class="upgradeButtonDescLower">--------</p>
         </div>
       </div>
     </div>

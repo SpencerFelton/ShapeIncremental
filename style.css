@@ -5,3 +5,35 @@
 .generatorWrapper > * {
   display: inline-block;
 }
+
+#upgradeLine1Wrapper > * {
+  display: inline-block;
+  width: 250px;
+}
+
+#upgradeLine2Wrapper > * {
+  display: inline-block;
+  width: 250px;
+}
+
+#upgradeLine3Wrapper > * {
+  display: inline-block;
+  width: 250px;
+}
+
+#upgradeLine4Wrapper > * {
+  display: inline-block;
+  width: 250px;
+}
+.upgradeButtonDescUpper {
+  text-align: center;
+}
+
+.upgradeButtonDescLower {
+  text-align: center;
+}
+
+.upgradeButton {
+  display: block;
+  margin: 0 auto;
+}

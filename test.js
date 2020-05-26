@@ -65,12 +65,18 @@ $(document).ready(function(){
     $("#upgradeWindow").hide();
     $("#achievementWindow").show();
   });
+  function onUpgradePurchase(jQuerySelector){
+    jQuerySelector.css("background-color", "green"); //Change the background colour to green
+    jQuerySelector.css("color", "black"); // change button text colour to black
+    jQuerySelector.text("PURCHASED"); // change the button text to PURCHASED
+    jQuerySelector.prop("disabled", true); // diable the button so it cant be clicked again
+  }
   //POINT UPGRADE BUTTONS
   $("#pointUpgrade1Button").click(function(){
     if (playerCurrency >= 50) { // check the player has enough money to purchase the upgrade
       playerCurrency -= 50;
       generatorMultipliers[0] *= 2; // multiply currency generation by points by 2
-      $("#pointUpgrade1").hide(); // hide the button and description so it cant be pressed twice
+      onUpgradePurchase($(this));
       pointUpgradesPurchased[0] = true;
     }
     else{
@@ -82,7 +88,7 @@ $(document).ready(function(){
     if (playerCurrency >= 1000) { // check the player has enough money to purchase the upgrade
       playerCurrency -= 1000;
       generatorMultipliers[0] *= 3; // multiply currency generation by points by 2
-      $("#pointUpgrade2").hide(); // hide the button and description so it cant be pressed twice
+      onUpgradePurchase($(this));
       pointUpgradesPurchased[1] = true;
     }
     else{
@@ -94,7 +100,7 @@ $(document).ready(function(){
     if (playerCurrency >= 5000) { // check the player has enough money to purchase the upgrade
       playerCurrency -= 5000;
       generatorMultipliers[0] *= 4; // multiply currency generation by points by 2
-      $("#pointUpgrade3").hide(); // hide the button and description so it cant be pressed twice
+      onUpgradePurchase($(this));
       pointUpgradesPurchased[2] = true;
     }
     else{
@@ -106,7 +112,7 @@ $(document).ready(function(){
     if (playerCurrency >= 1e7){
       playerCurrency -= 1e7;
       generatorMultipliers[0] *= 10;
-      $("#pointUpgrade4").hide();
+      onUpgradePurchase($(this));
       pointUpgradesPurchased[3] = true;
     }
     else{
@@ -118,7 +124,7 @@ $(document).ready(function(){
     if (playerCurrency >= 100000000000){
       playerCurrency -= 100000000000;
       generatorMultipliers[0] = generatorExponent[0]*1.2;
-      $("#pointUpgrade5").hide();
+      onUpgradePurchase($(this));
       pointUpgradesPurchased[4] = true;
     }
     else{
@@ -131,7 +137,7 @@ $(document).ready(function(){
     if(playerCurrency >= 2e4){
       playerCurrency-=2e4;
       generatorMultipliers[1] *= 2;
-      $("#lineUpgrade1").hide();
+      onUpgradePurchase($(this));
       lineUpgradesPurchased[0] = true;
     }
   });
@@ -140,7 +146,7 @@ $(document).ready(function(){
     if(playerCurrency >= 2.5e5){
       playerCurrency-=2.5e5;
       generatorMultipliers[1] *= 3;
-      $("#lineUpgrade2").hide();
+      onUpgradePurchase($(this));
       lineUpgradesPurchased[1] = true;
     }
   });
@@ -149,7 +155,7 @@ $(document).ready(function(){
     if(playerCurrency >= 1e7){
       playerCurrency-=1e7;
       generatorMultipliers[1] *= 4;
-      $("#lineUpgrade3").hide();
+      onUpgradePurchase($(this));
       lineUpgradesPurchased[2] = true;
     }
   });
