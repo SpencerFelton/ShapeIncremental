@@ -15,7 +15,7 @@ var octagonUpgradesPurchased = [false, false, false, false, false, false, false,
 var nonagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
 var decagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
 
-var playerCurrency = 1e100;
+var playerCurrency = 1e0;
 var playerPrestigeCurrency = 0;
 
 function totalMultiplier(multiplier, exponent){
@@ -177,16 +177,16 @@ function resetGeneratorMultipliers(){
 }
 
 function resetGeneratorUpgrades(){
-  pointUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false]; // index corresponding to number of upgrade, [0] = upgrade1 etc
-  lineUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
-  triangleUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
-  squareUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
-  pentagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
-  hexagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
-  heptagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
-  octagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
-  nonagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
-  decagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
+  pointUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false]; // index corresponding to number of upgrade, [0] = upgrade1 etc
+  lineUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false];
+  triangleUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false];
+  squareUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false];
+  pentagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false];
+  hexagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false];
+  heptagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false];
+  octagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false];
+  nonagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false];
+  decagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false];
 }
 
 function hideGeneratorVisibility(){
@@ -220,70 +220,29 @@ function prestige(){ // perform a prestige
 function checkUpgrades(){
   // check how many points to see if eligible to see upgrades
 
-  //Point Upgrades
+  //Point Upgrades Row 1
   if (generatorArray[0] >= 5 && pointUpgradesPurchased[0] == false) {
-    $("#pointUpgrade1").show();
+    $("#upgradeLine1Wrapper").show();
   }
-  if (generatorArray[0] >= 10 && pointUpgradesPurchased[1] == false) {
-    $("#pointUpgrade2").show();
+  if(pointUpgradesPurchased[4] == true){
+    console.log("show me");
+    $("#upgradeLine2Wrapper").show();
   }
-  if (generatorArray[0] >= 1000 && pointUpgradesPurchased[2] == false) {
-    $("#pointUpgrade3").show();
-  }
-  if (generatorArray[0] >= 2500 && pointUpgradesPurchased[3] == false) {
-    $("#pointUpgrade4").show();
-  }
-  if (generatorArray[0] >= 10000 && pointUpgradesPurchased[4] == false) {
-    $("#pointUpgrade5").show();
-  }
-  if (generatorArray[0] >= 50000 && pointUpgradesPurchased[5] == false) { // not implemented below
-    $("#pointUpgrade6").show();
-  }
-  if (generatorArray[0] >= 50000 && pointUpgradesPurchased[6] == false) {
-    $("#pointUpgrade7").show();
-  }
-  if (generatorArray[0] >= 50000 && pointUpgradesPurchased[7] == false) {
-    $("#pointUpgrade8").show();
-  }
-  if (generatorArray[0] >= 50000 && pointUpgradesPurchased[8] == false) {
-    $("#pointUpgrade9").show();
-  }
-  if (generatorArray[0] >= 50000 && pointUpgradesPurchased[9] == false) {
-    $("#pointUpgrade10").show();
+  if(pointUpgradesPurchased[4] == true && generatorArray[0] >= 100000 && pointUpgradesPurchased[5] == false){ // check upgrade 5 has been bought, upgrade 6 hasnt and the player had the required cardinals
+    $("#pointUpgrade6DescUpper").text("Big boy leagues");
+    $("#pointUpgrade6Button").text("1e15");
+    $("#pointUpgrade6DescLower").text("x250 Cardinal output of points");
+    $("#pointUpgrade6Button").prop("disabled", false);
   }
 
   //Line Upgrades
   if(generatorArray[1] >= 5 && lineUpgradesPurchased[0] == false){
-    $("#lineUpgrade1").show();
+    $("#upgradeLine3Wrapper").show();
   }
-  if(generatorArray[1] >= 10 && lineUpgradesPurchased[1] == false){
-    console.log("in erem9");
-    $("#lineUpgrade2").show();
+  if(lineUpgradesPurchased[4] == true){
+    $("#upgradeLine4Wrapper").show();
   }
-  if(generatorArray[1] >= 100 && lineUpgradesPurchased[2] == false){
-    $("#lineUpgrade3").show();
-  }
-  if(generatorArray[1] >= 1000 && lineUpgradesPurchased[3] == false){
-    $("#lineUpgrade4").show();
-  }
-  if(generatorArray[1] >= 10000 && lineUpgradesPurchased[4] == false){
-    $("#lineUpgrade5").show();
-  }
-  if(generatorArray[1] >= 5 && lineUpgradesPurchased[5] == false){
-    $("#lineUpgrade6").show();
-  }
-  if(generatorArray[1] >= 5 && lineUpgradesPurchased[6] == false){
-    $("#lineUpgrade7").show();
-  }
-  if(generatorArray[1] >= 5 && lineUpgradesPurchased[7] == false){
-    $("#lineUpgrade8").show();
-  }
-  if(generatorArray[1] >= 5 && lineUpgradesPurchased[8] == false){
-    $("#lineUpgrade9").show();
-  }
-  if(generatorArray[1] >= 5 && lineUpgradesPurchased[9] == false){
-    $("#lineUpgrade10").show();
-  }
+
 }
 
 function updateDisplay(){

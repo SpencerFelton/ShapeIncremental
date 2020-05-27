@@ -109,8 +109,8 @@ $(document).ready(function(){
   });
 
   $("#pointUpgrade4Button").click(function(){
-    if (playerCurrency >= 1e7){
-      playerCurrency -= 1e7;
+    if (playerCurrency >= 1e6){
+      playerCurrency -= 1e6;
       generatorMultipliers[0] *= 10;
       onUpgradePurchase($(this));
       pointUpgradesPurchased[3] = true;
@@ -121,11 +121,23 @@ $(document).ready(function(){
   });
 
   $("#pointUpgrade5Button").click(function(){
-    if (playerCurrency >= 100000000000){
-      playerCurrency -= 100000000000;
-      generatorMultipliers[0] = generatorExponent[0]*1.2;
+    if (playerCurrency >= 1e8){
+      playerCurrency -= 1e8;
+      generatorExponent[0] = generatorExponent[0]*1.2;
       onUpgradePurchase($(this));
       pointUpgradesPurchased[4] = true;
+    }
+    else{
+      console.log("you cant afford that yet");
+    }
+  });
+
+  $("#pointUpgrade6Button").click(function(){
+    if (playerCurrency >= 1e15){
+      playerCurrency -= 1e15;
+      generatorMultipliers[0]*=250;
+      onUpgradePurchase($(this));
+      pointUpgradesPurchased[5] = true;
     }
     else{
       console.log("you cant afford that yet");
@@ -161,7 +173,21 @@ $(document).ready(function(){
   });
 
   $("#lineUpgrade4Button").click(function(){
+    if(playerCurrency >= 1e9){
+      playerCurrency-=1e9;
+      generatorMultipliers[1]*=10;
+      onUpgradePurchase($(this));
+      lineUpgradesPurchased[3] = true;
+    }
+  });
 
+  $("#lineUpgrade5Button").click(function(){
+    if(playerCurrency >= 1e12){
+      playerCurrency-=1e12;
+      generatorExponent[1] = generatorExponent[1]*1.3;
+      onUpgradePurchase($(this));
+      lineUpgradesPurchased[4] = true;
+    }
   });
 
   $("#lineUpgrade5Button").click(function(){
