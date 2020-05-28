@@ -25,6 +25,11 @@
   display: inline-block;
   width: 250px;
 }
+
+#upgradeLine5Wrapper > * {
+  display: inline-block;
+  width: 250px;
+}
 .upgradeButtonDescUpper {
   text-align: center;
 }

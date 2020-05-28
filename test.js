@@ -173,8 +173,8 @@ $(document).ready(function(){
   });
 
   $("#lineUpgrade4Button").click(function(){
-    if(playerCurrency >= 1e9){
-      playerCurrency-=1e9;
+    if(playerCurrency >= 5e8){
+      playerCurrency-=5e8;
       generatorMultipliers[1]*=10;
       onUpgradePurchase($(this));
       lineUpgradesPurchased[3] = true;
@@ -212,6 +212,52 @@ $(document).ready(function(){
 
   $("#lineUpgrade10Button").click(function(){
 
+  });
+
+  //TRIANGLE UPGRADE BUTTONS
+  $("#triangleUpgrade1Button").click(function(){
+    if(playerCurrency >= 7e9){
+      playerCurrency-=7e9;
+      generatorMultipliers[2] *= 2;
+      onUpgradePurchase($(this));
+      triangleUpgradesPurchased[0] = true;
+    }
+  });
+
+  $("#triangleUpgrade2Button").click(function(){
+    if(playerCurrency >= 5e11){
+      playerCurrency-=5e11;
+      generatorMultipliers[2]*=3;
+      onUpgradePurchase($(this));
+      triangleUpgradesPurchased[1] = true;
+    }
+  });
+
+  $("#triangleUpgrade3Button").click(function(){
+    if(playerCurrency >= 1e12){
+      playerCurrency-=1e12;
+      generatorMultipliers[2]*=4;
+      onUpgradePurchase($(this));
+      triangleUpgradesPurchased[2] = true;
+    }
+  });
+
+  $("#triangleUpgrade4Button").click(function(){
+    if(playerCurrency >= 1e15){
+      playerCurrency-=1e15;
+      generatorMultipliers[2]*=10;
+      onUpgradePurchase($(this));
+      triangleUpgradesPurchased[3] = true;
+    }
+  });
+
+  $("#triangleUpgrade5Button").click(function(){
+    if(playerCurrency >= 1e16){
+      playerCurrency-=1e16;
+      generatorExponent[2] = generatorExponent[2]*1.4;
+      onUpgradePurchase($(this));
+      triangleUpgradesPurchased[4] = true;
+    }
   });
 
 });

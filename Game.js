@@ -18,7 +18,7 @@ var decagonUpgradesPurchased = [false, false, false, false, false, false, false,
 var playerCurrency = 1e0;
 var playerPrestigeCurrency = 0;
 
-function totalMultiplier(multiplier, exponent){
+function totalMultiplier(multiplier, exponent){ // total multiplier to a generator is defined as its multiplied raised to the power of its exponent
   return multiplier**exponent;
 }
 
@@ -221,7 +221,7 @@ function checkUpgrades(){
   // check how many points to see if eligible to see upgrades
 
   //Point Upgrades Row 1
-  if (generatorArray[0] >= 5 && pointUpgradesPurchased[0] == false) {
+  if (generatorArray[0] >= 5) {
     $("#upgradeLine1Wrapper").show();
   }
   if(pointUpgradesPurchased[4] == true){
@@ -236,11 +236,16 @@ function checkUpgrades(){
   }
 
   //Line Upgrades
-  if(generatorArray[1] >= 5 && lineUpgradesPurchased[0] == false){ // show first row of upgrades for lines
+  if(generatorArray[1] >= 5){ // show first row of upgrades for lines
     $("#upgradeLine3Wrapper").show();
   }
   if(lineUpgradesPurchased[4] == true){ // show 2nd row of upgrades for lines if the final upgrade of the first row has been bought
     $("#upgradeLine4Wrapper").show();
+  }
+
+  // Triangle Upgrades
+  if(generatorArray[2] >= 5){
+    $("#upgradeLine5Wrapper").show();
   }
 
 }
