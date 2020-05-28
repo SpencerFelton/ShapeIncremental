@@ -236,10 +236,10 @@ function checkUpgrades(){
   }
 
   //Line Upgrades
-  if(generatorArray[1] >= 5 && lineUpgradesPurchased[0] == false){
+  if(generatorArray[1] >= 5 && lineUpgradesPurchased[0] == false){ // show first row of upgrades for lines
     $("#upgradeLine3Wrapper").show();
   }
-  if(lineUpgradesPurchased[4] == true){
+  if(lineUpgradesPurchased[4] == true){ // show 2nd row of upgrades for lines if the final upgrade of the first row has been bought
     $("#upgradeLine4Wrapper").show();
   }
 
