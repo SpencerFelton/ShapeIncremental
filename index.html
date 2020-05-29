@@ -11,13 +11,13 @@
     <p id="CardinalCurrency">Cardinals: 1</p>
 
     <div id="upgradeShopWrapper" style="display: none;">
-      <button type="button" id="homeButton">Home</button>
-      <button type="button" id="upgradeShopButton">Upgrades</button>
-      <button type="button" id="achievementButton">Achievements</button>
-      <button type="button" id="prestigeShopButton">Prestige Shop</button>
+      <button type="button" class="navigationButton" id="homeButton">Home</button>
+      <button type="button" class="navigationButton" id="upgradeShopButton">Upgrades</button>
+      <button type="button" class="navigationButton" id="achievementButton">Achievements</button>
+      <button type="button" class="navigationButton" id="prestigeShopButton">Prestige Shop</button>
     </div>
 
-    <div id="mainGameWindow">
+    <div id="homeWindow" class="window">
 
       <div id="pointWrapper" class="generatorWrapper">
         <p id=point>Points: 0</p>
@@ -81,7 +81,7 @@
 
 
     </div>
-    <div id="upgradeWindow" style="display: none;">
+    <div id="upgradeShopWindow" class="window" style="display: none;">
       <div id="upgradeLine1Wrapper" style="display: none;">
         <div id="pointUpgrade1">
           <p id="pointUpgrade1DescUpper" class="upgradeButtonDescUpper">Bigger Points</p>
@@ -221,10 +221,10 @@
       </div>
     </div>
 
-    <div id="achievementWindow" style="display: none;">
+    <div id="achievementWindow" class="window" style="display: none;">
     </div>
 
-    <div id="prestigeShopWindow" style="display: none;">
+    <div id="prestigeShopWindow" class="window" style="display: none;">
     </div>
 
 
