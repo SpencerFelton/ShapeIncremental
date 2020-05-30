@@ -6,30 +6,11 @@
   display: inline-block;
 }
 
-#upgradeLine1Wrapper > * {
+.upgradeWrapper > * {
   display: inline-block;
   width: 250px;
 }
 
-#upgradeLine2Wrapper > * {
-  display: inline-block;
-  width: 250px;
-}
-
-#upgradeLine3Wrapper > * {
-  display: inline-block;
-  width: 250px;
-}
-
-#upgradeLine4Wrapper > * {
-  display: inline-block;
-  width: 250px;
-}
-
-#upgradeLine5Wrapper > * {
-  display: inline-block;
-  width: 250px;
-}
 .upgradeButtonDescUpper {
   text-align: center;
 }

@@ -258,31 +258,32 @@ function checkRow2PointUpgrades(totalPoints){ // compare total number of points 
     };
   };
 
+  function showRow1Upgrades(generatorArray){
+    for(var i=0; i<10; i++){ // 0 = points, 9 = decagons
+      if(generatorArray[i] >= 5){
+        var id = "#upgradeLine" + ((i*2)+1) + "Wrapper" // 1st row id is always an odd number, eg: points index is 0, but upgrade row id is 1
+        $(id).show();
+      }
+    }
+  }
+
 function checkUpgrades(){
-  // check how many points to see if eligible to see upgrades
 
-  //Point Upgrades Row 1
-  if (generatorArray[0] >= 5) {
-    $("#upgradeLine1Wrapper").show();
-  }
-  if(pointUpgradesPurchased[4] == true){
-    console.log("show me");
+  showRow1Upgrades(generatorArray); // all generator row 1 upgrades
+
+  if(pointUpgradesPurchased[4] == true){ // only show the 2nd row after the 5th upgrade has been bought
     $("#upgradeLine2Wrapper").show();
+    checkRow2PointUpgrades(generatorArray[0]);
   }
-  checkRow2PointUpgrades(generatorArray[0]);
 
-  //Line Upgrades
-  if(generatorArray[1] >= 5){ // show first row of upgrades for lines
-    $("#upgradeLine3Wrapper").show();
-  }
   if(lineUpgradesPurchased[4] == true){ // show 2nd row of upgrades for lines if the final upgrade of the first row has been bought
     $("#upgradeLine4Wrapper").show();
   }
 
-  // Triangle Upgrades
-  if(generatorArray[2] >= 5){
-    $("#upgradeLine5Wrapper").show();
+  if(triangleUpgradesPurchased[4] == true){ // show 2nd row of upgrades for triangles
+    $("#upgradeLine6Wrapper").show();
   }
+
 
 }
 
