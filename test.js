@@ -113,6 +113,40 @@ $(document).ready(function(){
       pointUpgradesPurchased[5] = true;
     }
   });
+  $("#pointUpgrade7Button").click(function(){
+    if (playerCurrency >= 1e20){
+      playerCurrency -= 1e20;
+      generatorMultipliers[0]*=500;
+      onUpgradePurchase($(this));
+      pointUpgradesPurchased[6] = true;
+    }
+  });
+  $("#pointUpgrade8Button").click(function(){
+    if (playerCurrency >= 1e25){
+      playerCurrency -= 1e25;
+      generatorMultipliers[0]*=1000;
+      onUpgradePurchase($(this));
+      pointUpgradesPurchased[7] = true;
+    }
+  });
+  $("#pointUpgrade9Button").click(function(){
+    if (playerCurrency >= 1e30){
+      playerCurrency -= 1e30;
+      generatorMultipliers[0]*=2000;
+      onUpgradePurchase($(this));
+      pointUpgradesPurchased[8] = true;
+    }
+  });
+  $("#pointUpgrade10Button").click(function(){
+    if (playerCurrency >= 1e35){
+      playerCurrency -= 1e35;
+      for(var i=0; i<10; i++){
+        generatorMultipliers[i] *= 1000;
+      }
+      onUpgradePurchase($(this));
+      pointUpgradesPurchased[9] = true;
+    }
+  });
 
   //LINE UPGRADE BUTTONS
   $("#lineUpgrade1Button").click(function(){ // Double output

@@ -217,34 +217,44 @@ function prestige(){ // perform a prestige
 
 function checkRow2PointUpgrades(totalPoints){ // compare total number of points against certain breakpoints, and show buttons as breakpoints are reached
     if(totalPoints >= 100000){
-      $("#pointUpgrade6DescUpper").text("Big boy leagues");
-      $("#pointUpgrade6Button").text("1e15");
-      $("#pointUpgrade6DescLower").text("x250 Cardinal output of points");
-      $("#pointUpgrade6Button").prop("disabled", false);
+      if(pointUpgradesPurchased[5] != true){
+        $("#pointUpgrade6DescUpper").text("Big boy leagues");
+        $("#pointUpgrade6Button").text("1e15");
+        $("#pointUpgrade6DescLower").text("x250 Cardinal output of points");
+        $("#pointUpgrade6Button").prop("disabled", false);
+      };
     };
     if(totalPoints >= 1e7){
-      $("#pointUpgrade7DescUpper").text("Bigger bruh leagues");
-      $("#pointUpgrade7Button").text("1e20");
-      $("#pointUpgrade7DescLower").text("x500 Cardinal output of points");
-      $("#pointUpgrade7Button").prop("disabled", false);
+      if(pointUpgradesPurchased[6] != true){
+        $("#pointUpgrade7DescUpper").text("Bigger bruh leagues");
+        $("#pointUpgrade7Button").text("1e20");
+        $("#pointUpgrade7DescLower").text("x500 Cardinal output of points");
+        $("#pointUpgrade7Button").prop("disabled", false);
+      };
     };
     if(totalPoints >= 1e9){
-      $("#pointUpgrade8DescUpper").text("Naming is hard yo");
-      $("#pointUpgrade8Button").text("1e25");
-      $("#pointUpgrade8DescLower").text("x1000 Cardinal output of points");
-      $("#pointUpgrade8Button").prop("disabled", false);
+      if(pointUpgradesPurchased[7] != true){
+        $("#pointUpgrade8DescUpper").text("Naming is hard yo");
+        $("#pointUpgrade8Button").text("1e25");
+        $("#pointUpgrade8DescLower").text("x1000 Cardinal output of points");
+        $("#pointUpgrade8Button").prop("disabled", false);
+      };
     };
     if(totalPoints >= 1e11){
-      $("#pointUpgrade9DescUpper").text("B1gg3r bruh l34gu3s");
-      $("#pointUpgrade9Button").text("1e30");
-      $("#pointUpgrade9DescLower").text("x2000 Cardinal output of points");
-      $("#pointUpgrade9Button").prop("disabled", false);
+      if(pointUpgradesPurchased[8] != true){
+        $("#pointUpgrade9DescUpper").text("B1gg3r bruh l34gu3s");
+        $("#pointUpgrade9Button").text("1e30");
+        $("#pointUpgrade9DescLower").text("x2000 Cardinal output of points");
+        $("#pointUpgrade9Button").prop("disabled", false);
+      };
     };
     if(totalPoints >= 1e13){
-      $("#pointUpgrade10DescUpper").text("Biggest boi league");
-      $("#pointUpgrade10Button").text("1e35");
-      $("#pointUpgrade10DescLower").text("x1000 to ALL generators");
-      $("#pointUpgrade10Button").prop("disabled", false);
+      if(pointUpgradesPurchased[9] != true){
+        $("#pointUpgrade10DescUpper").text("Biggest boi league");
+        $("#pointUpgrade10Button").text("1e35");
+        $("#pointUpgrade10DescLower").text("x1000 to ALL generators");
+        $("#pointUpgrade10Button").prop("disabled", false);
+      };
     };
   };
 
