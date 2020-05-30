@@ -215,7 +215,38 @@ function prestige(){ // perform a prestige
   hideGeneratorVisibility();
 }
 
-
+function checkRow2PointUpgrades(totalPoints){ // compare total number of points against certain breakpoints, and show buttons as breakpoints are reached
+    if(totalPoints >= 100000){
+      $("#pointUpgrade6DescUpper").text("Big boy leagues");
+      $("#pointUpgrade6Button").text("1e15");
+      $("#pointUpgrade6DescLower").text("x250 Cardinal output of points");
+      $("#pointUpgrade6Button").prop("disabled", false);
+    };
+    if(totalPoints >= 1e7){
+      $("#pointUpgrade7DescUpper").text("Bigger bruh leagues");
+      $("#pointUpgrade7Button").text("1e20");
+      $("#pointUpgrade7DescLower").text("x500 Cardinal output of points");
+      $("#pointUpgrade7Button").prop("disabled", false);
+    };
+    if(totalPoints >= 1e9){
+      $("#pointUpgrade8DescUpper").text("Naming is hard yo");
+      $("#pointUpgrade8Button").text("1e25");
+      $("#pointUpgrade8DescLower").text("x1000 Cardinal output of points");
+      $("#pointUpgrade8Button").prop("disabled", false);
+    };
+    if(totalPoints >= 1e11){
+      $("#pointUpgrade9DescUpper").text("B1gg3r bruh l34gu3s");
+      $("#pointUpgrade9Button").text("1e30");
+      $("#pointUpgrade9DescLower").text("x2000 Cardinal output of points");
+      $("#pointUpgrade9Button").prop("disabled", false);
+    };
+    if(totalPoints >= 1e13){
+      $("#pointUpgrade10DescUpper").text("Biggest boi league");
+      $("#pointUpgrade10Button").text("1e35");
+      $("#pointUpgrade10DescLower").text("x1000 to ALL generators");
+      $("#pointUpgrade10Button").prop("disabled", false);
+    };
+  };
 
 function checkUpgrades(){
   // check how many points to see if eligible to see upgrades
@@ -228,12 +259,7 @@ function checkUpgrades(){
     console.log("show me");
     $("#upgradeLine2Wrapper").show();
   }
-  if(pointUpgradesPurchased[4] == true && generatorArray[0] >= 100000 && pointUpgradesPurchased[5] == false){ // check upgrade 5 has been bought, upgrade 6 hasnt and the player had the required cardinals
-    $("#pointUpgrade6DescUpper").text("Big boy leagues");
-    $("#pointUpgrade6Button").text("1e15");
-    $("#pointUpgrade6DescLower").text("x250 Cardinal output of points");
-    $("#pointUpgrade6Button").prop("disabled", false);
-  }
+  checkRow2PointUpgrades(generatorArray[0]);
 
   //Line Upgrades
   if(generatorArray[1] >= 5){ // show first row of upgrades for lines

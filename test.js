@@ -230,4 +230,6 @@ $(document).ready(function(){
     }
   });
 
+  //SQUARE UPGRADE BUTTONS
+
 });
