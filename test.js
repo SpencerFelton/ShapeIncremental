@@ -194,29 +194,53 @@ $(document).ready(function(){
     }
   });
 
-  $("#lineUpgrade5Button").click(function(){
-
-  });
-
   $("#lineUpgrade6Button").click(function(){
-
+    if(playerCurrency >= 1e15){
+      playerCurrency -= 1e15;
+      generatorMultipliers[1] *= 250;
+      onUpgradePurchase($(this));
+      lineUpgradesPurchased[5] = true;
+    }
   });
 
   $("#lineUpgrade7Button").click(function(){
-
+    if(playerCurrency >= 1e20){
+      playerCurrency -= 1e20;
+      generatorMultipliers[1] *= 500;
+      onUpgradePurchase($(this));
+      lineUpgradesPurchased[6] = true;
+    }
   });
 
   $("#lineUpgrade8Button").click(function(){
-
+    if(playerCurrency >= 1e25){
+      playerCurrency -= 1e25;
+      generatorMultipliers[1] *= 1000;
+      onUpgradePurchase($(this));
+      lineUpgradesPurchased[7] = true;
+    }
   });
 
   $("#lineUpgrade9Button").click(function(){
-
+    if(playerCurrency >= 1e30){
+      playerCurrency -= 1e30;
+      generatorMultipliers[1] *= 2000;
+      onUpgradePurchase($(this));
+      lineUpgradesPurchased[8] = true;
+    }
   });
 
   $("#lineUpgrade10Button").click(function(){
-
+    if(playerCurrency >= 1e35){
+      playerCurrency -= 1e35;
+      for(var i=0; i<10; i++){
+        generatorMultipliers[i] *= 1000;
+      }
+      onUpgradePurchase($(this));
+      lineUpgradesPurchased[9] = true;
+    }
   });
+
 
   //TRIANGLE UPGRADE BUTTONS
   $("#triangleUpgrade1Button").click(function(){

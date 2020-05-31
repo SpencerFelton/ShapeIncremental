@@ -216,56 +216,99 @@ function prestige(){ // perform a prestige
 }
 
 function checkRow2PointUpgrades(totalPoints){ // compare total number of points against certain breakpoints, and show buttons as breakpoints are reached
-    if(totalPoints >= 100000){
-      if(pointUpgradesPurchased[5] != true){
-        $("#pointUpgrade6DescUpper").text("Big boy leagues");
-        $("#pointUpgrade6Button").text("1e15");
-        $("#pointUpgrade6DescLower").text("x250 Cardinal output of points");
-        $("#pointUpgrade6Button").prop("disabled", false);
-      };
-    };
-    if(totalPoints >= 1e7){
-      if(pointUpgradesPurchased[6] != true){
-        $("#pointUpgrade7DescUpper").text("Bigger bruh leagues");
-        $("#pointUpgrade7Button").text("1e20");
-        $("#pointUpgrade7DescLower").text("x500 Cardinal output of points");
-        $("#pointUpgrade7Button").prop("disabled", false);
-      };
-    };
-    if(totalPoints >= 1e9){
-      if(pointUpgradesPurchased[7] != true){
-        $("#pointUpgrade8DescUpper").text("Naming is hard yo");
-        $("#pointUpgrade8Button").text("1e25");
-        $("#pointUpgrade8DescLower").text("x1000 Cardinal output of points");
-        $("#pointUpgrade8Button").prop("disabled", false);
-      };
-    };
-    if(totalPoints >= 1e11){
-      if(pointUpgradesPurchased[8] != true){
-        $("#pointUpgrade9DescUpper").text("B1gg3r bruh l34gu3s");
-        $("#pointUpgrade9Button").text("1e30");
-        $("#pointUpgrade9DescLower").text("x2000 Cardinal output of points");
-        $("#pointUpgrade9Button").prop("disabled", false);
-      };
-    };
-    if(totalPoints >= 1e13){
-      if(pointUpgradesPurchased[9] != true){
-        $("#pointUpgrade10DescUpper").text("Biggest boi league");
-        $("#pointUpgrade10Button").text("1e35");
-        $("#pointUpgrade10DescLower").text("x1000 to ALL generators");
-        $("#pointUpgrade10Button").prop("disabled", false);
-      };
+  if(totalPoints >= 100000){
+    if(pointUpgradesPurchased[5] != true){
+      $("#pointUpgrade6DescUpper").text("Big boy leagues");
+      $("#pointUpgrade6Button").text("1e15");
+      $("#pointUpgrade6DescLower").text("x250 Cardinal output of points");
+      $("#pointUpgrade6Button").prop("disabled", false);
     };
   };
+  if(totalPoints >= 1e7){
+    if(pointUpgradesPurchased[6] != true){
+      $("#pointUpgrade7DescUpper").text("Bigger bruh leagues");
+      $("#pointUpgrade7Button").text("1e20");
+      $("#pointUpgrade7DescLower").text("x500 Cardinal output of points");
+      $("#pointUpgrade7Button").prop("disabled", false);
+    };
+  };
+  if(totalPoints >= 1e9){
+    if(pointUpgradesPurchased[7] != true){
+      $("#pointUpgrade8DescUpper").text("Naming is hard yo");
+      $("#pointUpgrade8Button").text("1e25");
+      $("#pointUpgrade8DescLower").text("x1000 Cardinal output of points");
+      $("#pointUpgrade8Button").prop("disabled", false);
+    };
+  };
+  if(totalPoints >= 1e11){
+    if(pointUpgradesPurchased[8] != true){
+      $("#pointUpgrade9DescUpper").text("B1gg3r bruh l34gu3s");
+      $("#pointUpgrade9Button").text("1e30");
+      $("#pointUpgrade9DescLower").text("x2000 Cardinal output of points");
+      $("#pointUpgrade9Button").prop("disabled", false);
+    };
+  };
+  if(totalPoints >= 1e13){
+    if(pointUpgradesPurchased[9] != true){
+      $("#pointUpgrade10DescUpper").text("Biggest boi league");
+      $("#pointUpgrade10Button").text("1e35");
+      $("#pointUpgrade10DescLower").text("x1000 to ALL generators");
+      $("#pointUpgrade10Button").prop("disabled", false);
+    };
+  };
+}
 
-  function showRow1Upgrades(generatorArray){
-    for(var i=0; i<10; i++){ // 0 = points, 9 = decagons
-      if(generatorArray[i] >= 5){
-        var id = "#upgradeLine" + ((i*2)+1) + "Wrapper" // 1st row id is always an odd number, eg: points index is 0, but upgrade row id is 1
-        $(id).show();
-      }
+function checkRow2LineUpgrades(totalLines){
+  if(totalLines >= 100000){
+    if(lineUpgradesPurchased[5] != true){
+      $("#lineUpgrade6DescUpper").text("CHANGE NAME");
+      $("#lineUpgrade6Button").text("1e15");
+      $("#lineUpgrade6DescLower").text("x250 Point output of Lines");
+      $("#lineUpgrade6Button").prop("disabled", false);
     }
   }
+  if(totalLines >= 1e7){
+    if(lineUpgradesPurchased[6] != true){
+      $("#lineUpgrade7DescUpper").text("CHANGE NAME");
+      $("#lineUpgrade7Button").text("1e20");
+      $("#lineUpgrade7DescLower").text("x500 Point output of Lines");
+      $("#lineUpgrade7Button").prop("disabled", false);
+    }
+  }
+  if(totalLines >= 1e9){
+    if(lineUpgradesPurchased[7] != true){
+      $("#lineUpgrade8DescUpper").text("CHANGE NAME");
+      $("#lineUpgrade8Button").text("1e25");
+      $("#lineUpgrade8DescLower").text("x1000 Point output of Lines");
+      $("#lineUpgrade8Button").prop("disabled", false);
+    }
+  }
+  if(totalLines >= 1e11){
+    if(lineUpgradesPurchased[8] != true){
+      $("#lineUpgrade9DescUpper").text("CHANGE NAME");
+      $("#lineUpgrade9Button").text("1e30");
+      $("#lineUpgrade9DescLower").text("x2000 Point output of Lines");
+      $("#lineUpgrade9Button").prop("disabled", false);
+    }
+  }
+  if(totalLines >= 1e13){
+    if(lineUpgradesPurchased[9] != true){
+      $("#lineUpgrade10DescUpper").text("CHANGE NAME");
+      $("#lineUpgrade10Button").text("1e35");
+      $("#lineUpgrade10DescLower").text("x1000 to ALL generators");
+      $("#lineUpgrade10Button").prop("disabled", false);
+    }
+  }
+}
+
+function showRow1Upgrades(generatorArray){
+  for(var i=0; i<10; i++){ // 0 = points, 9 = decagons
+    if(generatorArray[i] >= 5){
+      var id = "#upgradeLine" + ((i*2)+1) + "Wrapper" // 1st row id is always an odd number, eg: points index is 0, but upgrade row id is 1
+      $(id).show();
+    }
+  }
+}
 
 function checkUpgrades(){
 
@@ -278,6 +321,7 @@ function checkUpgrades(){
 
   if(lineUpgradesPurchased[4] == true){ // show 2nd row of upgrades for lines if the final upgrade of the first row has been bought
     $("#upgradeLine4Wrapper").show();
+    checkRow2LineUpgrades(generatorArray[1]);
   }
 
   if(triangleUpgradesPurchased[4] == true){ // show 2nd row of upgrades for triangles
