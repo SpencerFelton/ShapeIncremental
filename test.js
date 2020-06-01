@@ -1,43 +1,39 @@
 $(document).ready(function(){
 
-  $("#buyPointButton").click(function(){
-    buyGenerator(0);
-  });
-
-  $("#buyLineButton").click(function(){
-    buyGenerator(1);
-  });
-
-  $("#buyTriangleButton").click(function(){
-    buyGenerator(2);
-  });
-
-  $("#buySquareButton").click(function(){
-    buyGenerator(3);
-  });
-
-  $("#buyPentagonButton").click(function(){
-    buyGenerator(4);
-  });
-
-  $("#buyHexagonButton").click(function(){
-    buyGenerator(5);
-  });
-
-  $("#buyHeptagonButton").click(function(){
-    buyGenerator(6);
-  });
-
-  $("#buyOctagonButton").click(function(){
-    buyGenerator(7);
-  });
-
-  $("#buyNonagonButton").click(function(){
-    buyGenerator(8);
-  });
-
-  $("#buyDecagonButton").click(function(){
-    buyGenerator(9);
+  $(".generatorButton").click(function(){
+    switch($(this).attr("id")){
+      case "buyPointButton":
+        buyGenerator(0);
+        break;
+      case "buyLineButton":
+        buyGenerator(1);
+        break;
+      case "buyTriangleButton":
+        buyGenerator(2);
+        break;
+      case "buySquareButton":
+        buyGenerator(3);
+        break;
+      case "buyPentagonButton":
+        buyGenerator(4);
+        break;
+      case "buyHexagonButton":
+        buyGenerator(5);
+        break;
+      case "buyHeptagonButton":
+        buyGenerator(6);
+        break;
+      case "buyOctagonButton":
+        buyGenerator(7);
+        break;
+      case "buyNonagonButton":
+        buyGenerator(8);
+        break;
+      case "buyDecagonButton":
+        buyGenerator(9);
+      default:
+        break;
+    }
   });
 
   $(".navigationButton").click(function(){

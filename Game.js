@@ -333,6 +333,7 @@ function checkUpgrades(){
 
 function updateDisplay(){
   //PRE PRESTIGE GENERATION
+  //UPDATE TOTAL NUMBER OF EACH GENERATOR DECS->POINTS
   $("#decagon").text("Decagons: " + toENotation(generatorArray[9]));
   $("#nonagon").text("Nonagons: " + toENotation(generatorArray[8]));
   $("#octagon").text("Octagons: " + toENotation(generatorArray[7]));
@@ -345,6 +346,7 @@ function updateDisplay(){
   $("#line").text("Lines: " + toENotation(generatorArray[1]));
   $("#point").text("Points: " + toENotation(generatorArray[0]));
 
+  // UPDATE COST OF EACH GENERATOR POINTS->DECS
   $("#buyPointButton").text("Cost: " + toENotation(generatorCurrentCostArray[0]));
   $("#buyLineButton").text("Cost: " + toENotation(generatorCurrentCostArray[1]));
   $("#buyTriangleButton").text("Cost: " + toENotation(generatorCurrentCostArray[2]));
@@ -356,6 +358,7 @@ function updateDisplay(){
   $("#buyNonagonButton").text("Cost: " + toENotation(generatorCurrentCostArray[8]));
   $("#buyDecagonButton").text("Cost: " + toENotation(generatorCurrentCostArray[9]));
 
+  //UPDATE GAIN PS FOR EACH GENERATOR POINTS->DECS
   $("#currencyPS").text("Cardinals/Sec: " + (toENotation(currencyGainPerUpdate()*60)));
   $("#pointsPS").text("Points/Sec: " + (toENotation(pointGainPerUpdate()*60)));
   $("#linesPS").text("Lines/Sec: " + (toENotation(lineGainPerUpdate()*60)));
@@ -430,6 +433,4 @@ function loop(){
   update();
   updateDisplay();
   checkCanPrestige();
-
-
 }
