@@ -1,9 +1,18 @@
 .generatorWrapper {
   white-space: nowrap;
+  width: 500px;
 }
 
 .generatorWrapper > * {
   display: inline-block;
+}
+
+.generatorName {
+  width: 30%;
+}
+
+.generatorButton {
+  width: 22.5%;
 }
 
 .upgradeWrapper > * {
