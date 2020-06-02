@@ -234,6 +234,33 @@ $(document).ready(function(){
     }
   });
 
+  $("#triangleUpgrade6Button").click(function(){
+    generatorMultiplier(2, 1e15, 250, 5, $(this));
+  });
+
+  $("#triangleUpgrade7Button").click(function(){
+    generatorMultiplier(2, 1e20, 500, 6, $(this));
+  });
+
+  $("#triangleUpgrade8Button").click(function(){
+    generatorMultiplier(2, 1e25, 1000, 7, $(this));
+  });
+
+  $("#triangleUpgrade9Button").click(function(){
+    generatorMultiplier(2, 1e20, 2000, 8, $(this));
+  })
+
+  $("#triangleUpgrade10Button").click(function(){
+    if(playerCurrency >= 1e35){
+      playerCurrency -= 1e35;
+    }
+    for(var i=0; i<10; i++){
+      generatorMultipliers[i] *= 1000;
+    }
+    onUpgradePurchase($(this));
+    triangleUpgradesPurchased[9] = true;
+  })
+
   //SQUARE UPGRADE BUTTONS
 
 });

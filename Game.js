@@ -310,6 +310,58 @@ function showRow1Upgrades(generatorArray){
   }
 }
 
+function checkRow2TriangleUpgrades(totalTriangles){
+  if(totalTriangles >= 100000){
+    if(triangleUpgradesPurchased[5] != true){
+      $("#triangleUpgrade6DescUpper").text("CHANGE NAME");
+      $("#triangleUpgrade6Button").text("1e15");
+      $("#triangleUpgrade6DescLower").text("x250 Line output of Triangles");
+      $("#triangleUpgrade6Button").prop("disabled", false);
+    }
+  }
+  if(totalTriangles >= 1e7){
+    if(triangleUpgradesPurchased[6] != true){
+      $("#triangleUpgrade7DescUpper").text("CHANGE NAME");
+      $("#triangleUpgrade7Button").text("1e20");
+      $("#triangleUpgrade7DescLower").text("x500 Line output of Triangles");
+      $("#triangleUpgrade7Button").prop("disabled", false);
+    }
+  }
+  if(totalTriangles >= 1e9){
+    if(triangleUpgradesPurchased[7] != true){
+      $("#triangleUpgrade8DescUpper").text("CHANGE NAME");
+      $("#triangleUpgrade8Button").text("1e25");
+      $("#triangleUpgrade8DescLower").text("x1000 Line output of Triangles");
+      $("#triangleUpgrade8Button").prop("disabled", false);
+    }
+  }
+  if(totalTriangles >= 1e11){
+    if(triangleUpgradesPurchased[8] != true){
+      $("#triangleUpgrade9DescUpper").text("CHANGE NAME");
+      $("#triangleUpgrade9Button").text("1e30");
+      $("#triangleUpgrade9DescLower").text("x2000 Line output of Triangles");
+      $("#triangleUpgrade9Button").prop("disabled", false);
+    }
+  }
+  if(totalTriangles >= 1e13){
+    if(triangleUpgradesPurchased[9] != true){
+      $("#triangleUpgrade10DescUpper").text("CHANGE NAME");
+      $("#triangleUpgrade10Button").text("1e35");
+      $("#triangleUpgrade10DescLower").text("x1000 to ALL generators");
+      $("#triangleUpgrade10Button").prop("disabled", false);
+    }
+  }
+}
+
+function showRow1Upgrades(generatorArray){
+  for(var i=0; i<10; i++){ // 0 = points, 9 = decagons
+    if(generatorArray[i] >= 5){
+      var id = "#upgradeLine" + ((i*2)+1) + "Wrapper" // 1st row id is always an odd number, eg: points index is 0, but upgrade row id is 1
+      $(id).show();
+    }
+  }
+}
+
 function checkUpgrades(){
 
   showRow1Upgrades(generatorArray); // all generator row 1 upgrades
@@ -326,6 +378,7 @@ function checkUpgrades(){
 
   if(triangleUpgradesPurchased[4] == true){ // show 2nd row of upgrades for triangles
     $("#upgradeLine6Wrapper").show();
+    checkRow2TriangleUpgrades(generatorArray[2])
   }
 
 
