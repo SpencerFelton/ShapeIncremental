@@ -56,43 +56,69 @@ $(document).ready(function(){
     jQuerySelector.prop("disabled", true); // diable the button so it cant be clicked again
   }
 
+  function generatorMultiplier(generator, cost, multiplier, upgradeNumber, buttonClicked){
+    upgradesArray = [];
+    switch (generator){
+      case 0:
+        upgradesArray = pointUpgradesPurchased;
+        break;
+      case 1:
+        upgradesArray = lineUpgradesPurchased;
+        break;
+      case 2:
+        upgradesArray = triangleUpgradesPurchased;
+        break;
+      case 3:
+        upgradesArray = squareUpgradesPurchased;
+        break;
+      case 4:
+        upgradesArray = pentagonUpgradesPurchased;
+        break;
+      case 5:
+        upgradesArray = hexagonUpgradesPurchased;
+        break;
+      case 6:
+        upgradesArray = heptagonUpgradesPurchased;
+        break;
+      case 7:
+        upgradesArray = octagonUpgradesPurchased;
+        break;
+      case 8:
+        upgradesArray = nonagonUpgradesPurchased;
+        break;
+      case 9:
+        upgradesArray = decagonUpgradesPurchased;
+        break;
+      default:
+        break;
+    }
+
+    if(playerCurrency >= cost){
+      playerCurrency-=cost;
+    }
+    generatorMultipliers[generator] *= multiplier;
+    onUpgradePurchase(buttonClicked);
+    upgradesArray[upgradeNumber] = true;
+  }
+
   //POINT UPGRADE BUTTONS
   $("#pointUpgrade1Button").click(function(){
-    if (playerCurrency >= 50) { // check the player has enough money to purchase the upgrade
-      generatorMultipliers[0] *= 2; // multiply currency generation by points by 2
-      onUpgradePurchase($(this));
-      pointUpgradesPurchased[0] = true;
-    }
+    generatorMultiplier(0, 50, 2, 0, $(this)); // generator points = 0, lines = 1 etc, cost, multiplier, button
   });
 
   $("#pointUpgrade2Button").click(function(){
-    if (playerCurrency >= 1000) { // check the player has enough money to purchase the upgrade
-      playerCurrency -= 1000;
-      generatorMultipliers[0] *= 3; // multiply currency generation by points by 2
-      onUpgradePurchase($(this));
-      pointUpgradesPurchased[1] = true;
-    }
+    generatorMultiplier(0, 1000, 3, 1, $(this));
   });
 
   $("#pointUpgrade3Button").click(function(){
-    if (playerCurrency >= 5000) { // check the player has enough money to purchase the upgrade
-      playerCurrency -= 5000;
-      generatorMultipliers[0] *= 4; // multiply currency generation by points by 2
-      onUpgradePurchase($(this));
-      pointUpgradesPurchased[2] = true;
-    }
+    generatorMultiplier(0, 5000, 4, 2, $(this));
   });
 
   $("#pointUpgrade4Button").click(function(){
-    if (playerCurrency >= 1e6){
-      playerCurrency -= 1e6;
-      generatorMultipliers[0] *= 10;
-      onUpgradePurchase($(this));
-      pointUpgradesPurchased[3] = true;
-    }
+    generatorMultiplier(0, 1e6, 10, 3, $(this));
   });
 
-  $("#pointUpgrade5Button").click(function(){
+  $("#pointUpgrade5Button").click(function(){ // not a multiplier - so leave for now
     if (playerCurrency >= 1e8){
       playerCurrency -= 1e8;
       generatorExponent[0] = generatorExponent[0]*1.2;
@@ -102,38 +128,22 @@ $(document).ready(function(){
   });
 
   $("#pointUpgrade6Button").click(function(){
-    if (playerCurrency >= 1e15){
-      playerCurrency -= 1e15;
-      generatorMultipliers[0]*=250;
-      onUpgradePurchase($(this));
-      pointUpgradesPurchased[5] = true;
-    }
+    generatorMultiplier(0, 1e15, 250, 5, $(this));
   });
+
   $("#pointUpgrade7Button").click(function(){
-    if (playerCurrency >= 1e20){
-      playerCurrency -= 1e20;
-      generatorMultipliers[0]*=500;
-      onUpgradePurchase($(this));
-      pointUpgradesPurchased[6] = true;
-    }
+    generatorMultiplier(0, 1e20, 500, 6, $(this));
   });
+
   $("#pointUpgrade8Button").click(function(){
-    if (playerCurrency >= 1e25){
-      playerCurrency -= 1e25;
-      generatorMultipliers[0]*=1000;
-      onUpgradePurchase($(this));
-      pointUpgradesPurchased[7] = true;
-    }
+    generatorMultiplier(0, 1e25, 1000, 7, $(this));
   });
+
   $("#pointUpgrade9Button").click(function(){
-    if (playerCurrency >= 1e30){
-      playerCurrency -= 1e30;
-      generatorMultipliers[0]*=2000;
-      onUpgradePurchase($(this));
-      pointUpgradesPurchased[8] = true;
-    }
+    generatorMultiplier(0, 1e30, 2000, 8, $(this));
   });
-  $("#pointUpgrade10Button").click(function(){
+
+  $("#pointUpgrade10Button").click(function(){ // generatorMultiplier only deals with 1 generator multipier atm so leave for now
     if (playerCurrency >= 1e35){
       playerCurrency -= 1e35;
       for(var i=0; i<10; i++){
@@ -146,39 +156,19 @@ $(document).ready(function(){
 
   //LINE UPGRADE BUTTONS
   $("#lineUpgrade1Button").click(function(){ // Double output
-    if(playerCurrency >= 2e4){
-      playerCurrency-=2e4;
-      generatorMultipliers[1] *= 2;
-      onUpgradePurchase($(this));
-      lineUpgradesPurchased[0] = true;
-    }
+    generatorMultiplier(1, 2e4, 2, 0, $(this));
   });
 
   $("#lineUpgrade2Button").click(function(){ //x3 output
-    if(playerCurrency >= 2.5e5){
-      playerCurrency-=2.5e5;
-      generatorMultipliers[1] *= 3;
-      onUpgradePurchase($(this));
-      lineUpgradesPurchased[1] = true;
-    }
+    generatorMultiplier(1, 2.5e5, 3, 1, $(this))
   });
 
-  $("#lineUpgrade3Button").click(function(){
-    if(playerCurrency >= 1e7){
-      playerCurrency-=1e7;
-      generatorMultipliers[1] *= 4;
-      onUpgradePurchase($(this));
-      lineUpgradesPurchased[2] = true;
-    }
+  $("#lineUpgrade3Button").click(function(){ //x4 output
+    generatorMultiplier(1, 1e7, 4, 2, $(this));
   });
 
   $("#lineUpgrade4Button").click(function(){
-    if(playerCurrency >= 5e8){
-      playerCurrency-=5e8;
-      generatorMultipliers[1]*=10;
-      onUpgradePurchase($(this));
-      lineUpgradesPurchased[3] = true;
-    }
+    generatorMultiplier(1, 5e8, 10, 3, $(this));
   });
 
   $("#lineUpgrade5Button").click(function(){
@@ -191,39 +181,19 @@ $(document).ready(function(){
   });
 
   $("#lineUpgrade6Button").click(function(){
-    if(playerCurrency >= 1e15){
-      playerCurrency -= 1e15;
-      generatorMultipliers[1] *= 250;
-      onUpgradePurchase($(this));
-      lineUpgradesPurchased[5] = true;
-    }
+    generatorMultiplier(1, 1e15, 250, 5, $(this));
   });
 
   $("#lineUpgrade7Button").click(function(){
-    if(playerCurrency >= 1e20){
-      playerCurrency -= 1e20;
-      generatorMultipliers[1] *= 500;
-      onUpgradePurchase($(this));
-      lineUpgradesPurchased[6] = true;
-    }
+    generatorMultiplier(1, 1e20, 500, 6, $(this));
   });
 
   $("#lineUpgrade8Button").click(function(){
-    if(playerCurrency >= 1e25){
-      playerCurrency -= 1e25;
-      generatorMultipliers[1] *= 1000;
-      onUpgradePurchase($(this));
-      lineUpgradesPurchased[7] = true;
-    }
+    generatorMultiplier(1, 1e25, 1000, 7, $(this));
   });
 
   $("#lineUpgrade9Button").click(function(){
-    if(playerCurrency >= 1e30){
-      playerCurrency -= 1e30;
-      generatorMultipliers[1] *= 2000;
-      onUpgradePurchase($(this));
-      lineUpgradesPurchased[8] = true;
-    }
+    generatorMultiplier(1, 1e30, 2000, 8, $(this));
   });
 
   $("#lineUpgrade10Button").click(function(){
@@ -240,39 +210,19 @@ $(document).ready(function(){
 
   //TRIANGLE UPGRADE BUTTONS
   $("#triangleUpgrade1Button").click(function(){
-    if(playerCurrency >= 7e9){
-      playerCurrency-=7e9;
-      generatorMultipliers[2] *= 2;
-      onUpgradePurchase($(this));
-      triangleUpgradesPurchased[0] = true;
-    }
+    generatorMultiplier(2, 7e9, 2, 0, $(this));
   });
 
   $("#triangleUpgrade2Button").click(function(){
-    if(playerCurrency >= 5e11){
-      playerCurrency-=5e11;
-      generatorMultipliers[2]*=3;
-      onUpgradePurchase($(this));
-      triangleUpgradesPurchased[1] = true;
-    }
+    generatorMultiplier(2, 5e11, 3, 1, $(this));
   });
 
   $("#triangleUpgrade3Button").click(function(){
-    if(playerCurrency >= 1e12){
-      playerCurrency-=1e12;
-      generatorMultipliers[2]*=4;
-      onUpgradePurchase($(this));
-      triangleUpgradesPurchased[2] = true;
-    }
+    generatorMultiplier(2, 1e12, 4, 2, $(this));
   });
 
   $("#triangleUpgrade4Button").click(function(){
-    if(playerCurrency >= 1e15){
-      playerCurrency-=1e15;
-      generatorMultipliers[2]*=10;
-      onUpgradePurchase($(this));
-      triangleUpgradesPurchased[3] = true;
-    }
+    generatorMultiplier(2, 1e15, 10, 3, $(this));
   });
 
   $("#triangleUpgrade5Button").click(function(){
