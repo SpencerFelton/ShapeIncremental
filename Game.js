@@ -387,6 +387,49 @@ function checkRow2SquareUpgrades(totalSquares){
   }
 }
 
+function checkRow2PentagonUpgrades(totalPentagons){
+  if(totalPentagons >= 100000){
+    if(pentagonUpgradesPurchased[5] != true){
+      $("#pentagonUpgrade6DescUpper").text("CHANGE NAME");
+      $("#pentagonUpgrade6Button").text("7e12");
+      $("#pentagonUpgrade6DescLower").text("x10 Square output of Pentagons");
+      $("#pentagonUpgrade6Button").prop("disabled", false);
+    }
+  }
+  if(totalPentagons >= 1e7){
+    if(pentagonUpgradesPurchased[6] != true){
+      $("#squareUpgrade7DescUpper").text("CHANGE NAME");
+      $("#squareUpgrade7Button").text("7e12");
+      $("#squareUpgrade7DescLower").text("x15 Square output of Pentagons");
+      $("#squareUpgrade7Button").prop("disabled", false);
+    }
+  }
+  if(totalPentagons >= 1e9){
+    if(pentagonUpgradesPurchased[7] != true){
+      $("#pentagonUpgrade8DescUpper").text("CHANGE NAME");
+      $("#pentagonUpgrade8Button").text("7e12");
+      $("#pentagonUpgrade8DescLower").text("x25 Square output of Pentagons");
+      $("#pentagonUpgrade8Button").prop("disabled", false);
+    }
+  }
+  if(totalPentagons >= 1e11){
+    if(squareUpgradesPurchased[8] != true){
+      $("#squareUpgrade9DescUpper").text("CHANGE NAME");
+      $("#squareUpgrade9Button").text("7e12");
+      $("#squareUpgrade9DescLower").text("x50 Square output of Pentagons");
+      $("#squareUpgrade9Button").prop("disabled", false);
+    }
+  }
+  if(totalPentagons >= 1e13){
+    if(pentagonUpgradesPurchased[9] != true){
+      $("#pentagonUpgrade10DescUpper").text("CHANGE NAME");
+      $("#pentagonUpgrade10Button").text("7e12");
+      $("#pentagonUpgrade10DescLower").text("x10 to ALL generators");
+      $("#pentagonUpgrade10Button").prop("disabled", false);
+    }
+  }
+}
+
 function showRow1Upgrades(generatorArray){
   for(var i=0; i<10; i++){ // 0 = points, 9 = decagons
     if(generatorArray[i] >= 5){
@@ -418,6 +461,11 @@ function checkUpgrades(){
   if(squareUpgradesPurchased[4] == true){
     $("#upgradeLine8Wrapper").show();
     checkRow2SquareUpgrades(generatorArray[3]);
+  }
+
+  if(pentagonUpgradesPurchased[4] == true){
+    $("#upgradeLine10Wrapper").show();
+    checkRow2PentagonUpgrades(generatorArray[4]);
   }
 
 

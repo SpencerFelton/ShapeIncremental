@@ -312,8 +312,60 @@ $(document).ready(function(){
     }
     onUpgradePurchase($(this));
     squareUpgradesPurchased[9] = true;
-  })
+  });
 
+  //PENTAGON UPGRADES
+  $("#pentagonUpgrade1Button").click(function(){
+    generatorMultiplier(4, 7e12, 2, 0, $(this));
+  });
+
+  $("#pentagonUpgrade2Button").click(function(){
+    generatorMultiplier(4, 7e12, 3, 1, $(this));
+  });
+
+  $("#pentagonUpgrade3Button").click(function(){
+    generatorMultiplier(4, 7e12, 4, 2, $(this));
+  });
+
+  $("#pentagonUpgrade4Button").click(function(){
+    generatorMultiplier(4, 7e12, 5, 3, $(this));
+  });
+
+  $("#squarPENTAGONUpgrade5Button").click(function(){
+    if(playerCurrency >= 1e24){
+      playerCurrency-=1e24;
+      generatorExponent[4] = generatorExponent[4]*2;
+      onUpgradePurchase($(this));
+      pentagonUpgradesPurchased[4] = true;
+    }
+  });
+
+  $("#pentagonUpgrade6Button").click(function(){
+    generatorMultiplier(4, 7e12, 10, 5, $(this));
+  });
+
+  $("#pentagonUpgrade7Button").click(function(){
+    generatorMultiplier(4, 7e12, 15, 6, $(this));
+  });
+
+  $("#pentagonUpgrade8Button").click(function(){
+    generatorMultiplier(4, 7e12, 25, 7, $(this));
+  });
+
+  $("#pentagonUpgrade9Button").click(function(){
+    generatorMultiplier(4, 7e12, 50, 8, $(this));
+  });
+
+  $("#pentagonUpgrade10Button").click(function(){
+    if(playerCurrency >= 7e12){
+      playerCurrency -= 7e12;
+    }
+    for(var i=0; i<10; i++){
+      generatorMultipliers[i] *= 10;
+    }
+    onUpgradePurchase($(this));
+    pentagonUpgradesPurchased[9] = true;
+  });
 
 
 });
