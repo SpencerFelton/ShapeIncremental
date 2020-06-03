@@ -115,7 +115,7 @@ $(document).ready(function(){
   });
 
   $("#pointUpgrade4Button").click(function(){
-    generatorMultiplier(0, 1e6, 10, 3, $(this));
+    generatorMultiplier(0, 1e6, 5, 3, $(this));
   });
 
   $("#pointUpgrade5Button").click(function(){ // not a multiplier - so leave for now
@@ -128,26 +128,26 @@ $(document).ready(function(){
   });
 
   $("#pointUpgrade6Button").click(function(){
-    generatorMultiplier(0, 1e15, 250, 5, $(this));
+    generatorMultiplier(0, 1e15, 10, 5, $(this));
   });
 
   $("#pointUpgrade7Button").click(function(){
-    generatorMultiplier(0, 1e20, 500, 6, $(this));
+    generatorMultiplier(0, 1e20, 15, 6, $(this));
   });
 
   $("#pointUpgrade8Button").click(function(){
-    generatorMultiplier(0, 1e25, 1000, 7, $(this));
+    generatorMultiplier(0, 1e25, 25, 7, $(this));
   });
 
   $("#pointUpgrade9Button").click(function(){
-    generatorMultiplier(0, 1e30, 2000, 8, $(this));
+    generatorMultiplier(0, 1e30, 50, 8, $(this));
   });
 
   $("#pointUpgrade10Button").click(function(){ // generatorMultiplier only deals with 1 generator multipier atm so leave for now
     if (playerCurrency >= 1e35){
       playerCurrency -= 1e35;
       for(var i=0; i<10; i++){
-        generatorMultipliers[i] *= 1000;
+        generatorMultipliers[i] *= 10;
       }
       onUpgradePurchase($(this));
       pointUpgradesPurchased[9] = true;
@@ -168,7 +168,7 @@ $(document).ready(function(){
   });
 
   $("#lineUpgrade4Button").click(function(){
-    generatorMultiplier(1, 5e8, 10, 3, $(this));
+    generatorMultiplier(1, 5e8, 5, 3, $(this));
   });
 
   $("#lineUpgrade5Button").click(function(){
@@ -181,26 +181,26 @@ $(document).ready(function(){
   });
 
   $("#lineUpgrade6Button").click(function(){
-    generatorMultiplier(1, 1e15, 250, 5, $(this));
+    generatorMultiplier(1, 1e15, 10, 5, $(this));
   });
 
   $("#lineUpgrade7Button").click(function(){
-    generatorMultiplier(1, 1e20, 500, 6, $(this));
+    generatorMultiplier(1, 1e20, 15, 6, $(this));
   });
 
   $("#lineUpgrade8Button").click(function(){
-    generatorMultiplier(1, 1e25, 1000, 7, $(this));
+    generatorMultiplier(1, 1e25, 25, 7, $(this));
   });
 
   $("#lineUpgrade9Button").click(function(){
-    generatorMultiplier(1, 1e30, 2000, 8, $(this));
+    generatorMultiplier(1, 1e30, 50, 8, $(this));
   });
 
   $("#lineUpgrade10Button").click(function(){
     if(playerCurrency >= 1e35){
       playerCurrency -= 1e35;
       for(var i=0; i<10; i++){
-        generatorMultipliers[i] *= 1000;
+        generatorMultipliers[i] *= 10;
       }
       onUpgradePurchase($(this));
       lineUpgradesPurchased[9] = true;
@@ -222,7 +222,7 @@ $(document).ready(function(){
   });
 
   $("#triangleUpgrade4Button").click(function(){
-    generatorMultiplier(2, 1e15, 10, 3, $(this));
+    generatorMultiplier(2, 1e15, 5, 3, $(this));
   });
 
   $("#triangleUpgrade5Button").click(function(){
@@ -235,19 +235,19 @@ $(document).ready(function(){
   });
 
   $("#triangleUpgrade6Button").click(function(){
-    generatorMultiplier(2, 1e15, 250, 5, $(this));
+    generatorMultiplier(2, 1e15, 10, 5, $(this));
   });
 
   $("#triangleUpgrade7Button").click(function(){
-    generatorMultiplier(2, 1e20, 500, 6, $(this));
+    generatorMultiplier(2, 1e20, 15, 6, $(this));
   });
 
   $("#triangleUpgrade8Button").click(function(){
-    generatorMultiplier(2, 1e25, 1000, 7, $(this));
+    generatorMultiplier(2, 1e25, 25, 7, $(this));
   });
 
   $("#triangleUpgrade9Button").click(function(){
-    generatorMultiplier(2, 1e20, 2000, 8, $(this));
+    generatorMultiplier(2, 1e20, 50, 8, $(this));
   })
 
   $("#triangleUpgrade10Button").click(function(){
@@ -255,7 +255,7 @@ $(document).ready(function(){
       playerCurrency -= 1e35;
     }
     for(var i=0; i<10; i++){
-      generatorMultipliers[i] *= 1000;
+      generatorMultipliers[i] *= 10;
     }
     onUpgradePurchase($(this));
     triangleUpgradesPurchased[9] = true;
@@ -275,7 +275,7 @@ $(document).ready(function(){
   });
 
   $("#squareUpgrade4Button").click(function(){
-    generatorMultiplier(3, 7e21, 10, 3, $(this));
+    generatorMultiplier(3, 7e21, 5, 3, $(this));
   });
 
   $("#squareUpgrade5Button").click(function(){
@@ -288,19 +288,19 @@ $(document).ready(function(){
   });
 
   $("#squareUpgrade6Button").click(function(){
-    generatorMultiplier(3, 7e45, 250, 5, $(this));
+    generatorMultiplier(3, 7e45, 10, 5, $(this));
   });
 
   $("#squareUpgrade7Button").click(function(){
-    generatorMultiplier(3, 7e50, 500, 6, $(this));
+    generatorMultiplier(3, 7e50, 15, 6, $(this));
   });
 
   $("#squareUpgrade8Button").click(function(){
-    generatorMultiplier(3, 7e55, 1000, 7, $(this));
+    generatorMultiplier(3, 7e55, 25, 7, $(this));
   });
 
   $("#squareUpgrade9Button").click(function(){
-    generatorMultiplier(3, 7e60, 2000, 8, $(this));
+    generatorMultiplier(3, 7e60, 50, 8, $(this));
   });
 
   $("#squareUpgrade10Button").click(function(){
@@ -308,7 +308,7 @@ $(document).ready(function(){
       playerCurrency -= 1e65;
     }
     for(var i=0; i<10; i++){
-      generatorMultipliers[i] *= 1000;
+      generatorMultipliers[i] *= 10;
     }
     onUpgradePurchase($(this));
     squareUpgradesPurchased[9] = true;

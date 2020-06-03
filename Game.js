@@ -220,7 +220,7 @@ function checkRow2PointUpgrades(totalPoints){ // compare total number of points 
     if(pointUpgradesPurchased[5] != true){
       $("#pointUpgrade6DescUpper").text("Big boy leagues");
       $("#pointUpgrade6Button").text("1e15");
-      $("#pointUpgrade6DescLower").text("x250 Cardinal output of points");
+      $("#pointUpgrade6DescLower").text("x10 Cardinal output of points");
       $("#pointUpgrade6Button").prop("disabled", false);
     };
   };
@@ -228,7 +228,7 @@ function checkRow2PointUpgrades(totalPoints){ // compare total number of points 
     if(pointUpgradesPurchased[6] != true){
       $("#pointUpgrade7DescUpper").text("Bigger bruh leagues");
       $("#pointUpgrade7Button").text("1e20");
-      $("#pointUpgrade7DescLower").text("x500 Cardinal output of points");
+      $("#pointUpgrade7DescLower").text("x15 Cardinal output of points");
       $("#pointUpgrade7Button").prop("disabled", false);
     };
   };
@@ -236,7 +236,7 @@ function checkRow2PointUpgrades(totalPoints){ // compare total number of points 
     if(pointUpgradesPurchased[7] != true){
       $("#pointUpgrade8DescUpper").text("Naming is hard yo");
       $("#pointUpgrade8Button").text("1e25");
-      $("#pointUpgrade8DescLower").text("x1000 Cardinal output of points");
+      $("#pointUpgrade8DescLower").text("x25 Cardinal output of points");
       $("#pointUpgrade8Button").prop("disabled", false);
     };
   };
@@ -244,7 +244,7 @@ function checkRow2PointUpgrades(totalPoints){ // compare total number of points 
     if(pointUpgradesPurchased[8] != true){
       $("#pointUpgrade9DescUpper").text("B1gg3r bruh l34gu3s");
       $("#pointUpgrade9Button").text("1e30");
-      $("#pointUpgrade9DescLower").text("x2000 Cardinal output of points");
+      $("#pointUpgrade9DescLower").text("x50 Cardinal output of points");
       $("#pointUpgrade9Button").prop("disabled", false);
     };
   };
@@ -252,7 +252,7 @@ function checkRow2PointUpgrades(totalPoints){ // compare total number of points 
     if(pointUpgradesPurchased[9] != true){
       $("#pointUpgrade10DescUpper").text("Biggest boi league");
       $("#pointUpgrade10Button").text("1e35");
-      $("#pointUpgrade10DescLower").text("x1000 to ALL generators");
+      $("#pointUpgrade10DescLower").text("x10 to ALL generators");
       $("#pointUpgrade10Button").prop("disabled", false);
     };
   };
@@ -263,7 +263,7 @@ function checkRow2LineUpgrades(totalLines){
     if(lineUpgradesPurchased[5] != true){
       $("#lineUpgrade6DescUpper").text("CHANGE NAME");
       $("#lineUpgrade6Button").text("1e15");
-      $("#lineUpgrade6DescLower").text("x250 Point output of Lines");
+      $("#lineUpgrade6DescLower").text("x10 Point output of Lines");
       $("#lineUpgrade6Button").prop("disabled", false);
     }
   }
@@ -271,7 +271,7 @@ function checkRow2LineUpgrades(totalLines){
     if(lineUpgradesPurchased[6] != true){
       $("#lineUpgrade7DescUpper").text("CHANGE NAME");
       $("#lineUpgrade7Button").text("1e20");
-      $("#lineUpgrade7DescLower").text("x500 Point output of Lines");
+      $("#lineUpgrade7DescLower").text("x15 Point output of Lines");
       $("#lineUpgrade7Button").prop("disabled", false);
     }
   }
@@ -279,7 +279,7 @@ function checkRow2LineUpgrades(totalLines){
     if(lineUpgradesPurchased[7] != true){
       $("#lineUpgrade8DescUpper").text("CHANGE NAME");
       $("#lineUpgrade8Button").text("1e25");
-      $("#lineUpgrade8DescLower").text("x1000 Point output of Lines");
+      $("#lineUpgrade8DescLower").text("x25 Point output of Lines");
       $("#lineUpgrade8Button").prop("disabled", false);
     }
   }
@@ -287,7 +287,7 @@ function checkRow2LineUpgrades(totalLines){
     if(lineUpgradesPurchased[8] != true){
       $("#lineUpgrade9DescUpper").text("CHANGE NAME");
       $("#lineUpgrade9Button").text("1e30");
-      $("#lineUpgrade9DescLower").text("x2000 Point output of Lines");
+      $("#lineUpgrade9DescLower").text("x50 Point output of Lines");
       $("#lineUpgrade9Button").prop("disabled", false);
     }
   }
@@ -295,7 +295,7 @@ function checkRow2LineUpgrades(totalLines){
     if(lineUpgradesPurchased[9] != true){
       $("#lineUpgrade10DescUpper").text("CHANGE NAME");
       $("#lineUpgrade10Button").text("1e35");
-      $("#lineUpgrade10DescLower").text("x1000 to ALL generators");
+      $("#lineUpgrade10DescLower").text("x10 to ALL generators");
       $("#lineUpgrade10Button").prop("disabled", false);
     }
   }
@@ -306,7 +306,7 @@ function checkRow2TriangleUpgrades(totalTriangles){
     if(triangleUpgradesPurchased[5] != true){
       $("#triangleUpgrade6DescUpper").text("CHANGE NAME");
       $("#triangleUpgrade6Button").text("1e15");
-      $("#triangleUpgrade6DescLower").text("x250 Line output of Triangles");
+      $("#triangleUpgrade6DescLower").text("x10 Line output of Triangles");
       $("#triangleUpgrade6Button").prop("disabled", false);
     }
   }
@@ -314,7 +314,7 @@ function checkRow2TriangleUpgrades(totalTriangles){
     if(triangleUpgradesPurchased[6] != true){
       $("#triangleUpgrade7DescUpper").text("CHANGE NAME");
       $("#triangleUpgrade7Button").text("1e20");
-      $("#triangleUpgrade7DescLower").text("x500 Line output of Triangles");
+      $("#triangleUpgrade7DescLower").text("x15 Line output of Triangles");
       $("#triangleUpgrade7Button").prop("disabled", false);
     }
   }
@@ -322,7 +322,7 @@ function checkRow2TriangleUpgrades(totalTriangles){
     if(triangleUpgradesPurchased[7] != true){
       $("#triangleUpgrade8DescUpper").text("CHANGE NAME");
       $("#triangleUpgrade8Button").text("1e25");
-      $("#triangleUpgrade8DescLower").text("x1000 Line output of Triangles");
+      $("#triangleUpgrade8DescLower").text("25 Line output of Triangles");
       $("#triangleUpgrade8Button").prop("disabled", false);
     }
   }
@@ -330,7 +330,7 @@ function checkRow2TriangleUpgrades(totalTriangles){
     if(triangleUpgradesPurchased[8] != true){
       $("#triangleUpgrade9DescUpper").text("CHANGE NAME");
       $("#triangleUpgrade9Button").text("1e30");
-      $("#triangleUpgrade9DescLower").text("x2000 Line output of Triangles");
+      $("#triangleUpgrade9DescLower").text("50 Line output of Triangles");
       $("#triangleUpgrade9Button").prop("disabled", false);
     }
   }
@@ -338,7 +338,7 @@ function checkRow2TriangleUpgrades(totalTriangles){
     if(triangleUpgradesPurchased[9] != true){
       $("#triangleUpgrade10DescUpper").text("CHANGE NAME");
       $("#triangleUpgrade10Button").text("1e35");
-      $("#triangleUpgrade10DescLower").text("x1000 to ALL generators");
+      $("#triangleUpgrade10DescLower").text("x10 to ALL generators");
       $("#triangleUpgrade10Button").prop("disabled", false);
     }
   }
@@ -349,7 +349,7 @@ function checkRow2SquareUpgrades(totalSquares){
     if(squareUpgradesPurchased[5] != true){
       $("#squareUpgrade6DescUpper").text("CHANGE NAME");
       $("#squareUpgrade6Button").text("7e45");
-      $("#squareUpgrade6DescLower").text("x250 Triangle output of Squares");
+      $("#squareUpgrade6DescLower").text("x10 Triangle output of Squares");
       $("#squareUpgrade6Button").prop("disabled", false);
     }
   }
@@ -357,7 +357,7 @@ function checkRow2SquareUpgrades(totalSquares){
     if(squareUpgradesPurchased[6] != true){
       $("#squareUpgrade7DescUpper").text("CHANGE NAME");
       $("#squareUpgrade7Button").text("7e50");
-      $("#squareUpgrade7DescLower").text("x500 Triangle output of Squares");
+      $("#squareUpgrade7DescLower").text("x15 Triangle output of Squares");
       $("#squareUpgrade7Button").prop("disabled", false);
     }
   }
@@ -365,7 +365,7 @@ function checkRow2SquareUpgrades(totalSquares){
     if(squareUpgradesPurchased[7] != true){
       $("#squareUpgrade8DescUpper").text("CHANGE NAME");
       $("#squareUpgrade8Button").text("1e55");
-      $("#squareUpgrade8DescLower").text("x1000 Triangle output of Squares");
+      $("#squareUpgrade8DescLower").text("x25 Triangle output of Squares");
       $("#squareUpgrade8Button").prop("disabled", false);
     }
   }
@@ -373,7 +373,7 @@ function checkRow2SquareUpgrades(totalSquares){
     if(squareUpgradesPurchased[8] != true){
       $("#squareUpgrade9DescUpper").text("CHANGE NAME");
       $("#squareUpgrade9Button").text("1e60");
-      $("#squareUpgrade9DescLower").text("x2000 Triangle output of Squares");
+      $("#squareUpgrade9DescLower").text("x50 Triangle output of Squares");
       $("#squareUpgrade9Button").prop("disabled", false);
     }
   }
@@ -381,7 +381,7 @@ function checkRow2SquareUpgrades(totalSquares){
     if(squareUpgradesPurchased[9] != true){
       $("#squareUpgrade10DescUpper").text("CHANGE NAME");
       $("#squareUpgrade10Button").text("1e65");
-      $("#squareUpgrade10DescLower").text("x1000 to ALL generators");
+      $("#squareUpgrade10DescLower").text("x10 to ALL generators");
       $("#squareUpgrade10Button").prop("disabled", false);
     }
   }
