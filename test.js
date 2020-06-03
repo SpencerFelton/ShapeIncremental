@@ -331,7 +331,7 @@ $(document).ready(function(){
     generatorMultiplier(4, 7e12, 5, 3, $(this));
   });
 
-  $("#squarPENTAGONUpgrade5Button").click(function(){
+  $("#pentagonUpgrade5Button").click(function(){
     if(playerCurrency >= 1e24){
       playerCurrency-=1e24;
       generatorExponent[4] = generatorExponent[4]*2;

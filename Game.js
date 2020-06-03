@@ -398,10 +398,10 @@ function checkRow2PentagonUpgrades(totalPentagons){
   }
   if(totalPentagons >= 1e7){
     if(pentagonUpgradesPurchased[6] != true){
-      $("#squareUpgrade7DescUpper").text("CHANGE NAME");
-      $("#squareUpgrade7Button").text("7e12");
-      $("#squareUpgrade7DescLower").text("x15 Square output of Pentagons");
-      $("#squareUpgrade7Button").prop("disabled", false);
+      $("#pentagonUpgrade7DescUpper").text("CHANGE NAME");
+      $("#pentagonUpgrade7Button").text("7e12");
+      $("#pentagonUpgrade7DescLower").text("x15 Square output of Pentagons");
+      $("#pentagonUpgrade7Button").prop("disabled", false);
     }
   }
   if(totalPentagons >= 1e9){
@@ -413,11 +413,11 @@ function checkRow2PentagonUpgrades(totalPentagons){
     }
   }
   if(totalPentagons >= 1e11){
-    if(squareUpgradesPurchased[8] != true){
-      $("#squareUpgrade9DescUpper").text("CHANGE NAME");
-      $("#squareUpgrade9Button").text("7e12");
-      $("#squareUpgrade9DescLower").text("x50 Square output of Pentagons");
-      $("#squareUpgrade9Button").prop("disabled", false);
+    if(pentagonUpgradesPurchased[8] != true){
+      $("#pentagonUpgrade9DescUpper").text("CHANGE NAME");
+      $("#pentagonUpgrade9Button").text("7e12");
+      $("#pentagonUpgrade9DescLower").text("x50 Square output of Pentagons");
+      $("#pentagonUpgrade9Button").prop("disabled", false);
     }
   }
   if(totalPentagons >= 1e13){
