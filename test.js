@@ -259,8 +259,61 @@ $(document).ready(function(){
     }
     onUpgradePurchase($(this));
     triangleUpgradesPurchased[9] = true;
-  })
+  });
 
   //SQUARE UPGRADE BUTTONS
+  $("#squareUpgrade1Button").click(function(){
+    generatorMultiplier(3, 7e12, 2, 0, $(this));
+  });
+
+  $("#squareUpgrade2Button").click(function(){
+    generatorMultiplier(3, 7e15, 3, 1, $(this));
+  });
+
+  $("#squareUpgrade3Button").click(function(){
+    generatorMultiplier(3, 7e18, 4, 2, $(this));
+  });
+
+  $("#squareUpgrade4Button").click(function(){
+    generatorMultiplier(3, 7e21, 10, 3, $(this));
+  });
+
+  $("#squareUpgrade5Button").click(function(){
+    if(playerCurrency >= 1e24){
+      playerCurrency-=1e24;
+      generatorExponent[3] = generatorExponent[3]*2;
+      onUpgradePurchase($(this));
+      squareUpgradesPurchased[4] = true;
+    }
+  });
+
+  $("#squareUpgrade6Button").click(function(){
+    generatorMultiplier(3, 7e45, 250, 5, $(this));
+  });
+
+  $("#squareUpgrade7Button").click(function(){
+    generatorMultiplier(3, 7e50, 500, 6, $(this));
+  });
+
+  $("#squareUpgrade8Button").click(function(){
+    generatorMultiplier(3, 7e55, 1000, 7, $(this));
+  });
+
+  $("#squareUpgrade9Button").click(function(){
+    generatorMultiplier(3, 7e60, 2000, 8, $(this));
+  });
+
+  $("#squareUpgrade10Button").click(function(){
+    if(playerCurrency >= 1e65){
+      playerCurrency -= 1e65;
+    }
+    for(var i=0; i<10; i++){
+      generatorMultipliers[i] *= 1000;
+    }
+    onUpgradePurchase($(this));
+    squareUpgradesPurchased[9] = true;
+  })
+
+
 
 });

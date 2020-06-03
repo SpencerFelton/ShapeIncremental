@@ -301,15 +301,6 @@ function checkRow2LineUpgrades(totalLines){
   }
 }
 
-function showRow1Upgrades(generatorArray){
-  for(var i=0; i<10; i++){ // 0 = points, 9 = decagons
-    if(generatorArray[i] >= 5){
-      var id = "#upgradeLine" + ((i*2)+1) + "Wrapper" // 1st row id is always an odd number, eg: points index is 0, but upgrade row id is 1
-      $(id).show();
-    }
-  }
-}
-
 function checkRow2TriangleUpgrades(totalTriangles){
   if(totalTriangles >= 100000){
     if(triangleUpgradesPurchased[5] != true){
@@ -353,6 +344,49 @@ function checkRow2TriangleUpgrades(totalTriangles){
   }
 }
 
+function checkRow2SquareUpgrades(totalSquares){
+  if(totalSquares >= 100000){
+    if(squareUpgradesPurchased[5] != true){
+      $("#squareUpgrade6DescUpper").text("CHANGE NAME");
+      $("#squareUpgrade6Button").text("7e45");
+      $("#squareUpgrade6DescLower").text("x250 Triangle output of Squares");
+      $("#squareUpgrade6Button").prop("disabled", false);
+    }
+  }
+  if(totalSquares >= 1e7){
+    if(squareUpgradesPurchased[6] != true){
+      $("#squareUpgrade7DescUpper").text("CHANGE NAME");
+      $("#squareUpgrade7Button").text("7e50");
+      $("#squareUpgrade7DescLower").text("x500 Triangle output of Squares");
+      $("#squareUpgrade7Button").prop("disabled", false);
+    }
+  }
+  if(totalSquares >= 1e9){
+    if(squareUpgradesPurchased[7] != true){
+      $("#squareUpgrade8DescUpper").text("CHANGE NAME");
+      $("#squareUpgrade8Button").text("1e55");
+      $("#squareUpgrade8DescLower").text("x1000 Triangle output of Squares");
+      $("#squareUpgrade8Button").prop("disabled", false);
+    }
+  }
+  if(totalSquares >= 1e11){
+    if(squareUpgradesPurchased[8] != true){
+      $("#squareUpgrade9DescUpper").text("CHANGE NAME");
+      $("#squareUpgrade9Button").text("1e60");
+      $("#squareUpgrade9DescLower").text("x2000 Triangle output of Squares");
+      $("#squareUpgrade9Button").prop("disabled", false);
+    }
+  }
+  if(totalSquares >= 1e13){
+    if(squareUpgradesPurchased[9] != true){
+      $("#squareUpgrade10DescUpper").text("CHANGE NAME");
+      $("#squareUpgrade10Button").text("1e65");
+      $("#squareUpgrade10DescLower").text("x1000 to ALL generators");
+      $("#squareUpgrade10Button").prop("disabled", false);
+    }
+  }
+}
+
 function showRow1Upgrades(generatorArray){
   for(var i=0; i<10; i++){ // 0 = points, 9 = decagons
     if(generatorArray[i] >= 5){
@@ -378,7 +412,12 @@ function checkUpgrades(){
 
   if(triangleUpgradesPurchased[4] == true){ // show 2nd row of upgrades for triangles
     $("#upgradeLine6Wrapper").show();
-    checkRow2TriangleUpgrades(generatorArray[2])
+    checkRow2TriangleUpgrades(generatorArray[2]);
+  }
+
+  if(squareUpgradesPurchased[4] == true){
+    $("#upgradeLine8Wrapper").show();
+    checkRow2SquareUpgrades(generatorArray[3]);
   }
 
 
