@@ -4,16 +4,16 @@ var generatorCurrentCostArray =[1,3e3,1e9,1e16,1e25,1e36,1e49,1e64,1e81,1e100];
 var generatorMultipliers = [1,1,1,1,1,1,1,1,1,1]; //
 var generatorExponent = [1,1,1,1,1,1,1,1,1,1];
 
-var pointUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false]; // index corresponding to number of upgrade, [0] = upgrade1 etc
-var lineUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
-var triangleUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
-var squareUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
-var pentagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
-var hexagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
-var heptagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
-var octagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
-var nonagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
-var decagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false, false];
+var pointUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false]; // index corresponding to number of upgrade, [0] = upgrade1 etc
+var lineUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false];
+var triangleUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false];
+var squareUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false];
+var pentagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false];
+var hexagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false];
+var heptagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false];
+var octagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false];
+var nonagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false];
+var decagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false];
 
 var playerCurrency = 1e0;
 var playerPrestigeCurrency = 0;
@@ -258,7 +258,7 @@ function checkRow2PointUpgrades(totalPoints){ // compare total number of points 
   };
 }
 
-function checkRow2LineUpgrades(totalLines){
+function checkRow2LineUpgrades(totalLines){ // compares the total number of lines to thresholds to show row 2 upgrades
   if(totalLines >= 100000){
     if(lineUpgradesPurchased[5] != true){
       $("#lineUpgrade6DescUpper").text("CHANGE NAME");
@@ -301,7 +301,7 @@ function checkRow2LineUpgrades(totalLines){
   }
 }
 
-function checkRow2TriangleUpgrades(totalTriangles){
+function checkRow2TriangleUpgrades(totalTriangles){ // compares the total number of triangles to preset thresholds to show row 2 upgrades
   if(totalTriangles >= 100000){
     if(triangleUpgradesPurchased[5] != true){
       $("#triangleUpgrade6DescUpper").text("CHANGE NAME");
