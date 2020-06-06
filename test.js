@@ -56,9 +56,9 @@ $(document).ready(function(){
     jQuerySelector.prop("disabled", true); // diable the button so it cant be clicked again
   }
 
-  function generatorMultiplier(generator, cost, multiplier, upgradeNumber, buttonClicked){
+  function generatorMultiplier(generator, cost, multiplier, upgradeNumber, buttonClicked){ // generator is an index, cost is the price of an upgrade. multiplier is the amount to multiply total production by, upgradeNumber correspondes to the nth upgrade for that generator, buttonClicked is a jQuery variable of that element in the DOM
     upgradesArray = [];
-    switch (generator){
+    switch (generator){ // generator is an index, corresponding to the index of generators in the generatorArray, 0 = points, 1 = lines etc
       case 0:
         upgradesArray = pointUpgradesPurchased;
         break;
