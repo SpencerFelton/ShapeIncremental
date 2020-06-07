@@ -104,6 +104,7 @@ $(document).ready(function(){
   //POINT UPGRADE BUTTONS
   $("#pointUpgrade1Button").click(function(){
     generatorMultiplier(0, 50, 2, 0, $(this)); // generator points = 0, lines = 1 etc, cost, multiplier, button
+    console.log("here");
   });
 
   $("#pointUpgrade2Button").click(function(){
