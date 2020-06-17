@@ -47,52 +47,52 @@ function currencyGainPerUpdate(){ // game runs at 60 updates per second, so to g
 }
 
 function pointContributionPerUpdate(){ // points are the first tier of production, but their gain is dependent on lines, hence we check the 2nd index of the array
-  var contribution = generatorArray[0] * ((generatorBaseContributionArray[0] * generatorMultipliers[0])**generatorExponent[0]);
+  var contribution = (generatorArray[0] * ((generatorBaseContributionArray[0] * generatorMultipliers[0])**generatorExponent[0]))/60;
   return contribution;
 }
 
 function lineContributionPerUpdate(){
-  var contribution = generatorArray[1] * ((generatorBaseContributionArray[1] * generatorMultipliers[1])**generatorExponent[1]);
+  var contribution = (generatorArray[1] * ((generatorBaseContributionArray[1] * generatorMultipliers[1])**generatorExponent[1]))/60;
   return contribution;
 }
 
 function triangleContributionPerUpdate(){
-  var contribution = generatorArray[2] * ((generatorBaseContributionArray[2] * generatorMultipliers[2])**generatorExponent[2]);
+  var contribution = (generatorArray[2] * ((generatorBaseContributionArray[2] * generatorMultipliers[2])**generatorExponent[2]))/60;
   return contribution;
 }
 
 function squareContributionPerUpdate(){
-  var contribution = generatorArray[3] * ((generatorBaseContributionArray[3] * generatorMultipliers[3])**generatorExponent[3]);
+  var contribution = (generatorArray[3] * ((generatorBaseContributionArray[3] * generatorMultipliers[3])**generatorExponent[3]))/60;
   return contribution;
 }
 
 function pentagonContriubtionPerUpdate(){
-  var contribution = generatorArray[4] * ((generatorBaseContributionArray[4] * generatorMultipliers[4])**generatorExponent[4]);
+  var contribution = (generatorArray[4] * ((generatorBaseContributionArray[4] * generatorMultipliers[4])**generatorExponent[4]))/60;
   return contribution;
 }
 
 function hexagonContributionPerUpdate(){
-  var contribution = generatorArray[5] * ((generatorBaseContributionArray[5] * generatorMultipliers[5])**generatorExponent[5]);
+  var contribution = (generatorArray[5] * ((generatorBaseContributionArray[5] * generatorMultipliers[5])**generatorExponent[5]))/60;
   return contribution;
 }
 
 function heptagonContributionPerUpdate(){
-  var contribution = generatorArray[6] * ((generatorBaseContributionArray[6] * generatorMultipliers[6])**generatorExponent[6]);
+  var contribution = (generatorArray[6] * ((generatorBaseContributionArray[6] * generatorMultipliers[6])**generatorExponent[6]))/60;
   return contribution;
 }
 
 function octagonContributionPerUpdate(){
-  var contribution = generatorArray[7] * ((generatorBaseContributionArray[7] * generatorMultipliers[7])**generatorExponent[7]);
+  var contribution = (generatorArray[7] * ((generatorBaseContributionArray[7] * generatorMultipliers[7])**generatorExponent[7]))/60;
   return contribution;
 }
 
 function nonagonContributionPerUpdate(){
-  var contribution = generatorArray[8] * ((generatorBaseContributionArray[8] * generatorMultipliers[8])**generatorExponent[0]);
+  var contribution = (generatorArray[8] * ((generatorBaseContributionArray[8] * generatorMultipliers[8])**generatorExponent[0]))/60;
   return contribution;
 }
 
 function decagonContributionPerUpdate(){
-  var contribution = generatorArray[0] * ((generatorBaseContributionArray[9] * generatorMultipliers[9])**generatorExponent[9]);
+  var contribution = (generatorArray[9] * ((generatorBaseContributionArray[9] * generatorMultipliers[9])**generatorExponent[9]))/60;
   return contribution;
 }
 // update currency/generator functions
@@ -505,16 +505,16 @@ function updateDisplay(){
   $("#buyDecagonButton").text("Cost: " + toENotation(generatorCurrentCostArray[9]));
 
   //UPDATE GAIN PS FOR EACH GENERATOR POINTS->DECS
-  $("#currencyPS").text("Cardinals/Sec: " + (toENotation(currencyGainPerUpdate()*60)));
-  $("#pointsPS").text("Points/Sec: " + (toENotation(pointGainPerUpdate()*60)));
-  $("#linesPS").text("Lines/Sec: " + (toENotation(lineGainPerUpdate()*60)));
-  $("#trianglePS").text("Triangles/Sec: " + (toENotation(triangleGainPerUpdate()*60)));
-  $("#squarePS").text("Squares/Sec: " + (toENotation(squareGainPerUpdate()*60)));
-  $("#pentagonPS").text("Pentagons/Sec: " + (toENotation(pentagonGainPerUpdate()*60)));
-  $("#hexagonPS").text("Hexagons/Sec: " + (toENotation(hexagonGainPerUpdate()*60)));
-  $("#heptagonPS").text("Heptagons/Sec: " + (toENotation(heptagonGainPerUpdate()*60)));
-  $("#octagonPS").text("Octagons/Sec: " + (toENotation(octagonGainPerUpdate()*60)));
-  $("#nonagonPS").text("Nonagons/Sec: " + (toENotation(nonagonGainPerUpdate()*60)));
+  //$("#currencyPS").text("Cardinals/Sec: " + (toENotation(currencyGainPerUpdate()*60)));
+  //$("#pointsPS").text("Points/Sec: " + (toENotation(pointGainPerUpdate()*60)));
+  //$("#linesPS").text("Lines/Sec: " + (toENotation(lineGainPerUpdate()*60)));
+  //$("#trianglePS").text("Triangles/Sec: " + (toENotation(triangleGainPerUpdate()*60)));
+  //$("#squarePS").text("Squares/Sec: " + (toENotation(squareGainPerUpdate()*60)));
+  //$("#pentagonPS").text("Pentagons/Sec: " + (toENotation(pentagonGainPerUpdate()*60)));
+  //$("#hexagonPS").text("Hexagons/Sec: " + (toENotation(hexagonGainPerUpdate()*60)));
+  //$("#heptagonPS").text("Heptagons/Sec: " + (toENotation(heptagonGainPerUpdate()*60)));
+  //$("#octagonPS").text("Octagons/Sec: " + (toENotation(octagonGainPerUpdate()*60)));
+  //$("#nonagonPS").text("Nonagons/Sec: " + (toENotation(nonagonGainPerUpdate()*60)));
 
   //POST PRESTIGE GENERATION
 
@@ -562,15 +562,6 @@ function updateDisplay(){
 }
 
 function update(){ // update all aspects of the game
-  updateNonagons(); // update shapes top to bottom because nonagons give octagons p/s, octagons give heptagons p/s etc
-  updateOctagons();
-  updateHeptagons();
-  updateHexagons();
-  updatePentagons();
-  updateSquares();
-  updateTriangles();
-  updateLines();
-  updatePoints();
   updateCurrency();
 }
 
