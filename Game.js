@@ -1,6 +1,6 @@
 var generatorArray =[0,0,0,0,0,0,0,0,0,0]; // Start with 0 of each initial generator
 var generatorBaseCostArray =[1,1,1,1,1,1,1,1,1,1];
-var generatorCurrentCostArray =[1,3e3,1e9,1e16,1e25,1e36,1e49,1e64,1e81,1e100];
+var generatorCurrentCostArray =[1,50,1e9,1e16,1e25,1e36,1e49,1e64,1e81,1e100];
 var generatorBaseContributionArray = [1,5,25,125,625,3125,15625,78125,3906256,1953125]
 var generatorMultipliers = [1,1,1,1,1,1,1,1,1,1]; //
 var generatorExponent = [1,1,1,1,1,1,1,1,1,1];
@@ -505,16 +505,16 @@ function updateDisplay(){
   $("#buyDecagonButton").text("Cost: " + toENotation(generatorCurrentCostArray[9]));
 
   //UPDATE GAIN PS FOR EACH GENERATOR POINTS->DECS
-  //$("#currencyPS").text("Cardinals/Sec: " + (toENotation(currencyGainPerUpdate()*60)));
-  //$("#pointsPS").text("Points/Sec: " + (toENotation(pointGainPerUpdate()*60)));
-  //$("#linesPS").text("Lines/Sec: " + (toENotation(lineGainPerUpdate()*60)));
-  //$("#trianglePS").text("Triangles/Sec: " + (toENotation(triangleGainPerUpdate()*60)));
-  //$("#squarePS").text("Squares/Sec: " + (toENotation(squareGainPerUpdate()*60)));
-  //$("#pentagonPS").text("Pentagons/Sec: " + (toENotation(pentagonGainPerUpdate()*60)));
-  //$("#hexagonPS").text("Hexagons/Sec: " + (toENotation(hexagonGainPerUpdate()*60)));
-  //$("#heptagonPS").text("Heptagons/Sec: " + (toENotation(heptagonGainPerUpdate()*60)));
-  //$("#octagonPS").text("Octagons/Sec: " + (toENotation(octagonGainPerUpdate()*60)));
-  //$("#nonagonPS").text("Nonagons/Sec: " + (toENotation(nonagonGainPerUpdate()*60)));
+  $("#pointContri").text("Cardinals/Sec: " + (toENotation(pointContributionPerUpdate()*60)));
+  $("#lineContri").text("Cardinals/Sec: " + (toENotation(lineContributionPerUpdate()*60)));
+  $("#triangleContri").text("Cardinals/Sec: " + (toENotation(triangleContributionPerUpdate()*60)));
+  $("#squareContri").text("Cardinals/Sec: " + (toENotation(squareContributionPerUpdate()*60)));
+  $("#pentagonContri").text("Cardinals/Sec: " + (toENotation(pentagonContriubtionPerUpdate()*60)));
+  $("#hexagonContri").text("Cardinals/Sec: " + (toENotation(hexagonContributionPerUpdate()*60)));
+  $("#heptagonContri").text("Cardinals/Sec: " + (toENotation(heptagonContributionPerUpdate()*60)));
+  $("#octagonContri").text("Cardinals/Sec: " + (toENotation(octagonContributionPerUpdate()*60)));
+  $("#nonagonContri").text("Cardinals/Sec: " + (toENotation(nonagonContributionPerUpdate()*60)));
+  $("#decagonContri").text("Cardinals/Sec: " + (toENotation(decagonContributionPerUpdate()*60)));
 
   //POST PRESTIGE GENERATION
 
