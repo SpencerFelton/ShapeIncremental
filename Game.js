@@ -1,6 +1,7 @@
 var generatorArray =[0,0,0,0,0,0,0,0,0,0]; // Start with 0 of each initial generator
 var generatorBaseCostArray =[1,1,1,1,1,1,1,1,1,1];
 var generatorCurrentCostArray =[1,3e3,1e9,1e16,1e25,1e36,1e49,1e64,1e81,1e100];
+var generatorBaseContributionArray = [1,5,25,125,625,3125,15625,78125,3906256,1953125]
 var generatorMultipliers = [1,1,1,1,1,1,1,1,1,1]; //
 var generatorExponent = [1,1,1,1,1,1,1,1,1,1];
 
@@ -38,57 +39,62 @@ function buyGenerator(i){ //Try to buy generator according to resourcesArray
     console.log("you can't afford that!");
   }
 }
+
+
 // Gain per update functions - gain dependent on the generator above them, or i+1
 function currencyGainPerUpdate(){ // game runs at 60 updates per second, so to get gain per update we divide point gains by 60 and any upgrades
-  var gain = (generatorArray[0]*totalMultiplier(generatorMultipliers[0], generatorExponent[0]))/60;
-  return gain;
+  return pointContributionPerUpdate() + lineContributionPerUpdate() + triangleContributionPerUpdate() + squareContributionPerUpdate() + pentagonContriubtionPerUpdate() + hexagonContributionPerUpdate() + heptagonContributionPerUpdate() + octagonContributionPerUpdate() + nonagonContributionPerUpdate() + decagonContributionPerUpdate();
 }
 
-function pointGainPerUpdate(){ // points are the first tier of production, but their gain is dependent on lines, hence we check the 2nd index of the array
-  var gain = (generatorArray[1]*totalMultiplier(generatorMultipliers[1], generatorExponent[1]))/60;
-  return gain;
+function pointContributionPerUpdate(){ // points are the first tier of production, but their gain is dependent on lines, hence we check the 2nd index of the array
+  var contribution = generatorArray[0] * ((generatorBaseContributionArray[0] * generatorMultipliers[0])**generatorExponent[0]);
+  return contribution;
 }
 
-function lineGainPerUpdate(){
-  var gain = (generatorArray[2]*totalMultiplier(generatorMultipliers[2], generatorExponent[2]))/60;
-  return gain;
+function lineContributionPerUpdate(){
+  var contribution = generatorArray[1] * ((generatorBaseContributionArray[1] * generatorMultipliers[1])**generatorExponent[1]);
+  return contribution;
 }
 
-function triangleGainPerUpdate(){
-  var gain = (generatorArray[3]*totalMultiplier(generatorMultipliers[3], generatorExponent[3]))/60;
-  return gain;
+function triangleContributionPerUpdate(){
+  var contribution = generatorArray[2] * ((generatorBaseContributionArray[2] * generatorMultipliers[2])**generatorExponent[2]);
+  return contribution;
 }
 
-function squareGainPerUpdate(){
-  var gain = (generatorArray[4]*totalMultiplier(generatorMultipliers[4], generatorExponent[4]))/60;
-  return gain;
+function squareContributionPerUpdate(){
+  var contribution = generatorArray[3] * ((generatorBaseContributionArray[3] * generatorMultipliers[3])**generatorExponent[3]);
+  return contribution;
 }
 
-function pentagonGainPerUpdate(){
-  var gain = (generatorArray[5]*totalMultiplier(generatorMultipliers[5], generatorExponent[5]))/60;
-  return gain;
+function pentagonContriubtionPerUpdate(){
+  var contribution = generatorArray[4] * ((generatorBaseContributionArray[4] * generatorMultipliers[4])**generatorExponent[4]);
+  return contribution;
 }
 
-function hexagonGainPerUpdate(){
-  var gain = (generatorArray[6]*totalMultiplier(generatorMultipliers[6], generatorExponent[6]))/60;
-  return gain;
+function hexagonContributionPerUpdate(){
+  var contribution = generatorArray[5] * ((generatorBaseContributionArray[5] * generatorMultipliers[5])**generatorExponent[5]);
+  return contribution;
 }
 
-function heptagonGainPerUpdate(){
-  var gain = (generatorArray[7]*totalMultiplier(generatorMultipliers[7], generatorExponent[7]))/60;
-  return gain;
+function heptagonContributionPerUpdate(){
+  var contribution = generatorArray[6] * ((generatorBaseContributionArray[6] * generatorMultipliers[6])**generatorExponent[6]);
+  return contribution;
 }
 
-function octagonGainPerUpdate(){
-  var gain = (generatorArray[8]*totalMultiplier(generatorMultipliers[8], generatorExponent[8]))/60;
-  return gain;
+function octagonContributionPerUpdate(){
+  var contribution = generatorArray[7] * ((generatorBaseContributionArray[7] * generatorMultipliers[7])**generatorExponent[7]);
+  return contribution;
 }
 
-function nonagonGainPerUpdate(){
-  var gain = (generatorArray[9]*totalMultiplier(generatorMultipliers[9], generatorExponent[9]))/60;
-  return gain;
+function nonagonContributionPerUpdate(){
+  var contribution = generatorArray[8] * ((generatorBaseContributionArray[8] * generatorMultipliers[8])**generatorExponent[0]);
+  return contribution;
 }
 
+function decagonContributionPerUpdate(){
+  var contribution = generatorArray[0] * ((generatorBaseContributionArray[9] * generatorMultipliers[9])**generatorExponent[9]);
+  return contribution;
+}
 // update currency/generator functions
 function updateCurrency(){ // points generate currency - calculate and update html every update
   var gain = currencyGainPerUpdate();
