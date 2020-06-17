@@ -1,6 +1,6 @@
 var generatorArray =[0,0,0,0,0,0,0,0,0,0]; // Start with 0 of each initial generator
 var generatorBaseCostArray =[1,1,1,1,1,1,1,1,1,1];
-var generatorCurrentCostArray =[1,50,1e9,1e16,1e25,1e36,1e49,1e64,1e81,1e100];
+var generatorCurrentCostArray =[1,50,2500,125000,6250000,312500000,15625000000,781250000000,39062500000000,1953125000000000];
 var generatorBaseContributionArray = [1,5,25,125,625,3125,15625,78125,3906256,1953125]
 var generatorMultipliers = [1,1,1,1,1,1,1,1,1,1]; //
 var generatorExponent = [1,1,1,1,1,1,1,1,1,1];
@@ -477,6 +477,44 @@ function checkUpgrades(){
 
 }
 
+function percentageProduction(i){
+  if (currencyGainPerUpdate() == 0){
+    return 0
+  }
+  switch (i){
+    case 0:
+      return ((pointContributionPerUpdate()/currencyGainPerUpdate()) * 100).toPrecision(3);
+      break;
+    case 1:
+      return ((lineContributionPerUpdate()/currencyGainPerUpdate()) * 100).toPrecision(3);
+      break;
+    case 2:
+      return ((triangleContributionPerUpdate()/currencyGainPerUpdate()) * 100).toPrecision(3);
+      break;
+    case 3:
+      return ((squareContributionPerUpdate()/currencyGainPerUpdate()) * 100).toPrecision(3);
+      break;
+    case 4:
+      return ((pentagonContriubtionPerUpdate()/currencyGainPerUpdate()) * 100).toPrecision(3);
+      break;
+    case 5:
+      return ((hexagonContributionPerUpdate()/currencyGainPerUpdate()) * 100).toPrecision(3);
+      break;
+    case 6:
+      return ((heptagonContributionPerUpdate()/currencyGainPerUpdate()) * 100).toPrecision(3);
+      break;
+    case 7:
+      return ((octagonContributionPerUpdate()/currencyGainPerUpdate()) * 100).toPrecision(3);
+      break;
+    case 8:
+      return ((nonagonContributionPerUpdate()/currencyGainPerUpdate()) * 100).toPrecision(3);
+      break;
+    case 9:
+      return ((decagonContributionPerUpdate()/currencyGainPerUpdate()) * 100).toPrecision(3);
+      break;
+  }
+}
+
 function updateDisplay(){
   //PRE PRESTIGE GENERATION
   //UPDATE TOTAL NUMBER OF EACH GENERATOR DECS->POINTS
@@ -505,16 +543,16 @@ function updateDisplay(){
   $("#buyDecagonButton").text("Cost: " + toENotation(generatorCurrentCostArray[9]));
 
   //UPDATE GAIN PS FOR EACH GENERATOR POINTS->DECS
-  $("#pointContri").text("Cardinals/Sec: " + (toENotation(pointContributionPerUpdate()*60)));
-  $("#lineContri").text("Cardinals/Sec: " + (toENotation(lineContributionPerUpdate()*60)));
-  $("#triangleContri").text("Cardinals/Sec: " + (toENotation(triangleContributionPerUpdate()*60)));
-  $("#squareContri").text("Cardinals/Sec: " + (toENotation(squareContributionPerUpdate()*60)));
-  $("#pentagonContri").text("Cardinals/Sec: " + (toENotation(pentagonContriubtionPerUpdate()*60)));
-  $("#hexagonContri").text("Cardinals/Sec: " + (toENotation(hexagonContributionPerUpdate()*60)));
-  $("#heptagonContri").text("Cardinals/Sec: " + (toENotation(heptagonContributionPerUpdate()*60)));
-  $("#octagonContri").text("Cardinals/Sec: " + (toENotation(octagonContributionPerUpdate()*60)));
-  $("#nonagonContri").text("Cardinals/Sec: " + (toENotation(nonagonContributionPerUpdate()*60)));
-  $("#decagonContri").text("Cardinals/Sec: " + (toENotation(decagonContributionPerUpdate()*60)));
+  $("#pointContri").text("Cardinals/Sec: " + (toENotation(pointContributionPerUpdate()*60)) + " (" + percentageProduction(0) + "%)");
+  $("#lineContri").text("Cardinals/Sec: " + (toENotation(lineContributionPerUpdate()*60)) + " (" + percentageProduction(1) + "%)");
+  $("#triangleContri").text("Cardinals/Sec: " + (toENotation(triangleContributionPerUpdate()*60)) + " (" + percentageProduction(2) + "%)");
+  $("#squareContri").text("Cardinals/Sec: " + (toENotation(squareContributionPerUpdate()*60)) + " (" + percentageProduction(3) + "%)");
+  $("#pentagonContri").text("Cardinals/Sec: " + (toENotation(pentagonContriubtionPerUpdate()*60)) + " (" + percentageProduction(4) + "%)");
+  $("#hexagonContri").text("Cardinals/Sec: " + (toENotation(hexagonContributionPerUpdate()*60)) + " (" + percentageProduction(5) + "%)");
+  $("#heptagonContri").text("Cardinals/Sec: " + (toENotation(heptagonContributionPerUpdate()*60)) + " (" + percentageProduction(6) + "%)");
+  $("#octagonContri").text("Cardinals/Sec: " + (toENotation(octagonContributionPerUpdate()*60)) + " (" + percentageProduction(7) + "%)");
+  $("#nonagonContri").text("Cardinals/Sec: " + (toENotation(nonagonContributionPerUpdate()*60)) + " (" + percentageProduction(8) + "%)");
+  $("#decagonContri").text("Cardinals/Sec: " + (toENotation(decagonContributionPerUpdate()*60)) + " (" + percentageProduction(9) + "%)");
 
   //POST PRESTIGE GENERATION
 
