@@ -55,4 +55,24 @@ $(document).ready(function(){
     jQuerySelector.text("PURCHASED"); // change the button text to PURCHASED
     jQuerySelector.prop("disabled", true); // diable the button so it cant be clicked again
   }
+
+  $("#pointUpgrade1").hover(function(){
+    $(this).attr("title", pointTree.desc);
+  });
+  $("#pointUpgrade1").click(function(){
+    if(playerCurrency >= 50){
+      playerCurrency -= 50;
+    }
+    onUpgradePurchase($(this));
+  });
+
+  $("#pointUpgrade2").hover(function(){
+    $(this).attr("title", pointTree.desc);
+  });
+  $("#pointUpgrade2").click(function(){
+    if(playerCurrency >= 50){
+      playerCurrency -= 50;
+    }
+    onUpgradePurchase($(this));
+  });
 });
