@@ -5,16 +5,7 @@ var generatorBaseContributionArray = [1,5,25,125,625,3125,15625,78125,3906256,19
 var generatorMultipliers = [1,1,1,1,1,1,1,1,1,1]; //
 var generatorExponent = [1,1,1,1,1,1,1,1,1,1];
 
-var pointUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false]; // index corresponding to number of upgrade, [0] = upgrade1 etc
-var lineUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false];
-var triangleUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false];
-var squareUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false];
-var pentagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false];
-var hexagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false];
-var heptagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false];
-var octagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false];
-var nonagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false];
-var decagonUpgradesPurchased = [false, false, false, false, false, false, false, false, false, false];
+
 
 var playerCurrency = 1e0;
 var playerPrestigeCurrency = 0;

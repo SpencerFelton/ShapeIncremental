@@ -56,6 +56,10 @@ $(document).ready(function(){
     jQuerySelector.prop("disabled", true); // diable the button so it cant be clicked again
   }
 
+  function changeElementColour(idString, colour){
+    $("#" + idString).css("background-color", colour);
+  }
+
   $("#pointUpgrade1").hover(function(){
     $(this).attr("title", pointTree.desc);
   });
@@ -64,6 +68,7 @@ $(document).ready(function(){
       playerCurrency -= 50;
     }
     onUpgradePurchase($(this));
+    changeElementColour("pointUpgrade2", "yellow");
   });
 
   $("#pointUpgrade2").hover(function(){
@@ -74,5 +79,6 @@ $(document).ready(function(){
       playerCurrency -= 50;
     }
     onUpgradePurchase($(this));
+    changeElementColour("pointUpgrade3", "yellow");
   });
 });
