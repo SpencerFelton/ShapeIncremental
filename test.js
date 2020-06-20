@@ -53,7 +53,7 @@ $(document).ready(function(){
     jQuerySelector.css("background-color", "green"); //Change the background colour to green
     jQuerySelector.css("color", "black"); // change button text colour to black
     jQuerySelector.text("PURCHASED"); // change the button text to PURCHASED
-    jQuerySelector.prop("disabled", true); // diable the button so it cant be clicked again
+    jQuerySelector.css("pointer-events", "none"); // diable the button so it cant be clicked again
   }
 
   function changeElementColour(idString, colour){
@@ -69,6 +69,7 @@ $(document).ready(function(){
     }
     onUpgradePurchase($(this));
     changeElementColour("pointUpgrade2", "yellow");
+    $("#pointUpgrade2").css("pointer-events", "auto");
   });
 
   $("#pointUpgrade2").hover(function(){
