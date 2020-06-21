@@ -66,10 +66,11 @@ $(document).ready(function(){
   $("#pointUpgrade1").click(function(){
     if(playerCurrency >= 50){
       playerCurrency -= 50;
+      onUpgradePurchase($(this));
+      changeElementColour("pointUpgrade2", "yellow");
+      $("#pointUpgrade2").css("pointer-events", "auto");
+      generatorMultipliers[0] *= 2;
     }
-    onUpgradePurchase($(this));
-    changeElementColour("pointUpgrade2", "yellow");
-    $("#pointUpgrade2").css("pointer-events", "auto");
   });
 
   $("#pointUpgrade2").hover(function(){
@@ -78,8 +79,9 @@ $(document).ready(function(){
   $("#pointUpgrade2").click(function(){
     if(playerCurrency >= 50){
       playerCurrency -= 50;
+      onUpgradePurchase($(this));
+      changeElementColour("pointUpgrade3", "yellow");
+      generatorMultipliers *= 2;
     }
-    onUpgradePurchase($(this));
-    changeElementColour("pointUpgrade3", "yellow");
   });
 });
