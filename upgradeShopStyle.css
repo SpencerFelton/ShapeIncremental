@@ -1,6 +1,7 @@
 .grid-container {
   display: grid;
-  grid-template: repeat(9, 1fr) / repeat(9, 1fr);
+  grid-template: repeat(6, 1fr) / repeat(9, 1fr);
+  width: 1116px;
 }
 
 .grid-item {

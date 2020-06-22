@@ -64,24 +64,135 @@ $(document).ready(function(){
     $(this).attr("title", pointTree.desc);
   });
   $("#pointUpgrade1").click(function(){
-    if(playerCurrency >= 50){
+    if(playerCurrency >= 50){ // currency Check
       playerCurrency -= 50;
-      onUpgradePurchase($(this));
-      changeElementColour("pointUpgrade2", "yellow");
-      $("#pointUpgrade2").css("pointer-events", "auto");
-      generatorMultipliers[0] *= 2;
+      onUpgradePurchase($(this)); //change colour, disable click events
+      changeElementColour("pointUpgrade2", "yellow"); // channge colour of next upgrade
+      $("#pointUpgrade2").css("pointer-events", "auto"); // enable next upgrade
+      generatorMultipliers[0] *= 2; // upgrade effect
     }
   });
 
   $("#pointUpgrade2").hover(function(){
-    $(this).attr("title", pointTree.desc);
+    $(this).attr("title", pointTree.desc); // pointTree.desc is placeholder
   });
   $("#pointUpgrade2").click(function(){
     if(playerCurrency >= 50){
       playerCurrency -= 50;
       onUpgradePurchase($(this));
       changeElementColour("pointUpgrade3", "yellow");
-      generatorMultipliers *= 2;
+      $('#pointUpgrade3').css("pointer-events", "auto");
+      generatorMultipliers[0] *= 2;
     }
   });
+
+  $("#pointUpgrade3").hover(function(){
+    $(this).attr("title", pointTree.desc);
+  });
+  $("#pointUpgrade3").click(function(){
+    if(playerCurrency >= 50){
+      playerCurrency -= 50;
+      onUpgradePurchase($(this));
+      changeElementColour("pointUpgrade4", "yellow"); // upgrade paths become available
+      changeElementColour("pointUpgrade7", "yellow");
+
+      $("#pointUpgrade4").css("pointer-events", "auto");
+      $("#pointUpgrade7").css("pointer-events", "auto");
+      generatorMultipliers[0] *= 2;
+    }
+  });
+
+  $("#pointUpgrade4").hover(function(){
+    $(this).attr("title", pointTree.desc);
+  });
+  $("#pointUpgrade4").click(function(){
+    if(playerCurrency >= 50){
+      playerCurrency -= 50;
+      onUpgradePurchase($(this));
+      changeElementColour("pointUpgrade5", "yellow");
+      $("#pointUpgrade5").css("pointer-events", "auto");
+
+      changeElementColour("pointUpgrade7", "grey"); // change colour of the other branch to show it's unavailable
+      changeElementColour("pointUpgrade8", "grey");
+      changeElementColour("pointUpgrade9", "grey");
+
+      $("#pointUpgrade7").css("pointer-events", "none"); // disable the grid area from being clicked
+      $("#pointUpgrade8").css("pointer-events", "none");
+      $("#pointUpgrade9").css("pointer-events", "none");
+      generatorMultipliers[0] *= 2;
+    }
+  });
+
+  $("#pointUpgrade5").hover(function(){
+    $(this).attr("title", pointTree.desc);
+  });
+  $("#pointUpgrade5").click(function(){
+    if(playerCurrency >= 50){
+      playerCurrency -= 50;
+      onUpgradePurchase($(this));
+      changeElementColour("pointUpgrade6", "yellow");
+      $("#pointUpgrade6").css("pointer-events", "auto");
+      generatorMultipliers[0] *= 2;
+    }
+  });
+
+  $("#pointUpgrade6").hover(function(){
+    $(this).attr("title", pointTree.desc);
+  });
+  $("#pointUpgrade6").click(function(){ // last upgrade on this branch
+    if(playerCurrency >= 50){
+      playerCurrency -= 50;
+      onUpgradePurchase($(this));
+      generatorMultipliers[0] *= 2;
+    }
+  });
+
+  $("#pointUpgrade7").hover(function(){
+    $(this).attr("title", pointTree.desc);
+  });
+  $("#pointUpgrade7").click(function(){ // 2nd branch of the upgrade tree
+    if(playerCurrency >= 50){
+      playerCurrency -= 50;
+      onUpgradePurchase($(this));
+      changeElementColour("pointUpgrade8", "yellow");
+      $("#pointUpgrade8").css("pointer-events", "auto");
+
+      changeElementColour("pointUpgrade4", "grey"); // change colour of the other branch to show it's unavailable
+      changeElementColour("pointUpgrade5", "grey");
+      changeElementColour("pointUpgrade6", "grey");
+
+      $("#pointUpgrade4").css("pointer-events", "none"); // disable the grid area from being clicked
+      $("#pointUpgrade5").css("pointer-events", "none");
+      $("#pointUpgrade6").css("pointer-events", "none");
+      generatorMultipliers[0] *= 2;
+    }
+  });
+
+  $("#pointUpgrade8").hover(function(){
+    $(this).attr("title", pointTree.desc);
+  });
+  $("#pointUpgrade8").click(function(){
+    if(playerCurrency >= 50){
+      playerCurrency -= 50;
+      onUpgradePurchase($(this));
+      changeElementColour("pointUpgrade9", "yellow");
+      $("#pointUpgrade9").css("pointer-events", "auto");
+      generatorMultipliers[0] *= 2;
+    }
+  });
+
+  $("#pointUpgrade9").hover(function(){
+    $(this).attr("title", pointTree.desc);
+  });
+  $("#pointUpgrade9").click(function(){ // last upgrade on this branch
+    if(playerCurrency >= 50){
+      playerCurrency -= 50;
+      onUpgradePurchase($(this));
+      generatorMultipliers[0] *= 2;
+    }
+  });
+
+  $(".grid-item").click(function(){ //test function
+    console.log("still active");
+  })
 });
