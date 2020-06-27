@@ -192,6 +192,7 @@ $(document).ready(function(){
     }
   });
 
+  //lineUpgrade events
   $("#lineUpgrade1").hover(function(){
     $(this).attr("title", pointTree.desc);
   });
@@ -324,7 +325,7 @@ $(document).ready(function(){
     }
   });
 
-  //triangle upgrades
+  //triangle upgrade events
   $("#triangleUpgrade1").hover(function(){
     $(this).attr("title", pointTree.desc);
   });
@@ -457,7 +458,7 @@ $(document).ready(function(){
     }
   });
 
-  //square upgrades
+  //square upgrade events
   $("#squareUpgrade1").hover(function(){
     $(this).attr("title", pointTree.desc);
   });
