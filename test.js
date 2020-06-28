@@ -591,6 +591,139 @@ $(document).ready(function(){
     }
   });
 
+  //pentagon upgrade events
+  $("#pentagonUpgrade1").hover(function(){
+    $(this).attr("title", pointTree.desc);
+  });
+  $("#pentagonUpgrade1").click(function(){
+    if(playerCurrency >= 50){ // currency Check
+      playerCurrency -= 50;
+      onUpgradePurchase($(this)); //change colour, disable click events
+      changeElementColour("pentagonUpgrade2", "yellow"); // channge colour of next upgrade
+      $("#pentagonUpgrade2").css("pointer-events", "auto"); // enable next upgrade
+      generatorMultipliers[1] *= 2; // upgrade effect
+    }
+  });
+
+  $("#pentagonUpgrade2").hover(function(){
+    $(this).attr("title", pointTree.desc); // pointTree.desc is placeholder
+  });
+  $("#pentagonUpgrade2").click(function(){
+    if(playerCurrency >= 50){
+      playerCurrency -= 50;
+      onUpgradePurchase($(this));
+      changeElementColour("pentagonUpgrade3", "yellow");
+      $('#pentagonUpgrade3').css("pointer-events", "auto");
+      generatorMultipliers[1] *= 2;
+    }
+  });
+
+  $("#pentagonUpgrade3").hover(function(){
+    $(this).attr("title", pointTree.desc);
+  });
+  $("#pentagonUpgrade3").click(function(){
+    if(playerCurrency >= 50){
+      playerCurrency -= 50;
+      onUpgradePurchase($(this));
+      changeElementColour("pentagonUpgrade4", "yellow"); // upgrade paths become available
+      changeElementColour("pentagonUpgrade7", "yellow");
+
+      $("#pentagonUpgrade4").css("pointer-events", "auto");
+      $("#pentagonUpgrade7").css("pointer-events", "auto");
+      generatorMultipliers[1] *= 2;
+    }
+  });
+
+  $("#pentagonUpgrade4").hover(function(){
+    $(this).attr("title", pointTree.desc);
+  });
+  $("#pentagonUpgrade4").click(function(){
+    if(playerCurrency >= 50){
+      playerCurrency -= 50;
+      onUpgradePurchase($(this));
+      changeElementColour("pentagonUpgrade5", "yellow");
+      $("#pentagonUpgrade5").css("pointer-events", "auto");
+
+      changeElementColour("pentagonUpgrade7", "grey"); // change colour of the other branch to show it's unavailable
+      changeElementColour("pentagonUpgrade8", "grey");
+      changeElementColour("pentagonUpgrade9", "grey");
+
+      $("#pentagonUpgrade7").css("pointer-events", "none"); // disable the grid area from being clicked
+      $("#pentagonUpgrade8").css("pointer-events", "none");
+      $("#pentagonUpgrade9").css("pointer-events", "none");
+      generatorMultipliers[1] *= 2;
+    }
+  });
+
+  $("#pentagonUpgrade5").hover(function(){
+    $(this).attr("title", pointTree.desc);
+  });
+  $("#pentagonUpgrade5").click(function(){
+    if(playerCurrency >= 50){
+      playerCurrency -= 50;
+      onUpgradePurchase($(this));
+      changeElementColour("pentagonUpgrade6", "yellow");
+      $("#pentagonUpgrade6").css("pointer-events", "auto");
+      generatorMultipliers[1] *= 2;
+    }
+  });
+
+  $("#pentagonUpgrade6").hover(function(){
+    $(this).attr("title", pointTree.desc);
+  });
+  $("#pentagonUpgrade6").click(function(){ // last upgrade on this branch
+    if(playerCurrency >= 50){
+      playerCurrency -= 50;
+      onUpgradePurchase($(this));
+      generatorMultipliers[1] *= 2;
+    }
+  });
+
+  $("#pentagonUpgrade7").hover(function(){
+    $(this).attr("title", pointTree.desc);
+  });
+  $("#pentagonUpgrade7").click(function(){ // 2nd branch of the upgrade tree
+    if(playerCurrency >= 50){
+      playerCurrency -= 50;
+      onUpgradePurchase($(this));
+      changeElementColour("pentagonUpgrade8", "yellow");
+      $("#pentagonUpgrade8").css("pointer-events", "auto");
+
+      changeElementColour("pentagonUpgrade4", "grey"); // change colour of the other branch to show it's unavailable
+      changeElementColour("pentagonUpgrade5", "grey");
+      changeElementColour("pentagonUpgrade6", "grey");
+
+      $("#pentagonUpgrade4").css("pointer-events", "none"); // disable the grid area from being clicked
+      $("#pentagonUpgrade5").css("pointer-events", "none");
+      $("#pentagonUpgrade6").css("pointer-events", "none");
+      generatorMultipliers[1] *= 2;
+    }
+  });
+
+  $("#pentagonUpgrade8").hover(function(){
+    $(this).attr("title", pointTree.desc);
+  });
+  $("#pentagonUpgrade8").click(function(){
+    if(playerCurrency >= 50){
+      playerCurrency -= 50;
+      onUpgradePurchase($(this));
+      changeElementColour("pentagonUpgrade9", "yellow");
+      $("#pentagonUpgrade9").css("pointer-events", "auto");
+      generatorMultipliers[1] *= 2;
+    }
+  });
+
+  $("#pentagonUpgrade9").hover(function(){
+    $(this).attr("title", pointTree.desc);
+  });
+  $("#pentagonUpgrade9").click(function(){ // last upgrade on this branch
+    if(playerCurrency >= 50){
+      playerCurrency -= 50;
+      onUpgradePurchase($(this));
+      generatorMultipliers[1] *= 2;
+    }
+  });
+
   $(".grid-item").click(function(){ //test function
     console.log("still active");
   })
