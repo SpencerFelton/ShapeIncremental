@@ -436,37 +436,6 @@ function showRow1Upgrades(generatorArray){
   }
 }
 
-function checkUpgrades(){
-
-  showRow1Upgrades(generatorArray); // all generator row 1 upgrades
-
-  if(pointUpgradesPurchased[4] == true){ // only show the 2nd row after the 5th upgrade has been bought
-    $("#upgradeLine2Wrapper").show();
-    checkRow2PointUpgrades(generatorArray[0]);
-  }
-
-  if(lineUpgradesPurchased[4] == true){ // show 2nd row of upgrades for lines if the final upgrade of the first row has been bought
-    $("#upgradeLine4Wrapper").show();
-    checkRow2LineUpgrades(generatorArray[1]);
-  }
-
-  if(triangleUpgradesPurchased[4] == true){ // show 2nd row of upgrades for triangles
-    $("#upgradeLine6Wrapper").show();
-    checkRow2TriangleUpgrades(generatorArray[2]);
-  }
-
-  if(squareUpgradesPurchased[4] == true){
-    $("#upgradeLine8Wrapper").show();
-    checkRow2SquareUpgrades(generatorArray[3]);
-  }
-
-  if(pentagonUpgradesPurchased[4] == true){
-    $("#upgradeLine10Wrapper").show();
-    checkRow2PentagonUpgrades(generatorArray[4]);
-  }
-
-
-}
 
 function percentageProduction(i){
   if (currencyGainPerUpdate() == 0){
@@ -587,7 +556,6 @@ function updateDisplay(){
   if(generatorArray[8] >= 50){
     $("#decagonWrapper").show();
   }
-  checkUpgrades();
 }
 
 function update(){ // update all aspects of the game

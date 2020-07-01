@@ -74,7 +74,7 @@ $(document).ready(function(){
   });
 
   $("#pointUpgrade2").hover(function(){
-    $(this).attr("title", pointTree.desc); // pointTree.desc is placeholder
+    $(this).attr("title", pointTree.child.desc); // pointTree.desc is placeholder
   });
   $("#pointUpgrade2").click(function(){
     if(playerCurrency >= 50){
@@ -87,7 +87,7 @@ $(document).ready(function(){
   });
 
   $("#pointUpgrade3").hover(function(){
-    $(this).attr("title", pointTree.desc);
+    $(this).attr("title", pointTree.child.child.desc);
   });
   $("#pointUpgrade3").click(function(){
     if(playerCurrency >= 50){
@@ -103,7 +103,7 @@ $(document).ready(function(){
   });
 
   $("#pointUpgrade4").hover(function(){
-    $(this).attr("title", pointTree.desc);
+    $(this).attr("title", pointTree.child.child.child[0].desc);
   });
   $("#pointUpgrade4").click(function(){
     if(playerCurrency >= 50){
@@ -124,7 +124,7 @@ $(document).ready(function(){
   });
 
   $("#pointUpgrade5").hover(function(){
-    $(this).attr("title", pointTree.desc);
+    $(this).attr("title", pointTree.child.child.child[0].child.desc);
   });
   $("#pointUpgrade5").click(function(){
     if(playerCurrency >= 50){
@@ -137,7 +137,7 @@ $(document).ready(function(){
   });
 
   $("#pointUpgrade6").hover(function(){
-    $(this).attr("title", pointTree.desc);
+    $(this).attr("title", pointTree.child.child.child[0].child.child.desc);
   });
   $("#pointUpgrade6").click(function(){ // last upgrade on this branch
     if(playerCurrency >= 50){
@@ -148,7 +148,7 @@ $(document).ready(function(){
   });
 
   $("#pointUpgrade7").hover(function(){
-    $(this).attr("title", pointTree.desc);
+    $(this).attr("title", pointTree.child.child.child[1].desc);
   });
   $("#pointUpgrade7").click(function(){ // 2nd branch of the upgrade tree
     if(playerCurrency >= 50){
@@ -169,7 +169,7 @@ $(document).ready(function(){
   });
 
   $("#pointUpgrade8").hover(function(){
-    $(this).attr("title", pointTree.desc);
+    $(this).attr("title", pointTree.child.child.child[1].child.desc);
   });
   $("#pointUpgrade8").click(function(){
     if(playerCurrency >= 50){
@@ -182,7 +182,7 @@ $(document).ready(function(){
   });
 
   $("#pointUpgrade9").hover(function(){
-    $(this).attr("title", pointTree.desc);
+    $(this).attr("title", pointTree.child.child.child[1].child.child.desc);
   });
   $("#pointUpgrade9").click(function(){ // last upgrade on this branch
     if(playerCurrency >= 50){
