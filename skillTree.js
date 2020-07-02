@@ -17,6 +17,9 @@ var pointTree = {id:"pointUpgrade1", name:"node1", parent:{}, cost: 50, desc: "P
 }};
 
 function searchTreeForID(id, tree, savedSpot){
+  if(tree == null){
+    return null;
+  }
   if(tree.id == id){
     return tree;
   }
@@ -33,5 +36,4 @@ function searchTreeForID(id, tree, savedSpot){
   if(tree.id != id){
     return searchTreeForID(id, tree.child, savedSpot);
   }
-  return null;
 }
