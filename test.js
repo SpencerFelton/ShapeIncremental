@@ -99,10 +99,23 @@ $(document).ready(function(){
     }
   }
 
+  function setAllCosts(){
+    var allUpgrades = $(".grid-item-upgrade");
+
+    for(var i=0; i<90; i++){
+      var upgradeID = allUpgrades[i].id;
+      var upgradeTree = getUpgradeTree(upgradeID);
+      var upgradeDesc = searchTreeForID(upgradeID, upgradeTree);
+      $("#"+upgradeID).html(upgradeDesc.cost);
+    }
+  }
+
+  setAllCosts();
+
   $(".grid-item-upgrade").hover(function(){
     var upgradeID = $(this).attr("id");
 
-    upgradeTree = getUpgradeTree(upgradeID); //returns JSON object corresponding to a tree of upgrades
+    var upgradeTree = getUpgradeTree(upgradeID); //returns JSON object corresponding to a tree of upgrades
     var upgradeDesc = searchTreeForID(upgradeID, upgradeTree); // returns a single json object corresponding to a single upgrade
 
     $(this).attr("title", upgradeDesc.desc);
