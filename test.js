@@ -95,7 +95,7 @@ $(document).ready(function(){
 
   function upgradeEffect(upgradeID){
     if(upgradeID == "pointUpgrade1"){
-      alert("upgrade 1? completed it mate");
+      generatorBaseContributionArray[0] += 1;
     }
   }
 
