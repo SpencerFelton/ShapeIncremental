@@ -97,11 +97,16 @@ $(document).ready(function(){
     if(upgradeID == "pointUpgrade1"){
       generatorBaseContributionArray[0] += 1;
     }
+    if(upgradeID == "pointUpgrade2"){
+      generatorMultipliers[0] *= 2;
+    }
+    if(upgradeID == "pointUpgrade2"){
+      generatorMultipliers[0] *= 3;
+    }
   }
 
   function setAllCosts(){
     var allUpgrades = $(".grid-item-upgrade");
-
     for(var i=0; i<90; i++){
       var upgradeID = allUpgrades[i].id;
       var upgradeTree = getUpgradeTree(upgradeID);
