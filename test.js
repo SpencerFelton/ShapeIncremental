@@ -100,8 +100,11 @@ $(document).ready(function(){
     if(upgradeID == "pointUpgrade2"){
       generatorMultipliers[0] *= 2;
     }
-    if(upgradeID == "pointUpgrade2"){
+    if(upgradeID == "pointUpgrade3"){
       generatorMultipliers[0] *= 3;
+    }
+    if(upgradeID == "pointUpgrade4"){
+      pointUpgrades[3] = true;
     }
   }
 

@@ -5,6 +5,7 @@ var generatorBaseContributionArray = [1,5,25,125,625,3125,15625,78125,3906256,19
 var generatorMultipliers = [1,1,1,1,1,1,1,1,1,1]; //
 var generatorExponent = [1,1,1,1,1,1,1,1,1,1];
 
+var pointUpgrades = [false,false,false,false]
 
 
 var playerCurrency = 1e0;
@@ -37,8 +38,15 @@ function currencyGainPerUpdate(){ // game runs at 60 updates per second, so to g
   return pointContributionPerUpdate() + lineContributionPerUpdate() + triangleContributionPerUpdate() + squareContributionPerUpdate() + pentagonContriubtionPerUpdate() + hexagonContributionPerUpdate() + heptagonContributionPerUpdate() + octagonContributionPerUpdate() + nonagonContributionPerUpdate() + decagonContributionPerUpdate();
 }
 
+function gen1Up3(){
+  if(pointUpgrades[3]){
+    return generatorArray[0]*0.1;
+  }
+  return 1
+}
+
 function pointContributionPerUpdate(){ // points are the first tier of production, but their gain is dependent on lines, hence we check the 2nd index of the array
-  var contribution = (generatorArray[0] * ((generatorBaseContributionArray[0] * generatorMultipliers[0])**generatorExponent[0]))/60;
+  var contribution = (generatorArray[0] * ((generatorBaseContributionArray[0] * generatorMultipliers[0] * gen1Up3())**generatorExponent[0]))/60;
   return contribution;
 }
 
