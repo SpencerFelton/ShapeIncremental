@@ -1,9 +1,9 @@
 var pointTree = {id:"pointUpgrade1", name:"node1", parent:{}, cost: 50, desc: "Point upgrade 1: +1 to the base output of Points", child:{
   id:"pointUpgrade2", name:"node2", parent:"node1", cost: 500, desc:"Multiplies Point output by 2x", child:{
-    id:"pointUpgrade3", name:"node3", parent:"node2", cost: 5000, desc:"Increases the output of points by 3x", child:[{
-      id:"pointUpgrade4", name:"node4", parent:"node3", cost: 50000, desc:"Increases the output of points by 0.1x per Point bought", child:{
-        id:"pointUpgrade5", name:"node5", parent:"node4", cost: 500000, desc:"Increases the output of points by", child:{
-          id:"pointUpgrade6", name:"node6", parent:"node5", cost: 5000000, desc:"Increases the output of points by", child:{}
+    id:"pointUpgrade3", name:"node3", parent:"node2", cost: 5000, desc:"Multiplies Point output by 3x", child:[{
+      id:"pointUpgrade4", name:"node4", parent:"node3", cost: 50000, desc:"Multiplies Point output by 0.1x per Point bought (retroactive)", child:{
+        id:"pointUpgrade5", name:"node5", parent:"node4", cost: 500000, desc:"For each multiple of 10 points, gain 1 free generator for each tier", child:{
+          id:"pointUpgrade6", name:"node6", parent:"node5", cost: 5000000, desc:"Square Point output", child:{}
         }
       }
     },{
