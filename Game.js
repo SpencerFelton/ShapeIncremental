@@ -6,7 +6,7 @@ var generatorBaseContributionArray = [1,5,25,125,625,3125,15625,78125,3906256,19
 var generatorMultipliers = [1,1,1,1,1,1,1,1,1,1]; //
 var generatorExponent = [1,1,1,1,1,1,1,1,1,1];
 
-var pointUpgrades = [false,false,false,false]
+var pointUpgrades = [false,false,false,false,false]
 
 
 var playerCurrency = 1e0;
@@ -49,7 +49,17 @@ function gen1Up3(){
   return 1
 }
 
+function gen1Up5(){
+  if(pointUpgrades[4]){
+    var multOf10 = Math.floor(getTotalGenerators(0)/10);
+    for(var i=0; i<10; i++){
+      freeGeneratorArray[i] = multOf10;
+    }
+  }
+}
+
 function pointContributionPerUpdate(){ // points are the first tier of production, but their gain is dependent on lines, hence we check the 2nd index of the array
+  gen1Up5();
   var contribution = (getTotalGenerators(0) * ((generatorBaseContributionArray[0] * generatorMultipliers[0] * gen1Up3())**generatorExponent[0]))/60;
   return contribution;
 }
@@ -224,231 +234,6 @@ function prestige(){ // perform a prestige
   hideGeneratorVisibility();
 }
 
-function checkRow2PointUpgrades(totalPoints){ // compare total number of points against certain breakpoints, and show buttons as breakpoints are reached
-  if(totalPoints >= 100000){
-    if(pointUpgradesPurchased[5] != true){
-      $("#pointUpgrade6DescUpper").text("Big boy leagues");
-      $("#pointUpgrade6Button").text("1e15");
-      $("#pointUpgrade6DescLower").text("x10 Cardinal output of points");
-      $("#pointUpgrade6Button").prop("disabled", false);
-    };
-  };
-  if(totalPoints >= 1e7){
-    if(pointUpgradesPurchased[6] != true){
-      $("#pointUpgrade7DescUpper").text("Bigger bruh leagues");
-      $("#pointUpgrade7Button").text("1e20");
-      $("#pointUpgrade7DescLower").text("x15 Cardinal output of points");
-      $("#pointUpgrade7Button").prop("disabled", false);
-    };
-  };
-  if(totalPoints >= 1e9){
-    if(pointUpgradesPurchased[7] != true){
-      $("#pointUpgrade8DescUpper").text("Naming is hard yo");
-      $("#pointUpgrade8Button").text("1e25");
-      $("#pointUpgrade8DescLower").text("x25 Cardinal output of points");
-      $("#pointUpgrade8Button").prop("disabled", false);
-    };
-  };
-  if(totalPoints >= 1e11){
-    if(pointUpgradesPurchased[8] != true){
-      $("#pointUpgrade9DescUpper").text("B1gg3r bruh l34gu3s");
-      $("#pointUpgrade9Button").text("1e30");
-      $("#pointUpgrade9DescLower").text("x50 Cardinal output of points");
-      $("#pointUpgrade9Button").prop("disabled", false);
-    };
-  };
-  if(totalPoints >= 1e13){
-    if(pointUpgradesPurchased[9] != true){
-      $("#pointUpgrade10DescUpper").text("Biggest boi league");
-      $("#pointUpgrade10Button").text("1e35");
-      $("#pointUpgrade10DescLower").text("x10 to ALL generators");
-      $("#pointUpgrade10Button").prop("disabled", false);
-    };
-  };
-}
-
-function checkRow2LineUpgrades(totalLines){ // compares the total number of lines to thresholds to show row 2 upgrades
-  if(totalLines >= 100000){
-    if(lineUpgradesPurchased[5] != true){
-      $("#lineUpgrade6DescUpper").text("CHANGE NAME");
-      $("#lineUpgrade6Button").text("1e15");
-      $("#lineUpgrade6DescLower").text("x10 Point output of Lines");
-      $("#lineUpgrade6Button").prop("disabled", false);
-    }
-  }
-  if(totalLines >= 1e7){
-    if(lineUpgradesPurchased[6] != true){
-      $("#lineUpgrade7DescUpper").text("CHANGE NAME");
-      $("#lineUpgrade7Button").text("1e20");
-      $("#lineUpgrade7DescLower").text("x15 Point output of Lines");
-      $("#lineUpgrade7Button").prop("disabled", false);
-    }
-  }
-  if(totalLines >= 1e9){
-    if(lineUpgradesPurchased[7] != true){
-      $("#lineUpgrade8DescUpper").text("CHANGE NAME");
-      $("#lineUpgrade8Button").text("1e25");
-      $("#lineUpgrade8DescLower").text("x25 Point output of Lines");
-      $("#lineUpgrade8Button").prop("disabled", false);
-    }
-  }
-  if(totalLines >= 1e11){
-    if(lineUpgradesPurchased[8] != true){
-      $("#lineUpgrade9DescUpper").text("CHANGE NAME");
-      $("#lineUpgrade9Button").text("1e30");
-      $("#lineUpgrade9DescLower").text("x50 Point output of Lines");
-      $("#lineUpgrade9Button").prop("disabled", false);
-    }
-  }
-  if(totalLines >= 1e13){
-    if(lineUpgradesPurchased[9] != true){
-      $("#lineUpgrade10DescUpper").text("CHANGE NAME");
-      $("#lineUpgrade10Button").text("1e35");
-      $("#lineUpgrade10DescLower").text("x10 to ALL generators");
-      $("#lineUpgrade10Button").prop("disabled", false);
-    }
-  }
-}
-
-function checkRow2TriangleUpgrades(totalTriangles){ // compares the total number of triangles to preset thresholds to show row 2 upgrades
-  if(totalTriangles >= 100000){
-    if(triangleUpgradesPurchased[5] != true){
-      $("#triangleUpgrade6DescUpper").text("CHANGE NAME");
-      $("#triangleUpgrade6Button").text("1e15");
-      $("#triangleUpgrade6DescLower").text("x10 Line output of Triangles");
-      $("#triangleUpgrade6Button").prop("disabled", false);
-    }
-  }
-  if(totalTriangles >= 1e7){
-    if(triangleUpgradesPurchased[6] != true){
-      $("#triangleUpgrade7DescUpper").text("CHANGE NAME");
-      $("#triangleUpgrade7Button").text("1e20");
-      $("#triangleUpgrade7DescLower").text("x15 Line output of Triangles");
-      $("#triangleUpgrade7Button").prop("disabled", false);
-    }
-  }
-  if(totalTriangles >= 1e9){
-    if(triangleUpgradesPurchased[7] != true){
-      $("#triangleUpgrade8DescUpper").text("CHANGE NAME");
-      $("#triangleUpgrade8Button").text("1e25");
-      $("#triangleUpgrade8DescLower").text("25 Line output of Triangles");
-      $("#triangleUpgrade8Button").prop("disabled", false);
-    }
-  }
-  if(totalTriangles >= 1e11){
-    if(triangleUpgradesPurchased[8] != true){
-      $("#triangleUpgrade9DescUpper").text("CHANGE NAME");
-      $("#triangleUpgrade9Button").text("1e30");
-      $("#triangleUpgrade9DescLower").text("50 Line output of Triangles");
-      $("#triangleUpgrade9Button").prop("disabled", false);
-    }
-  }
-  if(totalTriangles >= 1e13){
-    if(triangleUpgradesPurchased[9] != true){
-      $("#triangleUpgrade10DescUpper").text("CHANGE NAME");
-      $("#triangleUpgrade10Button").text("1e35");
-      $("#triangleUpgrade10DescLower").text("x10 to ALL generators");
-      $("#triangleUpgrade10Button").prop("disabled", false);
-    }
-  }
-}
-
-function checkRow2SquareUpgrades(totalSquares){
-  if(totalSquares >= 100000){
-    if(squareUpgradesPurchased[5] != true){
-      $("#squareUpgrade6DescUpper").text("CHANGE NAME");
-      $("#squareUpgrade6Button").text("7e45");
-      $("#squareUpgrade6DescLower").text("x10 Triangle output of Squares");
-      $("#squareUpgrade6Button").prop("disabled", false);
-    }
-  }
-  if(totalSquares >= 1e7){
-    if(squareUpgradesPurchased[6] != true){
-      $("#squareUpgrade7DescUpper").text("CHANGE NAME");
-      $("#squareUpgrade7Button").text("7e50");
-      $("#squareUpgrade7DescLower").text("x15 Triangle output of Squares");
-      $("#squareUpgrade7Button").prop("disabled", false);
-    }
-  }
-  if(totalSquares >= 1e9){
-    if(squareUpgradesPurchased[7] != true){
-      $("#squareUpgrade8DescUpper").text("CHANGE NAME");
-      $("#squareUpgrade8Button").text("1e55");
-      $("#squareUpgrade8DescLower").text("x25 Triangle output of Squares");
-      $("#squareUpgrade8Button").prop("disabled", false);
-    }
-  }
-  if(totalSquares >= 1e11){
-    if(squareUpgradesPurchased[8] != true){
-      $("#squareUpgrade9DescUpper").text("CHANGE NAME");
-      $("#squareUpgrade9Button").text("1e60");
-      $("#squareUpgrade9DescLower").text("x50 Triangle output of Squares");
-      $("#squareUpgrade9Button").prop("disabled", false);
-    }
-  }
-  if(totalSquares >= 1e13){
-    if(squareUpgradesPurchased[9] != true){
-      $("#squareUpgrade10DescUpper").text("CHANGE NAME");
-      $("#squareUpgrade10Button").text("1e65");
-      $("#squareUpgrade10DescLower").text("x10 to ALL generators");
-      $("#squareUpgrade10Button").prop("disabled", false);
-    }
-  }
-}
-
-function checkRow2PentagonUpgrades(totalPentagons){
-  if(totalPentagons >= 100000){
-    if(pentagonUpgradesPurchased[5] != true){
-      $("#pentagonUpgrade6DescUpper").text("CHANGE NAME");
-      $("#pentagonUpgrade6Button").text("7e12");
-      $("#pentagonUpgrade6DescLower").text("x10 Square output of Pentagons");
-      $("#pentagonUpgrade6Button").prop("disabled", false);
-    }
-  }
-  if(totalPentagons >= 1e7){
-    if(pentagonUpgradesPurchased[6] != true){
-      $("#pentagonUpgrade7DescUpper").text("CHANGE NAME");
-      $("#pentagonUpgrade7Button").text("7e12");
-      $("#pentagonUpgrade7DescLower").text("x15 Square output of Pentagons");
-      $("#pentagonUpgrade7Button").prop("disabled", false);
-    }
-  }
-  if(totalPentagons >= 1e9){
-    if(pentagonUpgradesPurchased[7] != true){
-      $("#pentagonUpgrade8DescUpper").text("CHANGE NAME");
-      $("#pentagonUpgrade8Button").text("7e12");
-      $("#pentagonUpgrade8DescLower").text("x25 Square output of Pentagons");
-      $("#pentagonUpgrade8Button").prop("disabled", false);
-    }
-  }
-  if(totalPentagons >= 1e11){
-    if(pentagonUpgradesPurchased[8] != true){
-      $("#pentagonUpgrade9DescUpper").text("CHANGE NAME");
-      $("#pentagonUpgrade9Button").text("7e12");
-      $("#pentagonUpgrade9DescLower").text("x50 Square output of Pentagons");
-      $("#pentagonUpgrade9Button").prop("disabled", false);
-    }
-  }
-  if(totalPentagons >= 1e13){
-    if(pentagonUpgradesPurchased[9] != true){
-      $("#pentagonUpgrade10DescUpper").text("CHANGE NAME");
-      $("#pentagonUpgrade10Button").text("7e12");
-      $("#pentagonUpgrade10DescLower").text("x10 to ALL generators");
-      $("#pentagonUpgrade10Button").prop("disabled", false);
-    }
-  }
-}
-
-function showRow1Upgrades(generatorArray){
-  for(var i=0; i<10; i++){ // 0 = points, 9 = decagons
-    if(generatorArray[i] >= 5){
-      var id = "#upgradeLine" + ((i*2)+1) + "Wrapper" // 1st row id is always an odd number, eg: points index is 0, but upgrade row id is 1
-      $(id).show();
-    }
-  }
-}
-
-
 function percentageProduction(i){
   if (currencyGainPerUpdate() == 0){
     return 0
@@ -490,17 +275,17 @@ function percentageProduction(i){
 function updateDisplay(){
   //PRE PRESTIGE GENERATION
   //UPDATE TOTAL NUMBER OF EACH GENERATOR DECS->POINTS
-  $("#decagon").text("Decagons: " + toENotation(generatorArray[9]));
-  $("#nonagon").text("Nonagons: " + toENotation(generatorArray[8]));
-  $("#octagon").text("Octagons: " + toENotation(generatorArray[7]));
-  $("#heptagon").text("Heptagons: " + toENotation(generatorArray[6]));
-  $("#hexagon").text("Hexagons: " + toENotation(generatorArray[5]));
-  $("#pentagon").text("Pentagons: " + toENotation(generatorArray[4]));
-  $("#square").text("Squares: " + toENotation(generatorArray[3]));
-  $("#triangle").text("Triangles: " + toENotation(generatorArray[2]));
+  $("#decagon").text("Decagons: " + toENotation(getTotalGenerators(9)));
+  $("#nonagon").text("Nonagons: " + toENotation(getTotalGenerators(8)));
+  $("#octagon").text("Octagons: " + toENotation(getTotalGenerators(7)));
+  $("#heptagon").text("Heptagons: " + toENotation(getTotalGenerators(6)));
+  $("#hexagon").text("Hexagons: " + toENotation(getTotalGenerators(5)));
+  $("#pentagon").text("Pentagons: " + toENotation(getTotalGenerators(4)));
+  $("#square").text("Squares: " + toENotation(getTotalGenerators(3)));
+  $("#triangle").text("Triangles: " + toENotation(getTotalGenerators(2)));
+  $("#line").text("Lines: " + toENotation(getTotalGenerators(1)));
+  $("#point").text("Points: " + toENotation(getTotalGenerators(0)));
   $("#CardinalCurrency").text("Cardinals: " + toENotation(playerCurrency));
-  $("#line").text("Lines: " + toENotation(generatorArray[1]));
-  $("#point").text("Points: " + toENotation(generatorArray[0]));
 
   // UPDATE COST OF EACH GENERATOR POINTS->DECS
   $("#buyPointButton").text("Cost: " + toENotation(generatorCurrentCostArray[0]));
