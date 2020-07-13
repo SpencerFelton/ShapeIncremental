@@ -109,6 +109,9 @@ $(document).ready(function(){
     if(upgradeID == "pointUpgrade5"){
       pointUpgrades[4] = true;
     }
+    if(upgradeID == "pointUpgrade6"){
+      generatorExponent[0] = 2;
+    }
   }
 
   function setAllCosts(){
