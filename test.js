@@ -96,12 +96,15 @@ $(document).ready(function(){
   function upgradeEffect(upgradeID){
     if(upgradeID == "pointUpgrade1"){
       generatorBaseContributionArray[0] += 1;
+      pointUpgrades[0] = true;
     }
     if(upgradeID == "pointUpgrade2"){
       generatorMultipliers[0] *= 2;
+      pointUpgrades[1] = true;
     }
     if(upgradeID == "pointUpgrade3"){
       generatorMultipliers[0] *= 3;
+      pointUpgrades[2] = true;
     }
     if(upgradeID == "pointUpgrade4"){
       pointUpgrades[3] = true;
@@ -111,15 +114,19 @@ $(document).ready(function(){
     }
     if(upgradeID == "pointUpgrade6"){
       generatorExponent[0] = 2;
+      pointUpgrades[5] = true;
     }
     if(upgradeID == "pointUpgrade7"){
       generatorExponent[0] *= 1.1;
+      pointUpgrades[6] = true;
     }
     if(upgradeID == "pointUpgrade8"){
       generatorExponent[0] *= 1.2;
+      pointUpgrades[7] = true;
     }
     if(upgradeID == "pointUpgrade9"){
       generatorExponent[0] *= 1.3;
+      pointUpgrades[8] = true;
     }
   }
 
