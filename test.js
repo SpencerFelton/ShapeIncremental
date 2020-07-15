@@ -112,6 +112,15 @@ $(document).ready(function(){
     if(upgradeID == "pointUpgrade6"){
       generatorExponent[0] = 2;
     }
+    if(upgradeID == "pointUpgrade7"){
+      generatorExponent[0] *= 1.1;
+    }
+    if(upgradeID == "pointUpgrade8"){
+      generatorExponent[0] *= 1.2;
+    }
+    if(upgradeID == "pointUpgrade9"){
+      generatorExponent[0] *= 1.3;
+    }
   }
 
   function setAllCosts(){

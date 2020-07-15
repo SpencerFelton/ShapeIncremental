@@ -6,7 +6,7 @@ var generatorBaseContributionArray = [1,5,25,125,625,3125,15625,78125,3906256,19
 var generatorMultipliers = [1,1,1,1,1,1,1,1,1,1]; //
 var generatorExponent = [1,1,1,1,1,1,1,1,1,1];
 
-var pointUpgrades = [false,false,false,false,false]
+var pointUpgrades = [false,false,false,false,false, false, false, false, false]
 
 
 var playerCurrency = 1e0;

@@ -7,9 +7,9 @@ var pointTree = {id:"pointUpgrade1", name:"node1", parent:{}, cost: 50, desc: "P
         }
       }
     },{
-      id:"pointUpgrade7", name:"node7", parent:"node3", cost: 50000, desc:"Increases the output of points by", child:{
-        id:"pointUpgrade8", name:"node8", parent:"node7", cost: 500000, desc:"Increases the output of points by", child:{
-          id:"pointUpgrade9", name:"node9", parent:"node8", cost: 5000000, desc:"Increases the output of points by", child:{}
+      id:"pointUpgrade7", name:"node7", parent:"node3", cost: 50000, desc:"Point output raised to the 1.1", child:{
+        id:"pointUpgrade8", name:"node8", parent:"node7", cost: 500000, desc:"Point output raised to the 1.2", child:{
+          id:"pointUpgrade9", name:"node9", parent:"node8", cost: 5000000, desc:"Point output raised to the 1.3", child:{}
         }
       }
     }]
