@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-  $(".generatorButton").click(function(){
+  $(".generatorButton").click(function(){ // general function for generator buttons
     switch($(this).attr("id")){
       case "buyPointButton":
         buyGenerator(0);
@@ -36,7 +36,7 @@ $(document).ready(function(){
     }
   });
 
-  $(".navigationButton").click(function(){
+  $(".navigationButton").click(function(){ // general function for changing the window class being displayed
     var windowName = $(this).attr("id"); // get the id of the clicked button
     windowName = windowName.replace("Button", "") + "Window"; // remove Button from the id, and replace it with Window to create a window ID
     $(".window").each(function(){ // search each element of class window
@@ -49,14 +49,14 @@ $(document).ready(function(){
     });
   });
 
-  function onUpgradePurchase(jQuerySelector){
+  function onUpgradePurchase(jQuerySelector){ // helper function for purchasing upgrades, changes background colour of button
     jQuerySelector.css("background-color", "green"); //Change the background colour to green
     jQuerySelector.css("color", "black"); // change button text colour to black
     jQuerySelector.text("PURCHASED"); // change the button text to PURCHASED
     jQuerySelector.css("pointer-events", "none"); // diable the button so it cant be clicked again
   }
 
-  function changeElementColour(idString, colour){
+  function changeElementColour(idString, colour){ // helper function for purchasing upgrades
     $("#" + idString).css("background-color", colour);
   }
 
@@ -93,7 +93,7 @@ $(document).ready(function(){
     }
   }
 
-  function upgradeEffect(upgradeID){
+  function upgradeEffect(upgradeID){ // giant function for upgrade effects
     if(upgradeID == "pointUpgrade1"){
       generatorBaseContributionArray[0] += 1;
       pointUpgrades[0] = true;
@@ -130,7 +130,7 @@ $(document).ready(function(){
     }
   }
 
-  function setAllCosts(){
+  function setAllCosts(){ // search JSON objects to set the cost of the upgrade on the upgrade button
     var allUpgrades = $(".grid-item-upgrade");
     for(var i=0; i<90; i++){
       var upgradeID = allUpgrades[i].id;
