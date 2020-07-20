@@ -152,7 +152,8 @@ $(document).ready(function(){
 
   });
 
-  $(".grid-item-upgrade").click(function(){
+  $(".grid-item-upgrade").click(function(){ // onclick function for upgrades in inline grid, holds the logic for determining which button this is and what to do with it, uses JSON objects to
+    // get cost info, descripion, name etc
     var upgradeID = $(this).attr("id");
     var upgradeTree = null;
 
@@ -202,7 +203,6 @@ $(document).ready(function(){
       }
 
       upgradeEffect(upgradeID);
-      //DO THE EFFECT - WRITE FUNCTION TAKING ID AND PERFORMING THE ACTION
     }
   });
 
